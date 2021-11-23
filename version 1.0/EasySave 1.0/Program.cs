@@ -1,12 +1,11 @@
-﻿using System;
+using System;
 
-namespace EasySave_1._0
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            
-        }
-    }
+public class Program {
+	public static void Main() {
+		throw new System.NotImplementedException("Not implemented");
+	}
+
+	private Controller.ControllerSave controllerSave;
+	private Controller.ControllerLanguage controllerLanguage;
+
 }
