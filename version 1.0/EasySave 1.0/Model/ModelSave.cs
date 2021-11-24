@@ -34,16 +34,7 @@ namespace EasySave_1_0.Model {
 				targetPath = value;
 			}
 		}
-		
-		protected string pathLog;
-		public string PathLog {
-			get {
-				return pathLog;
-			}
-			set {
-				pathLog = value;
-			}
-		}
+
 
 		protected string filename;
 		public string Filename

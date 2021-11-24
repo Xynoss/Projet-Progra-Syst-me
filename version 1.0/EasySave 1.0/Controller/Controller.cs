@@ -38,7 +38,7 @@ namespace EasySave_1_0.Controller
         }
         public void Start()
         {
-            
+
 
             view.Output("que faire :");
             string Input_choise = view.Input();
