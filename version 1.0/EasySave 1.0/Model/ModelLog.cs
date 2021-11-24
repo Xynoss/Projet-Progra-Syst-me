@@ -1,7 +1,7 @@
 using System;
 
-namespace Model {
-	public abstract class ModelLog {
+namespace EasySave 1.0.Model {
+	public abstract class ModelLog : ModelSave  {
 		private string name;
 		public string Name {
 			get {
@@ -38,6 +38,10 @@ namespace Model {
 				timestamp = value;
 			}
 		}
+
+		public abstract void CreateLogFile();
+		public abstract void WriteLog();
+		public abstract void Save();
 
 	}
 

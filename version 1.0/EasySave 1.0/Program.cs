@@ -1,11 +1,13 @@
 using System;
 
-public class Program {
-	public static void Main() {
-		throw new System.NotImplementedException("Not implemented");
-	}
+namespace EasySave 1.0 {
+	public class Program {
+		public static void Main() {
+			throw new System.NotImplementedException("Not implemented");
+		}
 
-	private Controller.ControllerSave controllerSave;
-	private Controller.ControllerLanguage controllerLanguage;
+		private EasySave 1.0.Controller.Controller obj_controller;
+
+	}
 
 }
