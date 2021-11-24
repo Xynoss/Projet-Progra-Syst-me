@@ -1,7 +1,7 @@
 using System;
 
-namespace EasySave_1_0.Model {
-	public class ModelLogLog : ModelLog  {
+/*namespace EasySave_1_0.Model {
+	*//*public class ModelLogLog : ModelLog  {
 		private static EasySave_1_0.Model.ModelLogLog instance;
 		private int fileSize;
 		public int FileSize {
@@ -34,9 +34,9 @@ namespace EasySave_1_0.Model {
 		}
 		public static EasySave_1_0.Model.ModelLogLog GetInstance() {
 			return this.instance;
-		}
+		}*//*
 
 
 	}
 
-}
+}*/

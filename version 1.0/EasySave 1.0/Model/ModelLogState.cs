@@ -1,7 +1,7 @@
 using System;
 
-namespace EasySave_1_0.Model {
-	public class ModelLogState : ModelLog  {
+/*namespace EasySave_1_0.Model {
+	*//*public class ModelLogState : ModelLog  {
 		private static ModelLogState instance;
 		private bool state;
 		private int totalFileToCopy;
@@ -47,14 +47,14 @@ namespace EasySave_1_0.Model {
 		public override void WriteLog() {
 			throw new System.NotImplementedException("Not implemented");
 		}
-		private ModelLogState() {
+		*//*private ModelLogState() {
 			throw new System.NotImplementedException("Not implemented");
 		}
 		public static ModelLogState GetInstance() {
 			return this.instance;
-		}
+		}*//*
 
 
 	}
 
-}
+}*/
