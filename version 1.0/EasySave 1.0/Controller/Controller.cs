@@ -34,7 +34,7 @@ namespace EasySave_1_0.Controller {
 		public void LogLog(ref EasySave_1_0.Model.ModelSave[] save) {
 			throw new System.NotImplementedException("Not implemented");
 		}
-		public void DisplayLanguage() {
+		public void DisplayLanguage(EasySave_1_0.Model.LangConfig) {
 			throw new System.NotImplementedException("Not implemented");
 		}
 
