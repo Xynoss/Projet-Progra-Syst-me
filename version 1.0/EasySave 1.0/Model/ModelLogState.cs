@@ -44,6 +44,7 @@ namespace Model {
 
 		private MapperClass.MapperState mapperState;
 		private LogClass.CreateLogState createLogState;
+
 =======
 	     
 		public override void CreateLogFile() {
@@ -62,9 +63,25 @@ namespace Model {
 
         }
 		public override void WriteLog() {
-		string message=" ";
+		if (File.Exists(PathLog))
+		{
 
-		File.WriteAllText(PathLog, message);
+
+			using (StreamWriter sw = File.AppendText(PathLog))
+			{
+				sw.WriteLine(message);
+
+			}
+		}
+		else
+        {
+			using (StreamWriter sw = File.CreateText(PathLog))
+			{
+				sw.WriteLine(message);
+				
+			}
+
+		}
 		}
 		private ModelLogState() {
 			throw new System.NotImplementedException("Not implemented");
@@ -79,7 +96,6 @@ namespace Model {
 
     private Calcul_Check 0_*;
 >>>>>>> Stashed changes
-
 	}
 
 }
