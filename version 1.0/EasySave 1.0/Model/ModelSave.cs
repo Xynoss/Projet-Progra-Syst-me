@@ -1,8 +1,11 @@
 using System;
+using System.IO;
+using System.Diagnostics;
+using System.Reflection;
 
-namespace EasySave 1.0.Model {
+namespace EasySave_1_0.Model {
 	public abstract class ModelSave {
-		private string name;
+		protected string name;
 		public string Name {
 			get {
 				return name;
@@ -11,7 +14,7 @@ namespace EasySave 1.0.Model {
 				name = value;
 			}
 		}
-		private string sourcePath;
+		protected string sourcePath;
 		public string SourcePath {
 			get {
 				return sourcePath;
@@ -20,7 +23,7 @@ namespace EasySave 1.0.Model {
 				sourcePath = value;
 			}
 		}
-		private string targetPath;
+		protected string targetPath;
 		public string TargetPath {
 			get {
 				return targetPath;
@@ -29,7 +32,7 @@ namespace EasySave 1.0.Model {
 				targetPath = value;
 			}
 		}
-		private string pathLog;
+		protected string pathLog;
 		public string PathLog {
 			get {
 				return pathLog;
@@ -39,12 +42,14 @@ namespace EasySave 1.0.Model {
 			}
 		}
 
-		public void ModelSave(ref string name, ref string sourcePath, ref string targetPath) {
-			throw new System.NotImplementedException("Not implemented");
+		public ModelSave(string name, string sourcePath, string targetPath) {
+			Name = name;
+			TargetPath = targetPath;
+			SourcePath = sourcePath;
+
 		}
 		public abstract void Save();
 
-		private EasySave 1.0.Controller.Controller 1;
 
 	}
 

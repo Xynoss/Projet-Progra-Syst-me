@@ -1,8 +1,8 @@
 using System;
 
-namespace EasySave 1.0.Model {
+namespace EasySave_1_0.Model {
 	public class ModelLogLog : ModelLog  {
-		private static EasySave_1.0.Model.ModelLogLog instance;
+		private static EasySave_1_0.Model.ModelLogLog instance;
 		private int fileSize;
 		public int FileSize {
 			get {
@@ -28,14 +28,14 @@ namespace EasySave 1.0.Model {
 		public override void WriteLog() {
 			throw new System.NotImplementedException("Not implemented");
 		}
-		private ModelLogLog() {
-			throw new System.NotImplementedException("Not implemented");
+		private ModelLogLog(string name, string fileSource, string fileTarget, DateTime timestamp) {
+			Name = name;
+
 		}
-		public static EasySave_1.0.Model.ModelLogLog GetInstance() {
+		public static EasySave_1_0.Model.ModelLogLog GetInstance() {
 			return this.instance;
 		}
 
-		private Calcul_Check 0_*;
 
 	}
 

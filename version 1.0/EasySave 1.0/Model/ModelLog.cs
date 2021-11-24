@@ -1,17 +1,20 @@
 using System;
 
-namespace EasySave 1.0.Model {
-	public abstract class ModelLog : ModelSave  {
-		private string name;
-		public string Name {
-			get {
+namespace EasySave_1_0.Model {
+	public abstract class ModelLog  {
+		protected string name;
+		public string Name
+		{
+			get
+			{
 				return name;
 			}
-			set {
+			set
+			{
 				name = value;
 			}
 		}
-		private string fileSource;
+		protected string fileSource;
 		public string FileSource {
 			get {
 				return fileSource;
@@ -20,7 +23,7 @@ namespace EasySave 1.0.Model {
 				fileSource = value;
 			}
 		}
-		private string fileTarget;
+		protected string fileTarget;
 		public string FileTarget {
 			get {
 				return fileTarget;
@@ -29,19 +32,29 @@ namespace EasySave 1.0.Model {
 				fileTarget = value;
 			}
 		}
-		private DateTime timestamp;
-		public DateTime Timestamp {
-			get {
+		protected DateTime timestamp;
+		public DateTime Timestamp
+		{
+			get
+			{
 				return timestamp;
 			}
-			set {
+			set
+			{
 				timestamp = value;
 			}
 		}
 
+		public ModelLog(string name, string fileSource, string fileTarget, DateTime timestamp)
+        {
+			this.Name = name;
+			this.fileSource = fileSource;
+			this.fileTarget = fileTarget;
+			this.timestamp = timestamp;
+		}
+
 		public abstract void CreateLogFile();
 		public abstract void WriteLog();
-		public abstract void Save();
 
 	}
 

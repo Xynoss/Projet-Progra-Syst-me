@@ -1,9 +1,9 @@
 using System;
 
-namespace EasySave 1.0.Model {
+namespace EasySave_1_0.Model {
 	public enum LangConfig {
-		FRANCE_(name_:_"fr-FR"),
-		ENGLAND_(name_:_"en-EN"),
+		FRANCE = "fr-FR",
+		ENGLAND = "en-EN",
 
 	}
 

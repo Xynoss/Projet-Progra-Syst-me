@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\dossier\\CESI\\FISE A3 info 2021-2022\\projet\\prgrammation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\EasySave 1.0.csproj",
-      "projectName": "EasySave 1.0",
-      "projectPath": "D:\\dossier\\CESI\\FISE A3 info 2021-2022\\projet\\prgrammation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\EasySave 1.0.csproj",
+      "projectUniqueName": "D:\\dossier\\CESI\\FISE A3 info 2021-2022\\projet\\prgrammation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\EasySave_1_0.csproj",
+      "projectName": "EasySave_1_0",
+      "projectPath": "D:\\dossier\\CESI\\FISE A3 info 2021-2022\\projet\\prgrammation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\EasySave_1_0.csproj",
       "packagesPath": "C:\\Users\\Xynos\\.nuget\\packages\\",
       "outputPath": "D:\\dossier\\CESI\\FISE A3 info 2021-2022\\projet\\prgrammation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\obj\\",
       "projectStyle": "PackageReference",

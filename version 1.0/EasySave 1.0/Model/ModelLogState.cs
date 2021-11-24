@@ -1,6 +1,6 @@
 using System;
 
-namespace EasySave 1.0.Model {
+namespace EasySave_1_0.Model {
 	public class ModelLogState : ModelLog  {
 		private static ModelLogState instance;
 		private bool state;
@@ -54,7 +54,6 @@ namespace EasySave 1.0.Model {
 			return this.instance;
 		}
 
-		private Calcul_Check 0_*;
 
 	}
 

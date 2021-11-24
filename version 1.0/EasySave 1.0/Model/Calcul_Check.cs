@@ -1,6 +1,6 @@
 using System;
 
-namespace EasySave 1.0.Model {
+namespace EasySave_1_0.Model {
 	public class Calcul_Check {
 		public Calcul_Check() {
 			throw new System.NotImplementedException("Not implemented");
@@ -9,7 +9,6 @@ namespace EasySave 1.0.Model {
 			throw new System.NotImplementedException("Not implemented");
 		}
 
-		private ModelLogState 1;
 
 	}
 

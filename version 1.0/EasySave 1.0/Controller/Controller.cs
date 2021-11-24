@@ -1,9 +1,9 @@
 using System;
 
-namespace EasySave 1.0.Controller {
+namespace EasySave_1_0.Controller {
 	public class Controller {
-		private EasySave 1.0.Model.ModelSave[] saves;
-		public EasySave 1.0.Model.ModelSave[] Saves {
+		private EasySave_1_0.Model.ModelSave[] saves;
+		public EasySave_1_0.Model.ModelSave[] Saves {
 			get {
 				return saves;
 			}
@@ -11,8 +11,8 @@ namespace EasySave 1.0.Controller {
 				saves = value;
 			}
 		}
-		private EasySave 1.0.View.View view;
-		public EasySave 1.0.View.View View {
+		private EasySave_1_0.View.View view;
+		public EasySave_1_0.View.View View {
 			get {
 				return view;
 			}
@@ -20,26 +20,24 @@ namespace EasySave 1.0.Controller {
 				view = value;
 			}
 		}
-		private EasySave 1.0.Model.LangConfig displayLanguage;
+		private EasySave_1_0.Model.LangConfig displayLanguage;
 
-		public Controller(ref EasySave 1.0.Model.ModelSave[] saves, ref EasySave 1.0.View.View view, ref bool saveType) {
+		public Controller(ref EasySave_1_0.Model.ModelSave[] saves, ref EasySave_1_0.View.View view, ref bool saveType) {
 			throw new System.NotImplementedException("Not implemented");
 		}
 		public void Start() {
 			throw new System.NotImplementedException("Not implemented");
 		}
-		public void LogState(ref EasySave 1.0.Model.ModelSave[] save) {
+		public void LogState(ref EasySave_1_0.Model.ModelSave[] save) {
 			throw new System.NotImplementedException("Not implemented");
 		}
-		public void LogLog(ref EasySave 1.0.Model.ModelSave[] save) {
+		public void LogLog(ref EasySave_1_0.Model.ModelSave[] save) {
 			throw new System.NotImplementedException("Not implemented");
 		}
 		public void DisplayLanguage() {
 			throw new System.NotImplementedException("Not implemented");
 		}
 
-		private EasySave 1.0.View.View 1;
-		private EasySave 1.0.Model.ModelSave 0_*;
 
 
 	}
