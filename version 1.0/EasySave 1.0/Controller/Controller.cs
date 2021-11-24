@@ -32,37 +32,37 @@ namespace EasySave_1_0.Controller
 
         public Controller(List<EasySave_1_0.Model.ModelSave> saves, EasySave_1_0.View.View view, bool saveType)
         {
-
+            this.view = View;
+            this.saves = saves;
+            Start();
         }
         public void Start()
         {
-            List<EasySave_1_0.Model.ModelSave> list_backup = new List<EasySave_1_0.Model.ModelSave>();
-            View.View display = new View.View();
-            Controller control = new Controller(list_backup, display, true);
+            
 
-            display.Output("que faire :");
-            string Input_choise = display.Input();
+            view.Output("que faire :");
+            string Input_choise = view.Input();
             /*switch (Input_choise != null)
             {
                 case false:
                     Input_choise = 
             }*/
 
-            display.Output("créer une sauvegarde ? y => YES ");
-            Input_choise = display.Input();
-            if (Input_choise == "y" && list_backup.Count < 6)
+            view.Output("créer une sauvegarde ? y => YES ");
+            Input_choise = view.Input();
+            if (Input_choise == "y" && saves.Count < 6)
             {
-                display.Output("le nom :");
-                string save_name = display.Input();
-                display.Output("la source :");
-                string save_sourcepath = display.Input();
-                display.Output("la cible :");
-                string save_targetpath = display.Input();
-                list_backup.Add(new Model.ModelTotalSave(save_name, save_sourcepath, save_targetpath));
+                view.Output("le nom :");
+                string save_name = view.Input();
+                view.Output("la source :");
+                string save_sourcepath = view.Input();
+                view.Output("la cible :");
+                string save_targetpath = view.Input();
+                saves.Add(new Model.ModelTotalSave(save_name, save_sourcepath, save_targetpath));
             }
             else
             {
-                display.Output("tu ne peux pas créer !");
+                view.Output("tu ne peux pas créer !");
             }
 
 
@@ -76,7 +76,7 @@ namespace EasySave_1_0.Controller
         {
             throw new System.NotImplementedException("Not implemented");
         }
-        public void DisplayLanguage()
+        public void viewLanguage()
         {
             throw new System.NotImplementedException("Not implemented");
         }
