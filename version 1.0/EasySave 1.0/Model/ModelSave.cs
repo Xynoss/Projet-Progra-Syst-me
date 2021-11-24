@@ -3,8 +3,8 @@ using System.IO;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace EasySave_1_0.Model {
-	public abstract class ModelSave {
+namespace EasySave_1_0.model {
+	public class ModelSave {
 		protected string name;
 		public string Name {
 			get {
@@ -41,14 +41,16 @@ namespace EasySave_1_0.Model {
 				pathLog = value;
 			}
 		}
-
+		public ModelSave() { 
+		}
 		public ModelSave(string name, string sourcePath, string targetPath) {
 			Name = name;
 			TargetPath = targetPath;
 			SourcePath = sourcePath;
 
 		}
-		public abstract void Save();
+
+		//public abstract void Save();
 
 
 	}

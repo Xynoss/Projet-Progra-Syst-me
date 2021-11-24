@@ -6,7 +6,7 @@ namespace EasySave_1_0.View {
 			throw new System.NotImplementedException("Not implemented");
 		}
 		public void Output(string input) {
-			throw new System.NotImplementedException("Not implemented");
+			Console.WriteLine(input);
 		}
 
 	}
