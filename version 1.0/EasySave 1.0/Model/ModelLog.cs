@@ -45,14 +45,14 @@ namespace EasySave_1_0.Model {
 			}
 		}
 
-		public ModelLog(string name, string fileSource, string fileTarget, DateTime timestamp)
+		/*public ModelLog(string l_name, string l_fileSource, string l_fileTarget, DateTime l_timestamp)
         {
-			this.Name = name;
-			this.fileSource = fileSource;
-			this.fileTarget = fileTarget;
-			this.timestamp = timestamp;
+			this.Name = l_name;
+			this.FileSource = l_fileSource;
+			this.FileTarget = l_fileTarget;
+			this.Timestamp = l_timestamp;
 		}
-
+		*/
 		public abstract void CreateLogFile();
 		public abstract void WriteLog();
 
