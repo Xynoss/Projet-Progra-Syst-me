@@ -1,7 +1,8 @@
 using System;
 
-namespace Model {
+namespace EasySave 1.0.Model {
 	public class ModelLogState : ModelLog  {
+		private static ModelLogState instance;
 		private bool state;
 		private int totalFileToCopy;
 		public int TotalFileToCopy {
@@ -40,8 +41,20 @@ namespace Model {
 			}
 		}
 
-		private MapperClass.MapperState mapperState;
-		private LogClass.CreateLogState createLogState;
+		public override void CreateLogFile() {
+			throw new System.NotImplementedException("Not implemented");
+		}
+		public override void WriteLog() {
+			throw new System.NotImplementedException("Not implemented");
+		}
+		private ModelLogState() {
+			throw new System.NotImplementedException("Not implemented");
+		}
+		public static ModelLogState GetInstance() {
+			return this.instance;
+		}
+
+		private Calcul_Check 0_*;
 
 	}
 

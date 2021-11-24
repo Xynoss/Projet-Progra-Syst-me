@@ -1,7 +1,8 @@
 using System;
 
-namespace Model {
+namespace EasySave 1.0.Model {
 	public class ModelLogLog : ModelLog  {
+		private static EasySave_1.0.Model.ModelLogLog instance;
 		private int fileSize;
 		public int FileSize {
 			get {
@@ -21,8 +22,20 @@ namespace Model {
 			}
 		}
 
-		private MapperClass.MapperLog mapperLog;
-		private LogClass.CreateLogLog createLogLog;
+		public override void CreateLogFile() {
+			throw new System.NotImplementedException("Not implemented");
+		}
+		public override void WriteLog() {
+			throw new System.NotImplementedException("Not implemented");
+		}
+		private ModelLogLog() {
+			throw new System.NotImplementedException("Not implemented");
+		}
+		public static EasySave_1.0.Model.ModelLogLog GetInstance() {
+			return this.instance;
+		}
+
+		private Calcul_Check 0_*;
 
 	}
 

@@ -1,6 +1,6 @@
 using System;
 
-namespace Model {
+namespace EasySave 1.0.Model {
 	public abstract class ModelSave {
 		private string name;
 		public string Name {
@@ -29,15 +29,22 @@ namespace Model {
 				targetPath = value;
 			}
 		}
+		private string pathLog;
+		public string PathLog {
+			get {
+				return pathLog;
+			}
+			set {
+				pathLog = value;
+			}
+		}
 
 		public void ModelSave(ref string name, ref string sourcePath, ref string targetPath) {
 			throw new System.NotImplementedException("Not implemented");
 		}
 		public abstract void Save();
 
-		private MapperClass.MapperLog mapperLog;
-		private MapperClass.MapperState mapperState;
-		private Controller.ControllerSave controllerSave;
+		private EasySave 1.0.Controller.Controller 1;
 
 	}
 
