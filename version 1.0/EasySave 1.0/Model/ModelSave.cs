@@ -14,6 +14,7 @@ namespace EasySave_1_0.Model {
 				name = value;
 			}
 		}
+		
 		protected string sourcePath;
 		public string SourcePath {
 			get {
@@ -23,6 +24,7 @@ namespace EasySave_1_0.Model {
 				sourcePath = value;
 			}
 		}
+		
 		protected string targetPath;
 		public string TargetPath {
 			get {
@@ -32,6 +34,7 @@ namespace EasySave_1_0.Model {
 				targetPath = value;
 			}
 		}
+		
 		protected string pathLog;
 		public string PathLog {
 			get {
