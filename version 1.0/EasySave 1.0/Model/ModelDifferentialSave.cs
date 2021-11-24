@@ -7,6 +7,9 @@ namespace EasySave_1_0.Model {
         {
         }
 
+        /// <summary>
+        /// methods to copy the files  
+        /// </summary>
         public override void Save() {
             try
             {

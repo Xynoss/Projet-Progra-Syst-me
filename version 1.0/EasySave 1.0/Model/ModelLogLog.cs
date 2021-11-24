@@ -12,6 +12,7 @@ namespace EasySave_1_0.Model {
 				fileSize = value;
 			}
 		}
+
 		private int timeTransfert;
 		public int TimeTransfert {
 			get {

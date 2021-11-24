@@ -16,7 +16,9 @@ namespace EasySave_1_0.Model {
                     filename = f.Substring(sourcePath.Length + 1);
                     File.Copy(Path.Combine(sourcePath, filename), Path.Combine(targetPath,filename), true);
                 }
-                
+                /*
+                File.Create(sourcePath + "save_"+name+".conf");
+                File.AppendText(sourcePath + "save_" + name + ".conf");*/
             }
             catch (DirectoryNotFoundException dirNotFound)
             {

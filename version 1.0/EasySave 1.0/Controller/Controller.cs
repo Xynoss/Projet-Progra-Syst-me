@@ -23,10 +23,11 @@ namespace EasySave_1_0.Controller {
 		private EasySave_1_0.Model.LangConfig displayLanguage;
 
 		public Controller(ref EasySave_1_0.Model.ModelSave[] saves, ref EasySave_1_0.View.View view, ref bool saveType) {
+			saves[0].Name = "test_save01";
+			saves[0].SourcePath = @"C:\";
 			throw new System.NotImplementedException("Not implemented");
 		}
 		public void Start() {
-			throw new System.NotImplementedException("Not implemented");
 		}
 		public void LogState(ref EasySave_1_0.Model.ModelSave[] save) {
 			throw new System.NotImplementedException("Not implemented");
@@ -37,7 +38,6 @@ namespace EasySave_1_0.Controller {
 		public void DisplayLanguage() {
 			throw new System.NotImplementedException("Not implemented");
 		}
-
 
 
 	}
