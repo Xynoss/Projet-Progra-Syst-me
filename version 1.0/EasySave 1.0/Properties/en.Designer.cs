@@ -61,7 +61,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Enter the name of the save :.
+        ///   Recherche une chaîne localisée semblable à Enter the name of the backup:.
         /// </summary>
         internal static string ask_name_save {
             get {
@@ -70,7 +70,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Choose the type of save :.
+        ///   Recherche une chaîne localisée semblable à Choose the type of backup:.
         /// </summary>
         internal static string ask_save_type {
             get {
@@ -79,7 +79,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Enter save target folder path.
+        ///   Recherche une chaîne localisée semblable à Enter backup target folder path:.
         /// </summary>
         internal static string ask_source_path {
             get {
@@ -88,7 +88,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Enter save source folder path.
+        ///   Recherche une chaîne localisée semblable à Enter backup source folder path:.
         /// </summary>
         internal static string ask_target_path {
             get {
@@ -106,7 +106,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Please choose between the following choices :.
+        ///   Recherche une chaîne localisée semblable à Please choose between the following choices:.
         /// </summary>
         internal static string choose_action {
             get {
@@ -115,7 +115,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Indicate the concerned save : .
+        ///   Recherche une chaîne localisée semblable à Indicate the backup concerned:.
         /// </summary>
         internal static string choose_save {
             get {
@@ -124,7 +124,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Do you really want to delete the save {0} ?.
+        ///   Recherche une chaîne localisée semblable à Do you really want to delete the backup {0} ?.
         /// </summary>
         internal static string confirm_delete {
             get {
@@ -133,7 +133,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Save {0} has been delete..
+        ///   Recherche une chaîne localisée semblable à Backup {0} has been delete..
         /// </summary>
         internal static string delete_end {
             get {
@@ -142,7 +142,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Differential save : save only files differents.
+        ///   Recherche une chaîne localisée semblable à Differential backup: backup only different files..
         /// </summary>
         internal static string differentiel_save {
             get {
@@ -169,7 +169,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Select your language among the choices proposed.
+        ///   Recherche une chaîne localisée semblable à Select your language among the choices proposed:.
         /// </summary>
         internal static string language_choose {
             get {
@@ -196,7 +196,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Create a save.
+        ///   Recherche une chaîne localisée semblable à Create a backup.
         /// </summary>
         internal static string list_create_save {
             get {
@@ -205,7 +205,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Delete a save.
+        ///   Recherche une chaîne localisée semblable à Delete a backup.
         /// </summary>
         internal static string list_delete_save {
             get {
@@ -223,7 +223,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Run all the saves.
+        ///   Recherche une chaîne localisée semblable à Run all backups.
         /// </summary>
         internal static string list_run_all {
             get {
@@ -232,7 +232,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Run one save.
+        ///   Recherche une chaîne localisée semblable à Run one backup.
         /// </summary>
         internal static string list_run_one {
             get {
@@ -241,7 +241,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Save {0} does not exist. Check your choice..
+        ///   Recherche une chaîne localisée semblable à Backup {0} does not exist. Check your choice..
         /// </summary>
         internal static string notsave_found {
             get {
@@ -250,7 +250,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous avez choisi de lancer toutes les sauvegardes..
+        ///   Recherche une chaîne localisée semblable à You have chosen to run all backups..
         /// </summary>
         internal static string run_all_save {
             get {
@@ -259,7 +259,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous avez choisi de lancer une sauvegarde.
+        ///   Recherche une chaîne localisée semblable à You have chosen to launch a backup..
         /// </summary>
         internal static string run_onesave {
             get {
@@ -268,7 +268,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous avez choisi de créer une sauvegarde .
+        ///   Recherche une chaîne localisée semblable à You have chosen to create a backup..
         /// </summary>
         internal static string save_create_chosen {
             get {
@@ -277,7 +277,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Sauvegarde {0} crée.
+        ///   Recherche une chaîne localisée semblable à Backup {0} created.
         /// </summary>
         internal static string save_created {
             get {
@@ -286,7 +286,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous avez choisi de supprimer une sauvegarde.
+        ///   Recherche une chaîne localisée semblable à You have chosen to delete a backup..
         /// </summary>
         internal static string save_delete_chosen {
             get {
@@ -295,7 +295,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Sauvegarde {0} en cours....
+        ///   Recherche une chaîne localisée semblable à Backup {0} in progress....
         /// </summary>
         internal static string save_loading {
             get {
@@ -304,7 +304,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Sauvegarde {0} exécutée.
+        ///   Recherche une chaîne localisée semblable à Backup {0} executed..
         /// </summary>
         internal static string save_run {
             get {
@@ -313,7 +313,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Sauvegarde totale : sauvegarder l&apos;intégralité des fichiers..
+        ///   Recherche une chaîne localisée semblable à Full backup: back up all the files..
         /// </summary>
         internal static string total_save {
             get {
@@ -322,7 +322,7 @@ namespace EasySave_1._0.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous avez atteint le nombre de sauvegarde maximum. Veuillez supprimer des sauvegardes.
+        ///   Recherche une chaîne localisée semblable à You have reached the maximum number of backups. Please delete backups..
         /// </summary>
         internal static string warning_toomuchsave {
             get {

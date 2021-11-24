@@ -118,34 +118,34 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ask_name_save" xml:space="preserve">
-    <value>Enter the name of the save :</value>
+    <value>Enter the name of the backup:</value>
   </data>
   <data name="ask_save_type" xml:space="preserve">
-    <value>Choose the type of save :</value>
+    <value>Choose the type of backup:</value>
   </data>
   <data name="ask_source_path" xml:space="preserve">
-    <value>Enter save target folder path</value>
+    <value>Enter backup target folder path:</value>
   </data>
   <data name="ask_target_path" xml:space="preserve">
-    <value>Enter save source folder path</value>
+    <value>Enter backup source folder path:</value>
   </data>
   <data name="check_language" xml:space="preserve">
     <value>The language is english</value>
   </data>
   <data name="choose_action" xml:space="preserve">
-    <value>Please choose between the following choices :</value>
+    <value>Please choose between the following choices:</value>
   </data>
   <data name="choose_save" xml:space="preserve">
-    <value>Indicate the concerned save : </value>
+    <value>Indicate the backup concerned:</value>
   </data>
   <data name="confirm_delete" xml:space="preserve">
-    <value>Do you really want to delete the save {0} ?</value>
+    <value>Do you really want to delete the backup {0} ?</value>
   </data>
   <data name="delete_end" xml:space="preserve">
-    <value>Save {0} has been delete.</value>
+    <value>Backup {0} has been delete.</value>
   </data>
   <data name="differentiel_save" xml:space="preserve">
-    <value>Differential save : save only files differents</value>
+    <value>Differential backup: backup only different files.</value>
   </data>
   <data name="end" xml:space="preserve">
     <value>See you soon</value>
@@ -154,7 +154,7 @@
     <value>Welcome</value>
   </data>
   <data name="language_choose" xml:space="preserve">
-    <value>Select your language among the choices proposed</value>
+    <value>Select your language among the choices proposed:</value>
   </data>
   <data name="language_en" xml:space="preserve">
     <value>English</value>
@@ -163,48 +163,48 @@
     <value>Français</value>
   </data>
   <data name="list_create_save" xml:space="preserve">
-    <value>Create a save</value>
+    <value>Create a backup</value>
   </data>
   <data name="list_delete_save" xml:space="preserve">
-    <value>Delete a save</value>
+    <value>Delete a backup</value>
   </data>
   <data name="list_exit" xml:space="preserve">
     <value>Close the application</value>
   </data>
   <data name="list_run_all" xml:space="preserve">
-    <value>Run all the saves</value>
+    <value>Run all backups</value>
   </data>
   <data name="list_run_one" xml:space="preserve">
-    <value>Run one save</value>
+    <value>Run one backup</value>
   </data>
   <data name="notsave_found" xml:space="preserve">
-    <value>Save {0} does not exist. Check your choice.</value>
+    <value>Backup {0} does not exist. Check your choice.</value>
   </data>
   <data name="run_all_save" xml:space="preserve">
-    <value>Vous avez choisi de lancer toutes les sauvegardes.</value>
+    <value>You have chosen to run all backups.</value>
   </data>
   <data name="run_onesave" xml:space="preserve">
-    <value>Vous avez choisi de lancer une sauvegarde</value>
+    <value>You have chosen to launch a backup.</value>
   </data>
   <data name="save_created" xml:space="preserve">
-    <value>Sauvegarde {0} crée</value>
+    <value>Backup {0} created</value>
   </data>
   <data name="save_create_chosen" xml:space="preserve">
-    <value>Vous avez choisi de créer une sauvegarde </value>
+    <value>You have chosen to create a backup.</value>
   </data>
   <data name="save_delete_chosen" xml:space="preserve">
-    <value>Vous avez choisi de supprimer une sauvegarde</value>
+    <value>You have chosen to delete a backup.</value>
   </data>
   <data name="save_loading" xml:space="preserve">
-    <value>Sauvegarde {0} en cours...</value>
+    <value>Backup {0} in progress...</value>
   </data>
   <data name="save_run" xml:space="preserve">
-    <value>Sauvegarde {0} exécutée</value>
+    <value>Backup {0} executed.</value>
   </data>
   <data name="total_save" xml:space="preserve">
-    <value>Sauvegarde totale : sauvegarder l'intégralité des fichiers.</value>
+    <value>Full backup: back up all the files.</value>
   </data>
   <data name="warning_toomuchsave" xml:space="preserve">
-    <value>Vous avez atteint le nombre de sauvegarde maximum. Veuillez supprimer des sauvegardes</value>
+    <value>You have reached the maximum number of backups. Please delete backups.</value>
   </data>
 </root>
