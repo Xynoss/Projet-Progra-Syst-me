@@ -42,12 +42,25 @@ namespace EasySave_1_0.Model {
 			}
 		}
 
+		protected string filename;
+		public string Filename
+		{
+			get
+			{
+				return filename;
+			}
+			set
+			{
+				filename = value;
+			}
+		}
+
 		public ModelSave(string name, string sourcePath, string targetPath) {
 			Name = name;
 			TargetPath = targetPath;
 			SourcePath = sourcePath;
-
 		}
+
 		public abstract void Save();
 
 
