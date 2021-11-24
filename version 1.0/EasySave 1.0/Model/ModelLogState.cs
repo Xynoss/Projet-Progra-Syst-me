@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 namespace Model {
 	public class ModelLogState : ModelLog  {
@@ -9,7 +10,7 @@ namespace Model {
 				return totalFileToCopy;
 			}
 			set {
-				totalFileToCopy = value;
+			totalFileToCopy = value;
 			}
 		}
 		private int totalFileSize;
@@ -39,9 +40,45 @@ namespace Model {
 				nbFilesLeft = value;
 			}
 		}
+<<<<<<< Updated upstream
 
 		private MapperClass.MapperState mapperState;
 		private LogClass.CreateLogState createLogState;
+=======
+	     
+		public override void CreateLogFile() {
+
+		
+		// Vérifiez si le fichier existe déjà. Si oui, supprimez-le.    
+		if (File.Exists(PathLog))
+		{
+			File.Delete(PathLog);
+		}
+
+		// Créer un nouveau fichier   
+		using (FileStream fileStr = File.Create(PathLog)) ;
+
+
+
+        }
+		public override void WriteLog() {
+		string message=" ";
+
+		File.WriteAllText(PathLog, message);
+		}
+		private ModelLogState() {
+			throw new System.NotImplementedException("Not implemented");
+		}
+		public static ModelLogState GetInstance() {
+			return this.instance;
+		}
+
+    
+
+    
+
+    private Calcul_Check 0_*;
+>>>>>>> Stashed changes
 
 	}
 

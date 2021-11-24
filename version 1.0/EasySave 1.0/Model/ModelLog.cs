@@ -38,7 +38,18 @@ namespace Model {
 				timestamp = value;
 			}
 		}
+	protected string PathLog;
+	protected string SourcePath;
+	protected string TargetPath;
+	protected string message = " ";
 
+<<<<<<< Updated upstream
+=======
+	public abstract void CreateLogFile();
+		public abstract void WriteLog();
+		public abstract void Save();
+
+>>>>>>> Stashed changes
 	}
 
 }
