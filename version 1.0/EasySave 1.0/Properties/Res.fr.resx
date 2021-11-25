@@ -129,6 +129,9 @@
   <data name="ask_target_path" xml:space="preserve">
     <value>Entrez le chemin du dossier dans lequel sauvegarder</value>
   </data>
+  <data name="cancel_delete" xml:space="preserve">
+    <value>suppression annulée</value>
+  </data>
   <data name="check_language" xml:space="preserve">
     <value>La langue de l'application est le français</value>
   </data>
@@ -150,6 +153,9 @@
   <data name="end" xml:space="preserve">
     <value>À bientôt</value>
   </data>
+  <data name="exit_command" xml:space="preserve">
+    <value>pour quitter l'application tapper exit</value>
+  </data>
   <data name="greeting" xml:space="preserve">
     <value>Bienvenue</value>
   </data>
@@ -157,10 +163,10 @@
     <value>Sélectionner votre langue parmi les choix proposés</value>
   </data>
   <data name="language_en" xml:space="preserve">
-    <value>English</value>
+    <value>1 English</value>
   </data>
   <data name="language_fr" xml:space="preserve">
-    <value>Français</value>
+    <value>2 Français</value>
   </data>
   <data name="list_create_save" xml:space="preserve">
     <value>Créer une sauvegarde</value>

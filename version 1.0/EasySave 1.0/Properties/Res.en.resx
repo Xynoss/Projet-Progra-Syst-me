@@ -129,6 +129,9 @@
   <data name="ask_target_path" xml:space="preserve">
     <value>Enter backup source folder path:</value>
   </data>
+  <data name="cancel_delete" xml:space="preserve">
+    <value>suppresion canceled</value>
+  </data>
   <data name="check_language" xml:space="preserve">
     <value>The language is english</value>
   </data>
