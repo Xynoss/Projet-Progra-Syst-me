@@ -163,25 +163,25 @@
     <value>Sélectionner votre langue parmi les choix proposés</value>
   </data>
   <data name="language_en" xml:space="preserve">
-    <value>1 English</value>
+    <value>1 : English</value>
   </data>
   <data name="language_fr" xml:space="preserve">
-    <value>2 Français</value>
+    <value>2 : Français</value>
   </data>
   <data name="list_create_save" xml:space="preserve">
-    <value>Créer une sauvegarde</value>
+    <value>1 : Créer une sauvegarde</value>
   </data>
   <data name="list_delete_save" xml:space="preserve">
-    <value>Supprimer une sauvegarde</value>
+    <value>2 : Supprimer une sauvegarde</value>
   </data>
   <data name="list_exit" xml:space="preserve">
-    <value>Quitter l'application</value>
+    <value>5 : Quitter l'application</value>
   </data>
   <data name="list_run_all" xml:space="preserve">
-    <value>Exécuter toutes les sauvegardes</value>
+    <value>3 : Exécuter toutes les sauvegardes</value>
   </data>
   <data name="list_run_one" xml:space="preserve">
-    <value>Exécuter une sauvegarde</value>
+    <value>4 : Exécuter une sauvegarde</value>
   </data>
   <data name="notsave_found" xml:space="preserve">
     <value>La sauvegarde {0} n'existe pas. Vérifiez votre choix.</value>

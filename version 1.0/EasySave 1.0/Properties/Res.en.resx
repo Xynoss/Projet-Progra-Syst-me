@@ -124,10 +124,10 @@
     <value>Choose the type of backup:</value>
   </data>
   <data name="ask_source_path" xml:space="preserve">
-    <value>Enter backup target folder path:</value>
+    <value>Enter backup source folder path:</value>
   </data>
   <data name="ask_target_path" xml:space="preserve">
-    <value>Enter backup source folder path:</value>
+    <value>Enter backup target folder path:</value>
   </data>
   <data name="cancel_delete" xml:space="preserve">
     <value>suppresion canceled</value>
@@ -160,25 +160,25 @@
     <value>Select your language among the choices proposed:</value>
   </data>
   <data name="language_en" xml:space="preserve">
-    <value>English</value>
+    <value>1 : English</value>
   </data>
   <data name="language_fr" xml:space="preserve">
-    <value>Français</value>
+    <value>2 : Français</value>
   </data>
   <data name="list_create_save" xml:space="preserve">
-    <value>Create a backup</value>
+    <value>1 : Create a backup</value>
   </data>
   <data name="list_delete_save" xml:space="preserve">
-    <value>Delete a backup</value>
+    <value>2 : Delete a backup</value>
   </data>
   <data name="list_exit" xml:space="preserve">
-    <value>Close the application</value>
+    <value>5 : Close the application</value>
   </data>
   <data name="list_run_all" xml:space="preserve">
-    <value>Run all backups</value>
+    <value>3 : Run all backups</value>
   </data>
   <data name="list_run_one" xml:space="preserve">
-    <value>Run one backup</value>
+    <value>4 : Run one backup</value>
   </data>
   <data name="notsave_found" xml:space="preserve">
     <value>Backup {0} does not exist. Check your choice.</value>
