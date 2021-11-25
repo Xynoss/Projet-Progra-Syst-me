@@ -1,13 +1,1 @@
-[
-  {
-    "State": "END",
-    "TotalFileToCopy": 5,
-    "TotalFileSize": 52216585,
-    "Progression": 0,
-    "NbFilesLeft": 0,
-    "Name": "namesave",
-    "FileSource": "C:\\Users\\Xynoss\\Documents\\CESI\\Projet\\projet programmation syst\u00E8me FISE A3\\Projet-Progra-Syst-me\\source\\",
-    "FileTarget": "C:\\Users\\Xynoss\\Documents\\CESI\\Projet\\projet programmation syst\u00E8me FISE A3\\Projet-Progra-Syst-me\\target\\",
-    "Timestamp": "2021-11-26T00:15:43.8507036+01:00"
-  }
-]
+[{"State":"END","TotalFileToCopy":5,"TotalFileSize":52216585,"Progression":0,"NbFilesLeft":0,"Name":"name of the backup","FileSource":"C:\\Users\\Xynoss\\Documents\\CESI\\Projet\\projet programmation syst\u00E8me FISE A3\\Projet-Progra-Syst-me\\source\\","FileTarget":"C:\\Users\\Xynoss\\Documents\\CESI\\Projet\\projet programmation syst\u00E8me FISE A3\\Projet-Progra-Syst-me\\target\\","Timestamp":"2021-11-26T00:27:14.4234831+01:00"},{"State":"END","TotalFileToCopy":5,"TotalFileSize":52216585,"Progression":0,"NbFilesLeft":0,"Name":"save1","FileSource":"C:\\Users\\Xynoss\\Documents\\CESI\\Projet\\projet programmation syst\u00E8me FISE A3\\Projet-Progra-Syst-me\\source\\","FileTarget":"C:\\Users\\Xynoss\\Documents\\CESI\\Projet\\projet programmation syst\u00E8me FISE A3\\Projet-Progra-Syst-me\\target\\","Timestamp":"2021-11-26T00:28:46.7108272+01:00"},{"State":"END","TotalFileToCopy":5,"TotalFileSize":52216585,"Progression":0,"NbFilesLeft":0,"Name":"save2","FileSource":"C:\\Users\\Xynoss\\Documents\\CESI\\Projet\\projet programmation syst\u00E8me FISE A3\\Projet-Progra-Syst-me\\source\\","FileTarget":"C:\\Users\\Xynoss\\Documents\\CESI\\Projet\\projet programmation syst\u00E8me FISE A3\\Projet-Progra-Syst-me\\target\\","Timestamp":"2021-11-26T00:29:05.4277135+01:00"}]
