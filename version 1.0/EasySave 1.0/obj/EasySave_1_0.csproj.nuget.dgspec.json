@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\dossier\\CESI\\FISE A3 info 2021-2022\\projet\\prgrammation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\EasySave_1_0.csproj": {}
+    "C:\\Users\\Cedric Lawanango TOE\\Desktop\\Projet Programmation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\EasySave_1_0.csproj": {}
   },
   "projects": {
-    "D:\\dossier\\CESI\\FISE A3 info 2021-2022\\projet\\prgrammation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\EasySave_1_0.csproj": {
+    "C:\\Users\\Cedric Lawanango TOE\\Desktop\\Projet Programmation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\EasySave_1_0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\dossier\\CESI\\FISE A3 info 2021-2022\\projet\\prgrammation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\EasySave_1_0.csproj",
+        "projectUniqueName": "C:\\Users\\Cedric Lawanango TOE\\Desktop\\Projet Programmation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\EasySave_1_0.csproj",
         "projectName": "EasySave_1_0",
-        "projectPath": "D:\\dossier\\CESI\\FISE A3 info 2021-2022\\projet\\prgrammation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\EasySave_1_0.csproj",
-        "packagesPath": "C:\\Users\\Xynos\\.nuget\\packages\\",
-        "outputPath": "D:\\dossier\\CESI\\FISE A3 info 2021-2022\\projet\\prgrammation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\obj\\",
+        "projectPath": "C:\\Users\\Cedric Lawanango TOE\\Desktop\\Projet Programmation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\EasySave_1_0.csproj",
+        "packagesPath": "C:\\Users\\Cedric Lawanango TOE\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Cedric Lawanango TOE\\Desktop\\Projet Programmation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Xynos\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Cedric Lawanango TOE\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,7 +26,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -42,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -58,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
