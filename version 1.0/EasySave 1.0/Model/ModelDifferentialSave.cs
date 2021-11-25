@@ -40,7 +40,7 @@ namespace EasySave_1_0.model {
             string log_name = this.name;
             DateTime log_timestamp = DateTime.Now;
             model.ModelLogLog log_save = model.ModelLogLog.GetInstance(log_name, filename, this.sourcePath, this.targetPath, log_timestamp);
-            log_save.WriteLog();
+            //log_save.WriteLog();
         }
 
     }

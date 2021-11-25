@@ -66,7 +66,13 @@ namespace EasySave_1_0.model
                 timestamp = value;
             }
         }
-
+        /// <summary>
+        /// Constructor of the ModelLog class
+        /// </summary>
+        /// <param name="name">name of the save</param>
+        /// <param name="fileSource">source path of the file</param>
+        /// <param name="fileTarget">target path of the file</param>
+        /// <param name="timestamp">timestamp</param>
         public ModelLog(string name, string fileSource, string fileTarget, DateTime timestamp)
         {
             this.Name = name;
@@ -74,9 +80,11 @@ namespace EasySave_1_0.model
             this.fileTarget = fileTarget;
             this.timestamp = timestamp;
         }
-
-        public abstract void CreateLogFile();
-        public abstract void WriteLog();
+        /// <summary>
+        /// Abstract method to write a log file.
+        /// </summary>
+        /// <param name="file">name of the file which is concerned at the moment of the process.</param>
+        public abstract void WriteLog(string file);
 
     }
 
