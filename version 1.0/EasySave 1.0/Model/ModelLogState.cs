@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 namespace EasySave_1_0.Model {
 	public class ModelLogState : ModelLog  {
@@ -42,17 +43,38 @@ namespace EasySave_1_0.Model {
 		}
 
 		public override void CreateLogFile() {
-			throw new System.NotImplementedException("Not implemented");
+			if (!File.Exists(string.Concat(pathLog, name, "_log_state.json")))
+			{
+				File.Create(string.Concat(pathLog, name, "_log_state.json"));
+				File.AppendAllText(string.Concat(pathLog, name, "_log_state.json"), string.Concat("Log_", Name, "_", Timestamp));
+			};
 		}
 		public override void WriteLog() {
-			throw new System.NotImplementedException("Not implemented");
+
+			File.WriteAllText(string.Concat(pathLog, name, "_log_state.json"), string.Concat("")); ;
 		}
-		private ModelLogState() {
-			throw new System.NotImplementedException("Not implemented");
+		private ModelLogState(string name, string fileSource, string fileTarget, DateTime timestamp) : base(name, fileSource, fileTarget, timestamp)
+		{
+			this.name = name;
+			this.fileSource = fileSource;
+			this.fileTarget = fileTarget;
+			this.timestamp = timestamp;
+		    this.state = true;
+			this.TotalFileToCopy = 0;
+			this.TotalFileSize = 0;
+			this.Progression = 0;
+			this.NbFilesLeft = 0;
 		}
-		public static ModelLogState GetInstance() {
-			return this.instance;
+
+
+		public static ModelLogState GetInstance(string inst_name, string inst_fileSource, string inst_fileTarget, DateTime inst_timestamp) {
+			if (instance == null)
+			{
+				instance = new ModelLogState(inst_name, inst_fileSource, inst_fileTarget, inst_timestamp);
+			}
+			return instance;
 		}
+
 
 
 	}
