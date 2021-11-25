@@ -26,10 +26,10 @@ namespace EasySave_1_0.model
         /// Method to write a state file.
         /// </summary>
         /// <param name="modelLogState">State object to write a log file</param>
-        public void WriteState(ModelLogState modelLogState)
+        public void WriteState(List<ModelLogState> modelLogState)
         {
-            string jsonlog = JsonSerializer.Serialize(modelLogState);
-            File.WriteAllText(string.Concat(pathLog, modelLogState.Name, "_state.json"), jsonlog);
+            string jsonlog = JsonSerializer.Serialize(modelLogState.ToArray());
+            File.WriteAllText(string.Concat(pathLog, "state.json"), jsonlog);
         }
         /// <summary>
         /// Method to return a existed instance or create a new one. (SINGLETON)

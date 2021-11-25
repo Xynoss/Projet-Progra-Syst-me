@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace EasySave_1_0.model
@@ -28,7 +29,7 @@ namespace EasySave_1_0.model
                     state.NbFilesLeft--;
                     TimeSpan span = DateTime.Now - start;
                     LogLog(name, span, f, targetPath, sourcePath);
-                    LogState(state);
+                    LogState(Controller.Controller.States);
                 }
             }
             catch (DirectoryNotFoundException dirNotFound)
@@ -40,9 +41,10 @@ namespace EasySave_1_0.model
         /// <summary>
         /// Method to initialize the writing of the state's files
         /// </summary>
-        public override void LogState()
+        public override void LogState(List<model.ModelLogState> state)
         {
-            Logger.GetInstance().WriteState(new ModelLogState(name, fileSource, fileTarget));
+
+            Logger.GetInstance().WriteState(state);
         }
         /// <summary>
         /// Method to initialize the writing of the log's files.

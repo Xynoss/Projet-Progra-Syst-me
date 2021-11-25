@@ -64,6 +64,13 @@ namespace EasySave_1_0.model
                 nbFilesLeft = value;
             }
         }
+
+        /// <summary>
+        /// constructor of the modelLogState class
+        /// </summary>
+        /// <param name="name">name of the save</param>
+        /// <param name="fileSource">source path of the file</param>
+        /// <param name="fileTarget">target path of the file</param>
         public ModelLogState(string name, string fileSource, string fileTarget) : base(name, fileSource, fileTarget)
         {
             Calcul_Check CnC = new Calcul_Check();

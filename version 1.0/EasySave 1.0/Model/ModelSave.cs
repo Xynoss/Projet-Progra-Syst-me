@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Diagnostics;
 using System.Reflection;
+using System.Collections.Generic;
 
 namespace EasySave_1_0.model {
 	/// <summary>
@@ -74,7 +75,7 @@ namespace EasySave_1_0.model {
 		/// <summary>
 		/// Abstract method to initialize the writing of the state's file
 		/// </summary>
-		public abstract void LogState(string name, string fileSource, string fileTarget, string state);
+		public abstract void LogState(List<model.ModelLogState> state);
 		/// <summary>
 		/// Abstract method to initialize the writing of the log's file
 		/// </summary>

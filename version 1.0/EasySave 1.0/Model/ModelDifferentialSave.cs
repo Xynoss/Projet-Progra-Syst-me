@@ -1,8 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace EasySave_1_0.model
 {
+    /// <summary>
+    /// class to build a save but to save only the modification between the source and the target
+    /// </summary>
     public class ModelDifferentialSave : ModelSave
     {
         public ModelDifferentialSave(string name, string sourcePath, string targetPath) : base(name, sourcePath, targetPath)
@@ -10,11 +14,12 @@ namespace EasySave_1_0.model
         }
 
         /// <summary>
-        /// methods to copy the files  
+        /// methods to copy the files, trying to create the save and take every file form the source path.
         /// </summary>
+        /// <param name="state">an object Log State to refer to</param>
         public override void Save(ref model.ModelLogState state)
         {
-            try
+            try 
             {
                 string[] fileList = Directory.GetFiles(sourcePath, "*");
                 foreach (string f in fileList)
@@ -29,20 +34,25 @@ namespace EasySave_1_0.model
                 Console.WriteLine(dirNotFound.Message);
             }
         }
-
+        /// <summary>
+        /// Method to initialize the writing of the log's files.
+        /// </summary>
+        /// <param name="name">name of the save.</param>
+        /// <param name="span">time span form the start.</param>
+        /// <param name="filename">name of the file.</param>
+        /// <param name="targetPath">path to the target folder.</param>
+        /// <param name="sourcePath">path to the source folder.</param>
         public override void LogLog(string name, TimeSpan span, string filename, string targetPath, string sourcePath)
         {
-            string log_name = this.name;
-            DateTime log_timestamp = DateTime.Now;
-            //model.ModelLogState.GetInstance(log_name, this.sourcePath, this.targetPath, log_timestamp);
+            Logger.GetInstance().WriteLog(new ModelLogLog(name, filename, sourcePath, targetPath, span));
         }
-
-        public override void LogState(string name, string fileSource, string fileTarget, string state)
+        /// <summary>
+        /// Method to initialize the writing of the log's states files.
+        /// </summary>
+        /// <param name="state">list of modelLogState object</param>
+        public override void LogState(List<model.ModelLogState> state)
         {
-            string log_name = this.name;
-            DateTime log_timestamp = DateTime.Now;
-            //model.ModelLogLog log_save = model.ModelLogLog.GetInstance(log_name, filename, this.sourcePath, this.targetPath, log_timestamp);
-            //log_save.WriteLog();
+            Logger.GetInstance().WriteState(state);
         }
 
     }

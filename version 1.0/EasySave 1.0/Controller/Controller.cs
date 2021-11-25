@@ -9,7 +9,13 @@ namespace EasySave_1_0.Controller
     {
         private ResourceManager res_man;
         private CultureInfo culture;
-        static private List<EasySave_1_0.model.ModelLogState> states = new List<model.ModelLogState>();
+        private static List<EasySave_1_0.model.ModelLogState> states = new List<model.ModelLogState>();
+        public static List<EasySave_1_0.model.ModelLogState> States
+        {
+            get { return states; }
+            set { states = value; }
+        }
+
         private List<EasySave_1_0.model.ModelSave> saves;
         public List<EasySave_1_0.model.ModelSave> Saves
         {
@@ -43,6 +49,10 @@ namespace EasySave_1_0.Controller
             res_man = new ResourceManager("EasySave_1_0.Properties.Res", typeof(Controller).Assembly);
             Start();
         }
+
+        /// <summary>
+        /// the starting method of the application
+        /// </summary>
         public void Start()
         {
 
