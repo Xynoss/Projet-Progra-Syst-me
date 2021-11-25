@@ -28,7 +28,7 @@ namespace EasySave_1_0.model {
             }
         }
 
-        public override void LogLog()
+        public override void LogLog(string str_in)
         {
             string log_name = this.name;
             DateTime log_timestamp = DateTime.Now;

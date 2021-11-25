@@ -49,20 +49,20 @@ namespace EasySave_1_0.model
 
         public override void WriteLog()
         {
-            StreamWriter sw = new StreamWriter(pathLog + name + "_log.json");
+            //StreamWriter sw = new StreamWriter(pathLog + name + "_log.json");
             if (!File.Exists(string.Concat(pathLog, name, "_log.json")))
             {
                 File.Create(string.Concat(pathLog, name, "_log.json"));
                 File.AppendAllText(string.Concat(pathLog, name, "_log.json"), string.Concat("Log_", Name, "_", Timestamp));
             }
-            sw.WriteLine(this.name + "\n" + this.fileSource + this.filename + "\n" + this.fileTarget + "\n" + this.timestamp + "\n" + this.fileSize + "\n" + this.timeTransfert);
-            /*File.WriteAllText(string.Concat(pathLog, name, "_log.json"), string.Concat(this.name, "\n",
+            //sw.WriteLine(this.name + "\n" + this.fileSource + this.filename + "\n" + this.fileTarget + "\n" + this.timestamp + "\n" + this.fileSize + "\n" + this.timeTransfert);
+            File.AppendAllText(string.Concat(pathLog, name, "_log.json"), string.Concat(this.name, "\n",
                 this.fileSource, this.filename, "\n",
                 this.fileTarget, "\n",
                 this.timestamp, "\n",
                 this.fileSize, "\n",
                 this.timeTransfert
-                ));*/
+                ));
         }
         private ModelLogLog(string name, string filename, string fileSource, string fileTarget, DateTime timestamp) : base(name, fileSource, fileTarget, timestamp)
         {

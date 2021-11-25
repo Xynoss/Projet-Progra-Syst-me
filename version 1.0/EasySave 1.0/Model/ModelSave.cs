@@ -60,7 +60,7 @@ namespace EasySave_1_0.model {
 
 		public abstract void LogState();
 
-		public abstract void LogLog();
+		public abstract void LogLog(string str_in);
 
 	}
 
