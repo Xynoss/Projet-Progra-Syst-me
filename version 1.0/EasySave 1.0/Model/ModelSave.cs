@@ -79,7 +79,7 @@ namespace EasySave_1_0.model {
 		/// Abstract method to initialize the writing of the log's file
 		/// </summary>
 		/// <param name="str_in">file concerned at the moment of the process.</param>
-		public abstract void LogLog(string str_in);
+		public abstract void LogLog(string name, TimeSpan span, string filename, string targetPath, string sourcePath);
 
 	}
 

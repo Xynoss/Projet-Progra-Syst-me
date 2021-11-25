@@ -6,6 +6,10 @@ namespace EasySave_1_0.View
     {
         public string Input()
         {
+            while (Console.KeyAvailable)
+            {
+                Console.ReadKey(false); // true = hide input
+            }
             return Console.ReadLine();
         }
         public void Output(string input)

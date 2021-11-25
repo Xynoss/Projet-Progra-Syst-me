@@ -1,8 +1,10 @@
 using System;
 using System.IO;
 
-namespace EasySave_1_0.model {
-	public class ModelDifferentialSave : ModelSave  {
+namespace EasySave_1_0.model
+{
+    public class ModelDifferentialSave : ModelSave
+    {
         public ModelDifferentialSave(string name, string sourcePath, string targetPath) : base(name, sourcePath, targetPath)
         {
         }
@@ -10,7 +12,8 @@ namespace EasySave_1_0.model {
         /// <summary>
         /// methods to copy the files  
         /// </summary>
-        public override void Save() {
+        public override void Save()
+        {
             try
             {
                 string[] fileList = Directory.GetFiles(sourcePath, "*");
@@ -18,7 +21,6 @@ namespace EasySave_1_0.model {
                 {
                     filename = f.Substring(sourcePath.Length + 1);
                     File.Copy(Path.Combine(sourcePath, filename), Path.Combine(targetPath, filename));
-
                 }
 
             }
@@ -28,7 +30,7 @@ namespace EasySave_1_0.model {
             }
         }
 
-        public override void LogLog(string str_in)
+        public override void LogLog(string name, TimeSpan span, string filename, string targetPath, string sourcePath)
         {
             string log_name = this.name;
             DateTime log_timestamp = DateTime.Now;
@@ -39,7 +41,7 @@ namespace EasySave_1_0.model {
         {
             string log_name = this.name;
             DateTime log_timestamp = DateTime.Now;
-            model.ModelLogLog log_save = model.ModelLogLog.GetInstance(log_name, filename, this.sourcePath, this.targetPath, log_timestamp);
+            //model.ModelLogLog log_save = model.ModelLogLog.GetInstance(log_name, filename, this.sourcePath, this.targetPath, log_timestamp);
             //log_save.WriteLog();
         }
 

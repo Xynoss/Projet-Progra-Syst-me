@@ -23,8 +23,10 @@ namespace EasySave_1_0.model
                 foreach (string f in fileList)
                 {
                     filename = f.Substring(sourcePath.Length);
+                    DateTime start = DateTime.Now;
                     File.Copy(Path.Combine(sourcePath, filename), Path.Combine(targetPath, filename), true);
-                    LogLog(filename);
+                    TimeSpan span = DateTime.Now - start;
+                    LogLog(name, span, f, targetPath, sourcePath);
                 }
             }
             catch (DirectoryNotFoundException dirNotFound)
@@ -36,23 +38,16 @@ namespace EasySave_1_0.model
         /// <summary>
         /// Method to initialize the writing of the state's files
         /// </summary>
-        public override void LogState()
+        public override void LogState(string name, string fileSource, string fileTarget)
         {
-            string log_name = this.name;
-            DateTime log_timestamp = DateTime.Now;
-            model.ModelLogState.GetInstance(log_name, this.sourcePath, this.targetPath, log_timestamp);
-
+            Logger.GetInstance().WriteState(name, fileSource, fileTarget);
         }
         /// <summary>
         /// Method to initialize the writing of the log's files.
         /// </summary>
-        /// <param name="str_in">file concerned at the moment of the process.</param>
-        public override void LogLog(string str_in)
+        public override void LogLog(string name, TimeSpan span, string filename, string targetPath, string sourcePath)
         {
-            string log_name = this.name;
-            DateTime log_timestamp = DateTime.Now;
-            model.ModelLogLog log_save = model.ModelLogLog.GetInstance(log_name, str_in, this.sourcePath, this.targetPath, log_timestamp);
-            log_save.WriteLog(str_in);
+            Logger.GetInstance().WriteLog(new ModelLogLog(name, filename, sourcePath, targetPath, span));
         }
 
     }
