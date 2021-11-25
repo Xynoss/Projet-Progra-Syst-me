@@ -13,3 +13,14 @@ D:\dossier\CESI\FISE A3 info 2021-2022\projet\prgrammation système\Projet-Progr
 D:\dossier\CESI\FISE A3 info 2021-2022\projet\prgrammation système\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\obj\Debug\netcoreapp3.1\EasySave_1_0.csproj.CoreCompileInputs.cache
 D:\dossier\CESI\FISE A3 info 2021-2022\projet\prgrammation système\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\obj\Debug\netcoreapp3.1\EasySave_1_0.dll
 D:\dossier\CESI\FISE A3 info 2021-2022\projet\prgrammation système\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\obj\Debug\netcoreapp3.1\EasySave_1_0.pdb
+D:\dossier\CESI\FISE A3 info 2021-2022\projet\prgrammation système\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\bin\Debug\netcoreapp3.1\EasySave_1_0.exe
+D:\dossier\CESI\FISE A3 info 2021-2022\projet\prgrammation système\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\bin\Debug\netcoreapp3.1\EasySave_1_0.deps.json
+D:\dossier\CESI\FISE A3 info 2021-2022\projet\prgrammation système\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\bin\Debug\netcoreapp3.1\EasySave_1_0.runtimeconfig.json
+D:\dossier\CESI\FISE A3 info 2021-2022\projet\prgrammation système\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\bin\Debug\netcoreapp3.1\EasySave_1_0.runtimeconfig.dev.json
+D:\dossier\CESI\FISE A3 info 2021-2022\projet\prgrammation système\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\bin\Debug\netcoreapp3.1\EasySave_1_0.dll
+D:\dossier\CESI\FISE A3 info 2021-2022\projet\prgrammation système\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\bin\Debug\netcoreapp3.1\EasySave_1_0.pdb
+D:\dossier\CESI\FISE A3 info 2021-2022\projet\prgrammation système\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\bin\Debug\netcoreapp3.1\en\EasySave_1_0.resources.dll
+D:\dossier\CESI\FISE A3 info 2021-2022\projet\prgrammation système\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\bin\Debug\netcoreapp3.1\fr\EasySave_1_0.resources.dll
+D:\dossier\CESI\FISE A3 info 2021-2022\projet\prgrammation système\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\obj\Debug\netcoreapp3.1\en\EasySave_1_0.resources.dll
+D:\dossier\CESI\FISE A3 info 2021-2022\projet\prgrammation système\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\obj\Debug\netcoreapp3.1\fr\EasySave_1_0.resources.dll
+D:\dossier\CESI\FISE A3 info 2021-2022\projet\prgrammation système\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\obj\Debug\netcoreapp3.1\EasySave_1_0.genruntimeconfig.cache
