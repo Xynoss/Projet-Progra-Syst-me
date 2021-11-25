@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Resources;
@@ -39,7 +38,7 @@ namespace EasySave_1_0.Controller
 
         public Controller(List<EasySave_1_0.model.ModelSave> saves, EasySave_1_0.View.View view, bool saveType)
         {
-            this.view = View;
+            this.view = view;
             this.saves = saves;
             culture = CultureInfo.CreateSpecificCulture("en");
             res_man = new ResourceManager("EasySave_1_0.Properties.Res", typeof(Controller).Assembly);
@@ -49,42 +48,35 @@ namespace EasySave_1_0.Controller
         {
 
 
-            view.Output("que faire :");
-            string Input_choise = view.Input();
+            this.view.Output("que faire :");
+            string Input_choise = this.view.Input();
             /*switch (Input_choise != null)
             {
                 case false:
                     Input_choise = 
             }*/
 
-            view.Output("créer une sauvegarde ? y => YES ");
-            Input_choise = view.Input();
+            this.view.Output("créer une sauvegarde ? y => YES ");
+            Input_choise = this.view.Input();
             if (Input_choise == "y" && saves.Count < 6)
             {
-                view.Output("le nom :");
-                string save_name = view.Input();
-                view.Output("la source :");
-                string save_sourcepath = view.Input();
-                view.Output("la cible :");
-                string save_targetpath = view.Input();
+                this.view.Output("le nom :");
+                string save_name = this.view.Input();
+                this.view.Output("la source :");
+                string save_sourcepath = this.view.Input();
+                this.view.Output("la cible :");
+                string save_targetpath = this.view.Input();
                 saves.Add(new model.ModelTotalSave(save_name, save_sourcepath, save_targetpath));
             }
             else
             {
-                view.Output("tu ne peux pas créer !");
+                this.view.Output("tu ne peux pas créer !");
             }
 
 
 
         }
-        public void LogState(ref EasySave_1_0.model.ModelSave[] save)
-        {
-            throw new System.NotImplementedException("Not implemented");
-        }
-        public void LogLog(ref EasySave_1_0.model.ModelSave[] save)
-        {
-            throw new System.NotImplementedException("Not implemented");
-        }
+
         public void select_language()
         {
             view.Output(res_man.GetString("greeting", culture));
