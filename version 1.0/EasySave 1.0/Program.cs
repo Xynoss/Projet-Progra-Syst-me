@@ -1,12 +1,15 @@
 using System;
-
-namespace EasySave_1_0 {
-	public class Program {
+using System.Collections.Generic;
+using EasySave_1._0.controller;
+namespace EasySave_1_0
+{
+    public class Program {
 		public static void Main() {
-			throw new System.NotImplementedException("Not implemented");
+			Controller controller = new Controller(new List<model.ModelSave>(), new View.View());
+			controller.select_language();
 		}
 
-		private EasySave_1_0.Controller.Controller obj_controller;
+		/*private Controller obj_controller;*/
 
 	}
 
