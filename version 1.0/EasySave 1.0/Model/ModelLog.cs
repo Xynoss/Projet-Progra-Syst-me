@@ -1,6 +1,6 @@
 using System;
 
-namespace EasySave_1_0.Model
+namespace EasySave_1_0.model
 {
     public abstract class ModelLog
     {

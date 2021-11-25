@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Reflection;
 
 namespace EasySave_1_0.model {
-	public class ModelSave {
+	public abstract class ModelSave {
 		protected string name;
 		public string Name {
 			get {
@@ -57,7 +57,6 @@ namespace EasySave_1_0.model {
 		}
 
 		public abstract void Save();
-
 
 	}
 

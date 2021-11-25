@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace EasySave_1_0.Model {
+namespace EasySave_1_0.model {
 	public class ModelDifferentialSave : ModelSave  {
         public ModelDifferentialSave(string name, string sourcePath, string targetPath) : base(name, sourcePath, targetPath)
         {
@@ -27,6 +27,6 @@ namespace EasySave_1_0.Model {
             }
         }
 
-	}*/
+	}
 
 }

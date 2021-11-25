@@ -1,11 +1,11 @@
 using System;
 using System.IO;
 
-namespace EasySave_1_0.Model
+namespace EasySave_1_0.model
 {
     public class ModelLogLog : ModelLog
     {
-        private static EasySave_1_0.Model.ModelLogLog _instance;
+        private static EasySave_1_0.model.ModelLogLog _instance;
         private int fileSize;
         public int FileSize
         {
@@ -54,7 +54,7 @@ namespace EasySave_1_0.Model
             this.timeTransfert = 0; //calcul & check
             this.pathLog = @"..\..\Log\";
         }
-        public static EasySave_1_0.Model.ModelLogLog GetInstance(string inst_name, string inst_fileSource, string inst_fileTarget, DateTime inst_timestamp)
+        public static EasySave_1_0.model.ModelLogLog GetInstance(string inst_name, string inst_fileSource, string inst_fileTarget, DateTime inst_timestamp)
         {
             if (_instance == null)
             {
@@ -66,4 +66,4 @@ namespace EasySave_1_0.Model
 
     }
 
-}*/
+}
