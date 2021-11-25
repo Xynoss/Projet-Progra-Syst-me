@@ -25,25 +25,27 @@ namespace EasySave_1_0.model
                 {
                     filename = f.Substring(sourcePath.Length);
                     DateTime start = DateTime.Now;
+                    state.State = "ACTIVE";
                     File.Copy(Path.Combine(sourcePath, filename), Path.Combine(targetPath, filename), true);
                     state.NbFilesLeft--;
                     TimeSpan span = DateTime.Now - start;
                     LogLog(name, span, f, targetPath, sourcePath);
                     LogState(Controller.Controller.States);
                 }
+
             }
             catch (DirectoryNotFoundException dirNotFound)
             {
                 Console.WriteLine(dirNotFound.Message);
             }
-                
+            state.State = "END";
+            LogState(Controller.Controller.States);
         }
         /// <summary>
         /// Method to initialize the writing of the state's files
         /// </summary>
         public override void LogState(List<model.ModelLogState> state)
         {
-
             Logger.GetInstance().WriteState(state);
         }
         /// <summary>

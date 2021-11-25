@@ -72,22 +72,22 @@ namespace EasySave_1_0.Controller
 
             switch (Input_choise)
             {
-                case "1":
+                case "1"://choose the english language
                     culture = CultureInfo.CreateSpecificCulture("en");
                     this.view.Output(this.res_man.GetString("check_language", this.culture));
                     break;
-                case "2":
+                case "2"://choose the french language 
                     culture = CultureInfo.CreateSpecificCulture("fr");
                     this.view.Output(this.res_man.GetString("check_language", this.culture));
                     break;
             }
-            while (Input_choise != "5")
+            while (Input_choise != "5")//5 is to exit the app
             {
                 this.view.Output(this.res_man.GetString("choose_action", this.culture));
                 this.view.Output(this.res_man.GetString("list_create_save", this.culture));
                 this.view.Output(this.res_man.GetString("list_delete_save", this.culture));
                 this.view.Output(this.res_man.GetString("list_run_all", this.culture));
-                this.view.Output(this.res_man.GetString("list_run_one", this.culture));
+                this.view.Output("4 : list the save"/*this.res_man.GetString("list_run_one", this.culture)*/);
                 this.view.Output(this.res_man.GetString("list_exit", this.culture));
                 Input_choise = this.view.Input();
 
@@ -96,7 +96,7 @@ namespace EasySave_1_0.Controller
 
                 switch (Input_choise)
                 {
-                    case "1": //create back_up
+                    case "1": //create a backup
                         this.view.Output(this.res_man.GetString("save_create_chosen", this.culture));
                         if (saves.Count < 6)
                         {
@@ -119,7 +119,7 @@ namespace EasySave_1_0.Controller
                         this.view.Output(string.Format(this.res_man.GetString("save_created", this.culture), save_name));
                         break;
 
-                    case "2": //delete backup
+                    case "2": //delete a backup from the list
                         this.view.Output(this.res_man.GetString("choose_save", this.culture));
                         Input_choise = this.view.Input();
 
@@ -153,11 +153,11 @@ namespace EasySave_1_0.Controller
 
                         break;
 
-                    case "3":
-
+                    case "3": //it's will be the full job of save 
+                        this.view.Output("not implemented yet");
                         break;
 
-                    case "4":
+                    case "4": //list of the backup
                         foreach (model.ModelTotalSave Asave in saves)
                         {
                             int i = 1;
