@@ -85,6 +85,9 @@ namespace EasySave_1_0.Controller
         {
             throw new System.NotImplementedException("Not implemented");
         }
+        /// <summary>
+        /// Method to select the language at the start of the application
+        /// </summary>
         public void select_language()
         {
             view.Output(res_man.GetString("greeting", culture));
