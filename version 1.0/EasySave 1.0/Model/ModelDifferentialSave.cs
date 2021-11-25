@@ -12,7 +12,7 @@ namespace EasySave_1_0.model
         /// <summary>
         /// methods to copy the files  
         /// </summary>
-        public override void Save()
+        public override void Save(ref model.ModelLogState state)
         {
             try
             {

@@ -66,8 +66,9 @@ namespace EasySave_1_0.Controller
                 this.view.Output("la cible :");
                 string save_targetpath = this.view.Input();
                 saves.Add(new model.ModelTotalSave(save_name, save_sourcepath, save_targetpath));
-                states.Add(new model.ModelLogState(save_name, save_sourcepath,save_targetpath));
-                saves[0].Save();
+                model.ModelLogState statefile = new model.ModelLogState(save_name, save_sourcepath, save_targetpath);
+                states.Add(statefile);
+                saves[0].Save(ref statefile);
             }
             else
             {
