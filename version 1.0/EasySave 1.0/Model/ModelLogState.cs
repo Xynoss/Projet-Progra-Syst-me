@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace EasySave_1_0.Model {
+namespace EasySave_1_0.model {
 	public class ModelLogState : ModelLog  {
 		private static ModelLogState instance;
 		private bool state;
