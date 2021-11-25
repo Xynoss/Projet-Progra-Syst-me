@@ -14,6 +14,7 @@ namespace EasySave_1_0.model {
 				name = value;
 			}
 		}
+		
 		protected string sourcePath;
 		public string SourcePath {
 			get {
@@ -23,6 +24,7 @@ namespace EasySave_1_0.model {
 				sourcePath = value;
 			}
 		}
+		
 		protected string targetPath;
 		public string TargetPath {
 			get {
@@ -32,13 +34,18 @@ namespace EasySave_1_0.model {
 				targetPath = value;
 			}
 		}
-		protected string pathLog;
-		public string PathLog {
-			get {
-				return pathLog;
+
+
+		protected string filename;
+		public string Filename
+		{
+			get
+			{
+				return filename;
 			}
-			set {
-				pathLog = value;
+			set
+			{
+				filename = value;
 			}
 		}
 		public ModelSave() { 
@@ -47,10 +54,9 @@ namespace EasySave_1_0.model {
 			Name = name;
 			TargetPath = targetPath;
 			SourcePath = sourcePath;
-
 		}
 
-		//public abstract void Save();
+		public abstract void Save();
 
 
 	}

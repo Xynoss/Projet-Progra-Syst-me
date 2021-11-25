@@ -1,16 +1,14 @@
-using System;
 using System.Collections.Generic;
-using EasySave_1._0.controller;
+
 namespace EasySave_1_0
 {
-    public class Program {
-		public static void Main() {
-			Controller controller = new Controller(new List<model.ModelSave>(), new View.View());
-			controller.select_language();
-		}
-
-		/*private Controller obj_controller;*/
-
-	}
-
+    public class Program
+    {
+        public static void Main()
+        {
+            List<EasySave_1_0.Model.ModelSave> list_backup = new List<EasySave_1_0.Model.ModelSave>();
+            View.View display = new View.View();
+            Controller.Controller control = new Controller.Controller(list_backup, display, true);
+        }
+    }
 }
