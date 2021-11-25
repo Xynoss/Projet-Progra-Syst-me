@@ -1,0 +1,5 @@
+C:\Users\Xynoss\Documents\CESI\Projet\projet programmation système FISE A3\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\obj\Debug\netcoreapp3.1\EasySave_1_0.csproj.AssemblyReference.cache
+C:\Users\Xynoss\Documents\CESI\Projet\projet programmation système FISE A3\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\obj\Debug\netcoreapp3.1\EasySave_1_0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Xynoss\Documents\CESI\Projet\projet programmation système FISE A3\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\obj\Debug\netcoreapp3.1\EasySave_1_0.AssemblyInfoInputs.cache
+C:\Users\Xynoss\Documents\CESI\Projet\projet programmation système FISE A3\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\obj\Debug\netcoreapp3.1\EasySave_1_0.AssemblyInfo.cs
+C:\Users\Xynoss\Documents\CESI\Projet\projet programmation système FISE A3\Projet-Progra-Syst-me\version 1.0\EasySave 1.0\obj\Debug\netcoreapp3.1\EasySave_1_0.csproj.CoreCompileInputs.cache
