@@ -34,7 +34,6 @@ namespace EasySave_1_0.Controller
                 view = value;
             }
         }
-        private EasySave_1_0.Model.LangConfig displayLanguage;
 
         public Controller(List<EasySave_1_0.model.ModelSave> saves, EasySave_1_0.View.View view, bool saveType)
         {
@@ -67,6 +66,7 @@ namespace EasySave_1_0.Controller
                 this.view.Output("la cible :");
                 string save_targetpath = this.view.Input();
                 saves.Add(new model.ModelTotalSave(save_name, save_sourcepath, save_targetpath));
+                saves[0].Save();
             }
             else
             {

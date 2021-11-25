@@ -13,13 +13,12 @@ namespace EasySave_1_0.model
         {
             try
             {
-                LogLog();
                 string[] fileList = Directory.GetFiles(sourcePath, "*");
                 foreach (string f in fileList)
                 {
-                    filename = f.Substring(sourcePath.Length + 1);
+                    filename = f.Substring(sourcePath.Length);
                     File.Copy(Path.Combine(sourcePath, filename), Path.Combine(targetPath, filename), true);
-
+                    LogLog();
                 }
                 /*
                 File.Create(sourcePath + "save_"+name+".conf");

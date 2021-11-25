@@ -18,6 +18,7 @@ namespace EasySave_1_0.model {
                 {
                     filename = f.Substring(sourcePath.Length + 1);
                     File.Copy(Path.Combine(sourcePath, filename), Path.Combine(targetPath, filename));
+
                 }
 
             }
@@ -27,6 +28,21 @@ namespace EasySave_1_0.model {
             }
         }
 
-	}
+        public override void LogLog()
+        {
+            string log_name = this.name;
+            DateTime log_timestamp = DateTime.Now;
+            model.ModelLogState.GetInstance(log_name, this.sourcePath, this.targetPath, log_timestamp);
+        }
+
+        public override void LogState()
+        {
+            string log_name = this.name;
+            DateTime log_timestamp = DateTime.Now;
+            model.ModelLogLog log_save = model.ModelLogLog.GetInstance(log_name, filename, this.sourcePath, this.targetPath, log_timestamp);
+            log_save.WriteLog();
+        }
+
+    }
 
 }
