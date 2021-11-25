@@ -34,10 +34,10 @@ namespace EasySave_1_0.model
         {
             string log_name = this.name;
             DateTime log_timestamp = DateTime.Now;
-            model.ModelLogState.GetInstance(log_name, this.sourcePath, this.targetPath, log_timestamp);
+            //model.ModelLogState.GetInstance(log_name, this.sourcePath, this.targetPath, log_timestamp);
         }
 
-        public override void LogState()
+        public override void LogState(string name, string fileSource, string fileTarget, string state)
         {
             string log_name = this.name;
             DateTime log_timestamp = DateTime.Now;

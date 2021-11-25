@@ -9,7 +9,7 @@ namespace EasySave_1_0.Controller
     {
         private ResourceManager res_man;
         private CultureInfo culture;
-
+        static private List<EasySave_1_0.model.ModelLogState> states = new List<model.ModelLogState>();
         private List<EasySave_1_0.model.ModelSave> saves;
         public List<EasySave_1_0.model.ModelSave> Saves
         {
@@ -66,6 +66,7 @@ namespace EasySave_1_0.Controller
                 this.view.Output("la cible :");
                 string save_targetpath = this.view.Input();
                 saves.Add(new model.ModelTotalSave(save_name, save_sourcepath, save_targetpath));
+                states.Add(new model.ModelLogState(save_name, save_sourcepath,save_targetpath));
                 saves[0].Save();
             }
             else

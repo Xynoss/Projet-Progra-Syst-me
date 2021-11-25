@@ -66,11 +66,12 @@ namespace EasySave_1_0.model
         }
         public ModelLogState(string name, string fileSource, string fileTarget) : base(name, fileSource, fileTarget)
         {
-            this.state = "END";
-            this.TotalFileToCopy = 0;
-            this.TotalFileSize = 0;
-            this.Progression = 0;
-            this.NbFilesLeft = 0;
+            Calcul_Check CnC = new Calcul_Check();
+            this.state = "";
+            this.TotalFileToCopy = CnC.NbFiles(fileSource);
+            this.TotalFileSize = CnC.FileSize(fileSource);
+            //this.Progression = 0;
+            this.NbFilesLeft = CnC.NbFiles(fileSource);
         }
     }
 

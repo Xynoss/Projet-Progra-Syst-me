@@ -38,9 +38,9 @@ namespace EasySave_1_0.model
         /// <summary>
         /// Method to initialize the writing of the state's files
         /// </summary>
-        public override void LogState(string name, string fileSource, string fileTarget)
+        public override void LogState(string name, string fileSource, string fileTarget, string state)
         {
-            Logger.GetInstance().WriteState(name, fileSource, fileTarget);
+            Logger.GetInstance().WriteState(new ModelLogState(name, fileSource, fileTarget));
         }
         /// <summary>
         /// Method to initialize the writing of the log's files.

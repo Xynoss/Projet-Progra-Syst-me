@@ -13,7 +13,7 @@ namespace EasySave_1_0.model {
 		/// </summary>
 		/// <param name="pathFile">Access path to the file.</param>
 		/// <returns>Size of the file.</returns>
-		public uint FileSize(string pathFile)
+		public int FileSize(string pathFile)
 		{
 			//get the attribute for files or directory
 			FileAttributes fileAtt = File.GetAttributes(pathFile);
@@ -22,20 +22,20 @@ namespace EasySave_1_0.model {
             {
 				//If it is a directory, search in all the directory to obtain the size
 				DirectoryInfo dirInfo = new DirectoryInfo(pathFile);
-				uint folderSize = 0;
+				int folderSize = 0;
 				foreach(FileInfo file in dirInfo.GetFiles("*", SearchOption.AllDirectories))
                 {
-					folderSize += (uint)file.Length;
+					folderSize += (int)file.Length;
                 }
 				return folderSize;
             }
 			//else, return the size of the file
-			return (uint)new FileInfo(pathFile).Length;
+			return (int)new FileInfo(pathFile).Length;
 		}
 		/// <summary>
 		/// Method to determine the number of files in a folder
 		/// </summary>
-		/// <param name="pathFile">Acces path to the file.</param>
+		/// <param name="pathFile">Access path to the file.</param>
 		/// <returns>number of giles in a directory</returns>
 		public int NbFiles(string pathFile)
         {

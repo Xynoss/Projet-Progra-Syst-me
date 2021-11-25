@@ -55,7 +55,7 @@ namespace EasySave_1_0.model
         {
             Calcul_Check CnC = new Calcul_Check();
             this.filename = filename;
-            this.fileSize = CnC.FileSize(filename);
+            this.fileSize = (uint)CnC.FileSize(filename);
             this.timeTransfert = (int)span.TotalMilliseconds;
         }
     }
