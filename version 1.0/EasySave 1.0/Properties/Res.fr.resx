@@ -141,11 +141,8 @@
   <data name="choose_save" xml:space="preserve">
     <value>Indiquez la sauvegarde concernée :</value>
   </data>
-  <data name="confirm_delete" xml:space="preserve">
-    <value>Voulez-vous vraiment supprimer la sauvegarde {0}</value>
-  </data>
-  <data name="delete_end" xml:space="preserve">
-    <value>La sauvegarde {0} a bien été supprimée.</value>
+  <data name="choose_save_ref" xml:space="preserve">
+    <value>Entrez le nom de la sauvegarde de référence </value>
   </data>
   <data name="differentiel_save" xml:space="preserve">
     <value>Sauvegarde différentielle : sauvegarder uniquement les fichiers différents.</value>
@@ -192,20 +189,23 @@
   <data name="run_onesave" xml:space="preserve">
     <value>Vous avez choisi de lancer une sauvegarde</value>
   </data>
+  <data name="save_complete_chosen" xml:space="preserve">
+    <value>Vous avez choisi de créer une sauvegarde complète </value>
+  </data>
   <data name="save_created" xml:space="preserve">
     <value>Sauvegarde {0} crée</value>
   </data>
-  <data name="save_create_chosen" xml:space="preserve">
-    <value>Vous avez choisi de créer une sauvegarde </value>
-  </data>
-  <data name="save_delete_chosen" xml:space="preserve">
-    <value>Vous avez choisi de supprimer une sauvegarde</value>
+  <data name="save_differential_chosen" xml:space="preserve">
+    <value>Vous avez choisi de créer une sauvegarde différentielle </value>
   </data>
   <data name="save_loading" xml:space="preserve">
     <value>Sauvegarde {0} en cours...</value>
   </data>
   <data name="save_run" xml:space="preserve">
     <value>Sauvegarde {0} exécutée</value>
+  </data>
+  <data name="selected_ref_save_end" xml:space="preserve">
+    <value>La sauvegarde {0} a été selectioné pour modèle de référence</value>
   </data>
   <data name="total_save" xml:space="preserve">
     <value>Sauvegarde totale : sauvegarder l'intégralité des fichiers.</value>

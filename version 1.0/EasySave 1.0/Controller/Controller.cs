@@ -7,6 +7,9 @@ namespace EasySave_1_0.Controller
 {
     public class Controller
     {
+
+        string save_name = "";
+
         private ResourceManager res_man;
         private CultureInfo culture;
         private static List<EasySave_1_0.model.ModelLogState> states = new List<model.ModelLogState>();
@@ -62,8 +65,7 @@ namespace EasySave_1_0.Controller
         public void Start()
         {
             string Input_choise = "";
-            string save_name = "";
-            int save_selected = 0;
+            //int save_selected = 0;
             this.view.Output(this.res_man.GetString("greeting", this.culture));
             this.view.Output(this.res_man.GetString("language_choose", this.culture));
             this.view.Output(this.res_man.GetString("language_en", this.culture));
@@ -96,21 +98,28 @@ namespace EasySave_1_0.Controller
 
                 switch (Input_choise)
                 {
-                    case "1": //create a backup
-                        this.view.Output(this.res_man.GetString("save_create_chosen", this.culture));
+                    case "1": //create a backup total
+                        this.view.Output(this.res_man.GetString("save_complete_chosen", this.culture));
                         if (saves.Count < 6)
                         {
-                            this.view.Output(this.res_man.GetString("ask_name_save", this.culture));
-                            save_name = this.view.Input();
-                            this.view.Output(this.res_man.GetString("ask_source_path", this.culture));
-                            string save_sourcepath = this.view.Input();
-                            this.view.Output(this.res_man.GetString("ask_target_path", this.culture));
-                            string save_targetpath = this.view.Input();
-                            saves.Add(new model.ModelTotalSave(save_name, save_sourcepath, save_targetpath));
-                            model.ModelLogState statefile = new model.ModelLogState(save_name, save_sourcepath, save_targetpath);
-                            this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), save_name));
-                            states.Add(statefile);
-                            saves[0].Save(ref statefile);
+                            for (int i = 0; i < saves.Count; i++)
+                            {
+                                if(saves[i] != null)
+                                {
+                                    this.view.Output(this.res_man.GetString("ask_name_save", this.culture));
+                                    save_name = this.view.Input();
+                                    this.view.Output(this.res_man.GetString("ask_source_path", this.culture));
+                                    string save_sourcepath = this.view.Input();
+                                    this.view.Output(this.res_man.GetString("ask_target_path", this.culture));
+                                    string save_targetpath = this.view.Input();
+                                    saves.Add(new model.ModelTotalSave(save_name, save_sourcepath, save_targetpath));
+                                    model.ModelLogState statefile = new model.ModelLogState(save_name, save_sourcepath, save_targetpath);
+                                    this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), save_name));
+                                    states.Add(statefile);
+                                    saves[i].Save(ref statefile);
+                                }
+                                
+                            }
                         }
                         else
                         {
@@ -119,37 +128,40 @@ namespace EasySave_1_0.Controller
                         this.view.Output(string.Format(this.res_man.GetString("save_created", this.culture), save_name));
                         break;
 
-                    case "2": //delete a backup from the list
-                        this.view.Output(this.res_man.GetString("choose_save", this.culture));
-                        Input_choise = this.view.Input();
+                    case "2": //create a differential backup
+                        this.view.Output(this.res_man.GetString("save_differential_chosen", this.culture));
+                        createDifferential();
+                        //delete a backup from the list
+                        //    this.view.Output(this.res_man.GetString("choose_save", this.culture));
+                        //    Input_choise = this.view.Input();
 
-                        try
-                        {
-                            int i = 0;
-                            while (Input_choise != save_name)
-                            {
-                                save_name = saves[i].Name;
-                                i++;
-                            }
-                            save_selected = i;
-                        }
-                        catch
-                        {
+                        //    try
+                        //    {
+                        //        int i = 0;
+                        //        while (Input_choise != save_name)
+                        //        {
+                        //            save_name = saves[i].Name;
+                        //            i++;
+                        //        }
+                        //        save_selected = i;
+                        //    }
+                        //    catch
+                        //    {
 
-                        }
+                        //    }
 
-                        this.view.Output(string.Format(this.res_man.GetString("confirm_delete", this.culture), save_name));
-                        Input_choise = this.view.Input();
-                        if (Input_choise == "y")
-                        {
-                            Saves.Remove(saves[save_selected]);
-                            this.view.Output(string.Format(this.res_man.GetString("delete_end", this.culture), save_name));
-                            save_name = "";
-                        }
-                        else
-                        {
-                            this.view.Output(this.res_man.GetString("cancel_delete", this.culture));
-                        }
+                        //    this.view.Output(string.Format(this.res_man.GetString("confirm_delete", this.culture), save_name));
+                        //    Input_choise = this.view.Input();
+                        //    if (Input_choise == "y")
+                        //    {
+                        //        Saves.Remove(saves[save_selected]);
+                        //        this.view.Output(string.Format(this.res_man.GetString("delete_end", this.culture), save_name));
+                        //        save_name = "";
+                        //    }
+                        //    else
+                        //    {
+                        //        this.view.Output(this.res_man.GetString("cancel_delete", this.culture));
+                        //    }
 
                         break;
 
@@ -161,7 +173,7 @@ namespace EasySave_1_0.Controller
                         foreach (model.ModelTotalSave Asave in saves)
                         {
                             int i = 1;
-                            this.view.Output(string.Concat(i, " : ",Asave.Name));
+                            this.view.Output(string.Concat(i, " : ", Asave.Name));
                             i++;
                         }
 
@@ -172,6 +184,45 @@ namespace EasySave_1_0.Controller
             this.view.Output(this.res_man.GetString("end", this.culture));
 
         }
+
+        private void createDifferential()
+        {
+            if (saves.Count < 6)
+            {
+                this.view.Output(this.res_man.GetString("ask_name_save", this.culture));
+                save_name = this.view.Input();
+                this.view.Output(this.res_man.GetString("choose_save_ref", this.culture));
+                string save_ref = this.view.Input();
+                string save_sourcepath = "";
+                for (int i = 0; i < saves.Count; i++)
+                {
+                    if (save_ref == saves[i].Name)
+                    {
+                        save_sourcepath = saves[i].SourcePath;
+                        this.view.Output(this.res_man.GetString("ask_target_path", this.culture));
+                        string save_targetpath = this.view.Input();
+                        saves.Add(new model.ModelDifferentialSave(save_name, save_sourcepath, save_targetpath, save_ref));
+                        model.ModelLogState statefile = new model.ModelLogState(save_name, save_sourcepath, save_targetpath);
+                        this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), save_name));
+                        states.Add(statefile);
+                        saves[i].Save(ref statefile);
+                    }
+                    else
+                    {
+                        this.view.Output("erreur sauvegarde d'origin non trouvé");
+                    }
+
+                }
+
+            }
+            else
+            {
+                this.view.Output(this.res_man.GetString("ask_target_save", this.culture));
+            }
+            this.view.Output(string.Format(this.res_man.GetString("save_created", this.culture), save_name));
+            
+        }
+
         /// <summary>
         /// Method to select the language at the start of the application
         /// </summary>

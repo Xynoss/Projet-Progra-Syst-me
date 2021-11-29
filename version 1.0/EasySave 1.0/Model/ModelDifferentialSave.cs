@@ -9,8 +9,16 @@ namespace EasySave_1_0.model
     /// </summary>
     public class ModelDifferentialSave : ModelSave
     {
-        public ModelDifferentialSave(string name, string sourcePath, string targetPath) : base(name, sourcePath, targetPath)
+        private string saveRefPath;
+        public string SaveRefPath
         {
+            get { return saveRefPath; }
+            set { saveRefPath = value; }
+        }
+
+        public ModelDifferentialSave(string name, string sourcePath, string targetPath, string refSavePath) : base(name, sourcePath, targetPath)
+        {
+            saveRefPath = refSavePath;
         }
 
         /// <summary>
@@ -19,20 +27,39 @@ namespace EasySave_1_0.model
         /// <param name="state">an object Log State to refer to</param>
         public override void Save(ref model.ModelLogState state)
         {
-            try 
+            try
             {
                 string[] fileList = Directory.GetFiles(sourcePath, "*");
-                foreach (string f in fileList)
+                string[] fileOriginList = Directory.GetFiles(saveRefPath, "*");
+                foreach (string fo in fileOriginList)
                 {
-                    filename = f.Substring(sourcePath.Length + 1);
-                    File.Copy(Path.Combine(sourcePath, filename), Path.Combine(targetPath, filename));
+                    string fileOriginName = fo.Substring(saveRefPath.Length);
+                    foreach (string f in fileList)
+                    {
+                        filename = f.Substring(sourcePath.Length);
+
+                        if (filename == fileOriginName)
+                        {
+                            DateTime start = DateTime.Now;
+                            state.State = "ACTIVE";
+                            File.Copy(Path.Combine(sourcePath, filename), Path.Combine(targetPath, filename), true);
+                            state.NbFilesLeft--;
+                            TimeSpan span = DateTime.Now - start;
+                            LogLog(Name, span, f, targetPath, sourcePath);
+                            LogState(Controller.Controller.States);
+                        }
+
+                    }
                 }
+
 
             }
             catch (DirectoryNotFoundException dirNotFound)
             {
                 Console.WriteLine(dirNotFound.Message);
             }
+            state.State = "END";
+            LogState(Controller.Controller.States);
         }
         /// <summary>
         /// Method to initialize the writing of the log's files.
