@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Xynos\\.nuget\\packages\\": {},
+    "C:\\Users\\Xynoss\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\dossier\\CESI\\FISE A3 info 2021-2022\\projet\\prgrammation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\EasySave_1_0.csproj",
+      "projectUniqueName": "C:\\Users\\Xynoss\\Documents\\CESI\\Projet\\projet programmation système FISE A3\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\EasySave_1_0.csproj",
       "projectName": "EasySave_1_0",
-      "projectPath": "D:\\dossier\\CESI\\FISE A3 info 2021-2022\\projet\\prgrammation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\EasySave_1_0.csproj",
-      "packagesPath": "C:\\Users\\Xynos\\.nuget\\packages\\",
-      "outputPath": "D:\\dossier\\CESI\\FISE A3 info 2021-2022\\projet\\prgrammation système\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\obj\\",
+      "projectPath": "C:\\Users\\Xynoss\\Documents\\CESI\\Projet\\projet programmation système FISE A3\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\EasySave_1_0.csproj",
+      "packagesPath": "C:\\Users\\Xynoss\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Xynoss\\Documents\\CESI\\Projet\\projet programmation système FISE A3\\Projet-Progra-Syst-me\\version 1.0\\EasySave 1.0\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Xynos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Xynoss\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
