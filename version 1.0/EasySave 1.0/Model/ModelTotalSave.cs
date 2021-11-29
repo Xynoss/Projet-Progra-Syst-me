@@ -20,6 +20,8 @@ namespace EasySave_1_0.model
             
             try
             {
+                targetPath += name;
+                Directory.CreateDirectory(targetPath);
                 string[] fileList = Directory.GetFiles(sourcePath, "*");
                 foreach (string f in fileList)
                 {
