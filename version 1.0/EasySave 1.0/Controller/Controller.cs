@@ -100,32 +100,7 @@ namespace EasySave_1_0.Controller
                 {
                     case "1": //create a backup total
                         this.view.Output(this.res_man.GetString("save_complete_chosen", this.culture));
-                        if (saves.Count < 6)
-                        {
-                            for (int i = 0; i < saves.Count; i++)
-                            {
-                                if(saves[i] != null)
-                                {
-                                    this.view.Output(this.res_man.GetString("ask_name_save", this.culture));
-                                    save_name = this.view.Input();
-                                    this.view.Output(this.res_man.GetString("ask_source_path", this.culture));
-                                    string save_sourcepath = this.view.Input();
-                                    this.view.Output(this.res_man.GetString("ask_target_path", this.culture));
-                                    string save_targetpath = this.view.Input();
-                                    saves.Add(new model.ModelTotalSave(save_name, save_sourcepath, save_targetpath));
-                                    model.ModelLogState statefile = new model.ModelLogState(save_name, save_sourcepath, save_targetpath);
-                                    this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), save_name));
-                                    states.Add(statefile);
-                                    saves[i].Save(ref statefile);
-                                }
-                                
-                            }
-                        }
-                        else
-                        {
-                            this.view.Output(this.res_man.GetString("ask_target_save", this.culture));
-                        }
-                        this.view.Output(string.Format(this.res_man.GetString("save_created", this.culture), save_name));
+                        createTotal();
                         break;
 
                     case "2": //create a differential backup
@@ -185,6 +160,30 @@ namespace EasySave_1_0.Controller
 
         }
 
+        private void createTotal()
+        {
+            if (saves.Count < 6)
+            {
+                this.view.Output(this.res_man.GetString("ask_name_save", this.culture));
+                save_name = this.view.Input();
+                this.view.Output(this.res_man.GetString("ask_source_path", this.culture));
+                string save_sourcepath = this.view.Input();
+                this.view.Output(this.res_man.GetString("ask_target_path", this.culture));
+                string save_targetpath = this.view.Input();
+                model.ModelSave currentSave = new model.ModelTotalSave(save_name, save_sourcepath, save_targetpath);
+                saves.Add(currentSave);
+                model.ModelLogState statefile = new model.ModelLogState(save_name, save_sourcepath, save_targetpath);
+                this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), save_name));
+                states.Add(statefile);
+                currentSave.Save(ref statefile);
+            }
+            else
+            {
+                this.view.Output(this.res_man.GetString("ask_target_save", this.culture));
+            }
+            this.view.Output(string.Format(this.res_man.GetString("save_created", this.culture), save_name));
+        }
+
         private void createDifferential()
         {
             if (saves.Count < 6)
@@ -220,15 +219,7 @@ namespace EasySave_1_0.Controller
                 this.view.Output(this.res_man.GetString("ask_target_save", this.culture));
             }
             this.view.Output(string.Format(this.res_man.GetString("save_created", this.culture), save_name));
-            
-        }
 
-        /// <summary>
-        /// Method to select the language at the start of the application
-        /// </summary>
-        public void select_language()
-        {
-            view.Output(res_man.GetString("greeting", culture));
         }
 
 
