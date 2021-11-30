@@ -123,8 +123,13 @@ namespace EasySave_1_0.Controller
 
                     case "4": //run one save
                         this.view.Output(this.res_man.GetString("run_onesave", this.culture));
-                        //TODO list of saves
                         this.view.Output(this.res_man.GetString("choose_save", this.culture));
+                        int nbsave = 0;
+                        foreach(ModelSave save in this.saves)
+                        {
+                            this.view.Output(String.Format("{0} : {1}", nbsave, save.Name));
+                            nbsave++;
+                        }
                         int selected_save = int.Parse(this.view.Input());
                         ModelLogState correct_state = states[selected_save];
                         this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), selected_save));
