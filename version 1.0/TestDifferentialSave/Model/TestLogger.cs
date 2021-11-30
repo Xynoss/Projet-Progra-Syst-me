@@ -25,15 +25,14 @@ namespace TestEasySave.Model
             File.WriteAllText(@String.Concat(sourcePath, fileNoneModif), "Je suis un poisson");
             var stream = File.Create(@String.Concat(sourcePath, file));
             stream.Close();
-            ModelSave saveComplete = new ModelTotalSave(saveCompleteName, sourcePath, targetPath);
-
         }
 
         [Test]
         public void TestLog()
         {
-
+            ModelSave saveComplete = new ModelTotalSave(saveCompleteName, sourcePath, targetPath);
             ModelLogState stateComplete = new ModelLogState(saveCompleteName, sourcePath, targetPath);
+            saveComplete.Save(ref stateComplete);
             string log_path_complete = @String.Concat(pathlog, saveName, "_log.json");
             string state_path_complete = @String.Concat(pathlog, "state.json");
             Assert.IsTrue(File.Exists(log_path_complete));

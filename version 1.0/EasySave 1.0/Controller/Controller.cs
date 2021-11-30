@@ -1,4 +1,5 @@
 using EasySave_1_0.model;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Resources;
@@ -87,10 +88,10 @@ namespace EasySave_1_0.Controller
             while (Input_choise != "5")//5 is to exit the app
             {
                 this.view.Output(this.res_man.GetString("choose_action", this.culture));
-                this.view.Output(this.res_man.GetString("list_create_save", this.culture));
-                this.view.Output(this.res_man.GetString("list_delete_save", this.culture));
+                this.view.Output(this.res_man.GetString("list_complete_save", this.culture));
+                this.view.Output(this.res_man.GetString("list_diff_save", this.culture));
                 this.view.Output(this.res_man.GetString("list_run_all", this.culture));
-                this.view.Output("4 : list the save"/*this.res_man.GetString("list_run_one", this.culture)*/);
+                this.view.Output(this.res_man.GetString("list_run_one", this.culture));
                 this.view.Output(this.res_man.GetString("list_exit", this.culture));
                 Input_choise = this.view.Input();
 
@@ -109,20 +110,26 @@ namespace EasySave_1_0.Controller
                         createDifferential();
                         break;
 
-                    case "3": //it's will be the full job of save 
-
+                    case "3": //run all save
+                        this.view.Output(this.res_man.GetString("run_all_save", this.culture));
                         for (byte i = 0; i < states.Count; i++)
                         {
                             ModelLogState current_states = states[i];
+                            this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), states[i]));
                             this.saves[i].Save(ref current_states);
+                            this.view.Output(string.Format(this.res_man.GetString("save_created", this.culture), states[i]));
                         }
                         break;
 
-                    case "4": //list of the backup
-
+                    case "4": //run one save
+                        this.view.Output(this.res_man.GetString("run_onesave", this.culture));
+                        //TODO list of saves
+                        this.view.Output(this.res_man.GetString("choose_save", this.culture));
                         int selected_save = int.Parse(this.view.Input());
                         ModelLogState correct_state = states[selected_save];
+                        this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), selected_save));
                         Saves[selected_save].Save(ref correct_state);
+                        this.view.Output(string.Format(this.res_man.GetString("save_created", this.culture), selected_save));
                         break;
                 }
             }
@@ -171,29 +178,25 @@ namespace EasySave_1_0.Controller
                         save_sourcepath = saves[i].SourcePath;
                         this.view.Output(this.res_man.GetString("ask_target_path", this.culture));
                         string save_targetpath = this.view.Input();
-                        saves.Add(new model.ModelDifferentialSave(save_name, save_sourcepath, save_targetpath, save_ref));
+                        ModelSave modelSave = new model.ModelDifferentialSave(save_name, save_sourcepath, save_targetpath, String.Concat(saves[i].TargetPath, save_ref, "/"));
+                        saves.Add(modelSave);
                         model.ModelLogState statefile = new model.ModelLogState(save_name, save_sourcepath, save_targetpath);
                         this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), save_name));
                         states.Add(statefile);
-                        saves[i].Save(ref statefile);
+                        modelSave.Save(ref statefile);
+                        this.view.Output(string.Format(this.res_man.GetString("save_created", this.culture), save_name));
                     }
                     else
                     {
-                        this.view.Output("erreur sauvegarde d'origin non trouvé");
+                        this.view.Output(this.res_man.GetString("notsave_found", this.culture));
                     }
 
                 }
-
             }
             else
             {
-                this.view.Output(this.res_man.GetString("ask_target_save", this.culture));
+                this.view.Output(this.res_man.GetString("warning_toomuchsave", this.culture));
             }
-            this.view.Output(string.Format(this.res_man.GetString("save_created", this.culture), save_name));
-
         }
-
-
     }
-
 }

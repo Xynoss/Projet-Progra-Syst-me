@@ -120,17 +120,11 @@
   <data name="ask_name_save" xml:space="preserve">
     <value>Entrez le nom de votre sauvegarde</value>
   </data>
-  <data name="ask_save_type" xml:space="preserve">
-    <value>Choisissez le type de sauvegarde :</value>
-  </data>
   <data name="ask_source_path" xml:space="preserve">
     <value>Entrez le chemin du dossier à sauvegarder</value>
   </data>
   <data name="ask_target_path" xml:space="preserve">
     <value>Entrez le chemin du dossier dans lequel sauvegarder</value>
-  </data>
-  <data name="cancel_delete" xml:space="preserve">
-    <value>suppression annulée</value>
   </data>
   <data name="check_language" xml:space="preserve">
     <value>La langue de l'application est le français</value>
@@ -142,7 +136,7 @@
     <value>Indiquez la sauvegarde concernée :</value>
   </data>
   <data name="choose_save_ref" xml:space="preserve">
-    <value>Entrez le nom de la sauvegarde de référence </value>
+    <value>Entrez le nom de la sauvegarde de référence :</value>
   </data>
   <data name="differentiel_save" xml:space="preserve">
     <value>Sauvegarde différentielle : sauvegarder uniquement les fichiers différents.</value>
@@ -151,7 +145,7 @@
     <value>À bientôt</value>
   </data>
   <data name="exit_command" xml:space="preserve">
-    <value>pour quitter l'application tapper exit</value>
+    <value>Pour quitter l'application, entrez exit</value>
   </data>
   <data name="greeting" xml:space="preserve">
     <value>Bienvenue</value>
@@ -165,11 +159,11 @@
   <data name="language_fr" xml:space="preserve">
     <value>2 : Français</value>
   </data>
-  <data name="list_create_save" xml:space="preserve">
-    <value>1 : Créer une sauvegarde</value>
+  <data name="list_complete_save" xml:space="preserve">
+    <value>1 : Créer une sauvegarde complète</value>
   </data>
-  <data name="list_delete_save" xml:space="preserve">
-    <value>2 : Supprimer une sauvegarde</value>
+  <data name="list_diff_save" xml:space="preserve">
+    <value>2 : Créer une sauvegarde différentielle</value>
   </data>
   <data name="list_exit" xml:space="preserve">
     <value>5 : Quitter l'application</value>
@@ -205,7 +199,7 @@
     <value>Sauvegarde {0} exécutée</value>
   </data>
   <data name="selected_ref_save_end" xml:space="preserve">
-    <value>La sauvegarde {0} a été selectioné pour modèle de référence</value>
+    <value>La sauvegarde {0} a été sélectionné comme référence</value>
   </data>
   <data name="total_save" xml:space="preserve">
     <value>Sauvegarde totale : sauvegarder l'intégralité des fichiers.</value>

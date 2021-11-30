@@ -120,17 +120,11 @@
   <data name="ask_name_save" xml:space="preserve">
     <value>Enter the name of the backup:</value>
   </data>
-  <data name="ask_save_type" xml:space="preserve">
-    <value>Choose the type of backup:</value>
-  </data>
   <data name="ask_source_path" xml:space="preserve">
     <value>Enter backup source folder path:</value>
   </data>
   <data name="ask_target_path" xml:space="preserve">
     <value>Enter backup target folder path:</value>
-  </data>
-  <data name="cancel_delete" xml:space="preserve">
-    <value>suppresion canceled</value>
   </data>
   <data name="check_language" xml:space="preserve">
     <value>The language is english</value>
@@ -141,17 +135,17 @@
   <data name="choose_save" xml:space="preserve">
     <value>Indicate the backup concerned:</value>
   </data>
-  <data name="confirm_delete" xml:space="preserve">
-    <value>Do you really want to delete the backup {0} ?</value>
-  </data>
-  <data name="delete_end" xml:space="preserve">
-    <value>Backup {0} has been delete.</value>
+  <data name="choose_save_ref" xml:space="preserve">
+    <value>Enter the name of the reference backup:</value>
   </data>
   <data name="differentiel_save" xml:space="preserve">
     <value>Differential backup: backup only different files.</value>
   </data>
   <data name="end" xml:space="preserve">
     <value>See you soon</value>
+  </data>
+  <data name="exit_command" xml:space="preserve">
+    <value>To exit the application, enter exit:</value>
   </data>
   <data name="greeting" xml:space="preserve">
     <value>Welcome</value>
@@ -165,11 +159,11 @@
   <data name="language_fr" xml:space="preserve">
     <value>2 : Français</value>
   </data>
-  <data name="list_create_save" xml:space="preserve">
-    <value>1 : Create a backup</value>
+  <data name="list_complete_save" xml:space="preserve">
+    <value>1 : Create a complete backup</value>
   </data>
-  <data name="list_delete_save" xml:space="preserve">
-    <value>2 : Delete a backup</value>
+  <data name="list_diff_save" xml:space="preserve">
+    <value>2 : Create a differential backup</value>
   </data>
   <data name="list_exit" xml:space="preserve">
     <value>5 : Close the application</value>
@@ -189,20 +183,23 @@
   <data name="run_onesave" xml:space="preserve">
     <value>You have chosen to launch a backup.</value>
   </data>
+  <data name="save_complete_chosen" xml:space="preserve">
+    <value>You have chosen to create a complete backup.</value>
+  </data>
   <data name="save_created" xml:space="preserve">
     <value>Backup {0} created</value>
   </data>
-  <data name="save_create_chosen" xml:space="preserve">
-    <value>You have chosen to create a backup.</value>
-  </data>
-  <data name="save_delete_chosen" xml:space="preserve">
-    <value>You have chosen to delete a backup.</value>
+  <data name="save_differential_chosen" xml:space="preserve">
+    <value>You have chosen to create a differential backup</value>
   </data>
   <data name="save_loading" xml:space="preserve">
     <value>Backup {0} in progress...</value>
   </data>
   <data name="save_run" xml:space="preserve">
     <value>Backup {0} executed.</value>
+  </data>
+  <data name="selected_ref_save_end" xml:space="preserve">
+    <value>Backup  {0} has been selected as a reference</value>
   </data>
   <data name="total_save" xml:space="preserve">
     <value>Full backup: back up all the files.</value>
