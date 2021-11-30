@@ -13,28 +13,22 @@ namespace EasySave_1_0.model
         {
         }
         /// <summary>
-        /// Method to save in total save mode.
+        /// methods to copy the files, trying to create the save and take every file form the source path.
         /// </summary>
+        /// <param name="state">an object Log State to refer to</param>
         public override void Save(ref model.ModelLogState state)
         {
-            
+
             try
             {
-                targetPath += name;
-                Directory.CreateDirectory(targetPath);
-                string[] fileList = Directory.GetFiles(sourcePath, "*");
+                DirectoryCreated();
+                //search in the source path to compare with the saveref
                 foreach (string f in fileList)
                 {
-                    filename = f.Substring(sourcePath.Length);
-                    DateTime start = DateTime.Now;
-                    state.State = "ACTIVE";
-                    File.Copy(Path.Combine(sourcePath, filename), Path.Combine(targetPath, filename), true);
-                    state.NbFilesLeft--;
-                    TimeSpan span = DateTime.Now - start;
-                    LogLog(name, span, f, targetPath, sourcePath);
-                    LogState(Controller.Controller.States);
+                    filename = Path.GetFileName(f);
+                    //Copy the file form the source to the target
+                    CopyAndWrite(ref state, name, sourcePath, filename, targetPathSave, f);
                 }
-
             }
             catch (DirectoryNotFoundException dirNotFound)
             {
@@ -44,8 +38,9 @@ namespace EasySave_1_0.model
             LogState(Controller.Controller.States);
         }
         /// <summary>
-        /// Method to initialize the writing of the state's files
+        /// Method to initialize the writing of the log's states files.
         /// </summary>
+        /// <param name="state">list of modelLogState object</param>
         public override void LogState(List<model.ModelLogState> state)
         {
             Logger.GetInstance().WriteState(state);
@@ -53,6 +48,11 @@ namespace EasySave_1_0.model
         /// <summary>
         /// Method to initialize the writing of the log's files.
         /// </summary>
+        /// <param name="name">name of the save.</param>
+        /// <param name="span">time span form the start.</param>
+        /// <param name="filename">name of the file.</param>
+        /// <param name="targetPath">path to the target folder.</param>
+        /// <param name="sourcePath">path to the source folder.</param>
         public override void LogLog(string name, TimeSpan span, string filename, string targetPath, string sourcePath)
         {
             Logger.GetInstance().WriteLog(new ModelLogLog(name, filename, sourcePath, targetPath, span));

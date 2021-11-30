@@ -29,14 +29,7 @@ namespace EasySave_1_0.model
         {
             try
             {
-                //path to create a save folder
-                string targetPathSave = String.Concat(targetPath, name);
-                //if the save directory doesn't exit, create one
-                if (!Directory.Exists(targetPathSave))
-                {
-                    Directory.CreateDirectory(targetPathSave);
-                }
-                string[] fileList = Directory.GetFiles(sourcePath);
+                DirectoryCreated();
                 //search in the source path to compare with the saveref
                 foreach (string f in fileList)
                 {

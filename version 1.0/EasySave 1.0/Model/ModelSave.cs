@@ -52,6 +52,11 @@ namespace EasySave_1_0.model {
 				filename = value;
 			}
 		}
+
+		//protected atribut
+		protected string[] fileList;
+		protected string targetPathSave;
+
 		/// <summary>
 		/// Constructor for the save object.
 		/// </summary>
@@ -90,6 +95,18 @@ namespace EasySave_1_0.model {
 			TimeSpan span = DateTime.Now - start;
 			LogLog(Name, span, f, targetPath, sourcePath);
 			LogState(Controller.Controller.States);
+		}
+
+		public void DirectoryCreated()
+        {
+			//path to create a save folder
+			targetPathSave = String.Concat(targetPath, name);
+			//if the save directory doesn't exit, create one
+			if (!Directory.Exists(targetPathSave))
+			{
+				Directory.CreateDirectory(targetPathSave);
+			}
+			fileList = Directory.GetFiles(sourcePath);
 		}
 
 	}

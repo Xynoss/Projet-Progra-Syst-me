@@ -5,7 +5,7 @@ using System.IO;
 
 namespace TestEasySave
 {
-    public class TestsSave
+    public class TestDifferentialSave
     {
         const string sourcePath = "../../../TestPathSource/";
         const string targetPath = "../../../TestPathTarget/";

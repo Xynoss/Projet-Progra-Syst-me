@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Resources;
+using EasySave_1_0.model;
 
 
 namespace EasySave_1_0.Controller
@@ -170,9 +171,9 @@ namespace EasySave_1_0.Controller
                 string save_sourcepath = this.view.Input();
                 this.view.Output(this.res_man.GetString("ask_target_path", this.culture));
                 string save_targetpath = this.view.Input();
-                model.ModelSave currentSave = new model.ModelTotalSave(save_name, save_sourcepath, save_targetpath);
+                ModelSave currentSave = new ModelTotalSave(save_name, save_sourcepath, save_targetpath);
                 saves.Add(currentSave);
-                model.ModelLogState statefile = new model.ModelLogState(save_name, save_sourcepath, save_targetpath);
+                ModelLogState statefile = new ModelLogState(save_name, save_sourcepath, save_targetpath);
                 this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), save_name));
                 states.Add(statefile);
                 currentSave.Save(ref statefile);

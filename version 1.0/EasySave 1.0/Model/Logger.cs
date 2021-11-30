@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Text.Json;
 
 namespace EasySave_1_0.model
@@ -19,6 +17,10 @@ namespace EasySave_1_0.model
         /// <param ModelLogLog="modelLogLog">Log object to write a log file</param>
         public void WriteLog(ModelLogLog modelLogLog)
         {
+            if (!Directory.Exists(pathLog))
+            {
+                Directory.CreateDirectory(pathLog);
+            }
             string jsonlog = JsonSerializer.Serialize(modelLogLog);
             File.AppendAllText(string.Concat(pathLog, modelLogLog.Name, "_log.json"), jsonlog);
         }
@@ -28,6 +30,10 @@ namespace EasySave_1_0.model
         /// <param name="modelLogState">State object to write a log file</param>
         public void WriteState(List<ModelLogState> modelLogState)
         {
+            if (!Directory.Exists(pathLog))
+            {
+                Directory.CreateDirectory(pathLog);
+            }
             string jsonlog = JsonSerializer.Serialize(modelLogState.ToArray());
             File.WriteAllText(string.Concat(pathLog, "state.json"), jsonlog);
         }
@@ -44,5 +50,5 @@ namespace EasySave_1_0.model
             return _instance;
         }
     }
-    
+
 }
