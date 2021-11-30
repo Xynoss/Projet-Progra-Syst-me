@@ -81,6 +81,16 @@ namespace EasySave_1_0.model {
 		/// </summary>
 		/// <param name="str_in">file concerned at the moment of the process.</param>
 		public abstract void LogLog(string name, TimeSpan span, string filename, string targetPath, string sourcePath);
+		public void CopyAndWrite(ref model.ModelLogState state, string Name, string sourcePath, string filename, string targetPath, string f)
+        {
+			DateTime start = DateTime.Now;
+			state.State = "ACTIVE";
+			File.Copy(Path.Combine(sourcePath, filename), Path.Combine(targetPath, filename), true);
+			state.NbFilesLeft--;
+			TimeSpan span = DateTime.Now - start;
+			LogLog(Name, span, f, targetPath, sourcePath);
+			LogState(Controller.Controller.States);
+		}
 
 	}
 

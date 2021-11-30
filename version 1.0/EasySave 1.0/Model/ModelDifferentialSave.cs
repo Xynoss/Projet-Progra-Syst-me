@@ -29,31 +29,22 @@ namespace EasySave_1_0.model
         {
             try
             {
-                string[] fileList = Directory.GetFiles(sourcePath, "*");
-                string[] fileOriginList = Directory.GetFiles(saveRefPath, "*");
-                foreach (string fo in fileOriginList)
+                targetPath += name;
+                Directory.CreateDirectory(targetPath);
+                string[] fileList = Directory.GetFiles(sourcePath);
+                string[] fileOriginList = Directory.GetFiles(saveRefPath);
+                foreach (string f in fileList)
                 {
-                    string fileOriginName = fo.Substring(saveRefPath.Length);
-                    foreach (string f in fileList)
+                    filename = Path.GetFileName(f);
+                    if (File.Exists(String.Concat(saveRefPath, filename)))
                     {
-                        filename = f.Substring(sourcePath.Length);
-
-                        if (filename == fileOriginName)
+                        if (File.GetLastWriteTime(String.Concat(saveRefPath, filename)) != File.GetLastWriteTime(String.Concat(sourcePath, filename)))
                         {
-                            DateTime start = DateTime.Now;
-                            state.State = "ACTIVE";
-                            File.Copy(Path.Combine(sourcePath, filename), Path.Combine(targetPath, filename), true);
-                            state.NbFilesLeft--;
-                            TimeSpan span = DateTime.Now - start;
-                            LogLog(Name, span, f, targetPath, sourcePath);
-                            LogState(Controller.Controller.States);
+                            CopyAndWrite(ref state, name, sourcePath, filename, targetPath, String.Concat(targetPath, "/", filename));
                         }
-
+                    }
                     }
                 }
-
-
-            }
             catch (DirectoryNotFoundException dirNotFound)
             {
                 Console.WriteLine(dirNotFound.Message);
