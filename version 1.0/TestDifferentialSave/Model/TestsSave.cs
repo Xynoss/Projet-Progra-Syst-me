@@ -5,7 +5,7 @@ using System.IO;
 
 namespace TestEasySave
 {
-    public class TestsDifferential
+    public class TestsSave
     {
         const string sourcePath = "../../../TestPathSource/";
         const string targetPath = "../../../TestPathTarget/";
@@ -37,7 +37,23 @@ namespace TestEasySave
             save.Save(ref logState);
 
             Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", file)));
-            Assert.IsFalse(File.Exists(@String.Concat(targetPath, saveName, "/", fileAdd)));
+            Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", fileAdd)));
+            Assert.IsFalse(File.Exists(@String.Concat(targetPath, saveName, "/", fileNoneModif)));
+        }
+
+        [Test]
+        public void TestDifferentialx2()
+        {
+            ModelSave save = new ModelDifferentialSave(saveName, sourcePath, targetPath, @String.Concat(targetPath, saveCompleteName, "/"));
+            ModelLogState logState = new ModelLogState(saveName, sourcePath, targetPath);
+            save.Save(ref logState);
+            var stream = File.Create(@String.Concat(sourcePath, "test2.txt"));
+            stream.Close();
+            save.Save(ref logState);
+
+            Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", file)));
+            Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", "test2.txt")));
+            Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", fileAdd)));
             Assert.IsFalse(File.Exists(@String.Concat(targetPath, saveName, "/", fileNoneModif)));
         }
 

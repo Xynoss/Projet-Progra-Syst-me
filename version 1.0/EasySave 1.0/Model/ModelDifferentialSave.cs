@@ -29,22 +29,33 @@ namespace EasySave_1_0.model
         {
             try
             {
-                targetPath += name;
-                Directory.CreateDirectory(targetPath);
+                //path to create a save folder
+                string targetPathSave = String.Concat(targetPath, name);
+                //if the save directory doesn't exit, create one
+                if (!Directory.Exists(targetPathSave))
+                {
+                    Directory.CreateDirectory(targetPathSave);
+                }
                 string[] fileList = Directory.GetFiles(sourcePath);
-                string[] fileOriginList = Directory.GetFiles(saveRefPath);
+                //search in the source path to compare with the saveref
                 foreach (string f in fileList)
                 {
                     filename = Path.GetFileName(f);
+                    //If the file already exist in the saveref but has been modified, copy
                     if (File.Exists(String.Concat(saveRefPath, filename)))
                     {
                         if (File.GetLastWriteTime(String.Concat(saveRefPath, filename)) != File.GetLastWriteTime(String.Concat(sourcePath, filename)))
                         {
-                            CopyAndWrite(ref state, name, sourcePath, filename, targetPath, String.Concat(targetPath, "/", filename));
+                            CopyAndWrite(ref state, name, sourcePath, filename, targetPathSave, String.Concat(targetPathSave, "/", filename));
                         }
                     }
+                    //If the file does not exist in the saveref, copy
+                    else
+                    {
+                        CopyAndWrite(ref state, name, sourcePath, filename, targetPathSave, String.Concat(targetPathSave, "/", filename));
                     }
                 }
+            }
             catch (DirectoryNotFoundException dirNotFound)
             {
                 Console.WriteLine(dirNotFound.Message);
