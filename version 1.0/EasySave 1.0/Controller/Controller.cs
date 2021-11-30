@@ -1,7 +1,7 @@
+using EasySave_1_0.model;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Resources;
-using EasySave_1_0.model;
 
 
 namespace EasySave_1_0.Controller
@@ -107,52 +107,22 @@ namespace EasySave_1_0.Controller
                     case "2": //create a differential backup
                         this.view.Output(this.res_man.GetString("save_differential_chosen", this.culture));
                         createDifferential();
-                        //delete a backup from the list
-                        //    this.view.Output(this.res_man.GetString("choose_save", this.culture));
-                        //    Input_choise = this.view.Input();
-
-                        //    try
-                        //    {
-                        //        int i = 0;
-                        //        while (Input_choise != save_name)
-                        //        {
-                        //            save_name = saves[i].Name;
-                        //            i++;
-                        //        }
-                        //        save_selected = i;
-                        //    }
-                        //    catch
-                        //    {
-
-                        //    }
-
-                        //    this.view.Output(string.Format(this.res_man.GetString("confirm_delete", this.culture), save_name));
-                        //    Input_choise = this.view.Input();
-                        //    if (Input_choise == "y")
-                        //    {
-                        //        Saves.Remove(saves[save_selected]);
-                        //        this.view.Output(string.Format(this.res_man.GetString("delete_end", this.culture), save_name));
-                        //        save_name = "";
-                        //    }
-                        //    else
-                        //    {
-                        //        this.view.Output(this.res_man.GetString("cancel_delete", this.culture));
-                        //    }
-
                         break;
 
                     case "3": //it's will be the full job of save 
-                        this.view.Output("not implemented yet");
+
+                        for (byte i = 0; i < states.Count; i++)
+                        {
+                            ModelLogState current_states = states[i];
+                            this.saves[i].Save(ref current_states);
+                        }
                         break;
 
                     case "4": //list of the backup
-                        foreach (model.ModelTotalSave Asave in saves)
-                        {
-                            int i = 1;
-                            this.view.Output(string.Concat(i, " : ", Asave.Name));
-                            i++;
-                        }
 
+                        int selected_save = int.Parse(this.view.Input());
+                        ModelLogState correct_state = states[selected_save];
+                        Saves[selected_save].Save(ref correct_state);
                         break;
                 }
             }
