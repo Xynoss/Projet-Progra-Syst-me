@@ -29,7 +29,7 @@ namespace EasySave_1_0.model
         {
             try
             {
-                CopyFolder(sourcePath, targetPath, ref state);
+                CopyFolder(sourcePath, String.Concat(targetPath, name), ref state);
             }
             catch (DirectoryNotFoundException dirNotFound)
             {
@@ -69,7 +69,9 @@ namespace EasySave_1_0.model
             string subDir = "";
             if (!pathSame)
             {
-                subDir = sourcePath.Substring(sourcePath.LastIndexOf(Path.GetDirectoryName(this.sourcePath)));
+                string dirSrc = new DirectoryInfo(this.sourcePath).Name;
+                int index = sourcePath.LastIndexOf(dirSrc, StringComparison.InvariantCultureIgnoreCase) + dirSrc.Length + 1;
+                subDir = String.Concat(sourcePath.Substring(index), "/");
             }
             foreach (string f in Directory.EnumerateFiles(sourcePath))
             {
@@ -80,18 +82,18 @@ namespace EasySave_1_0.model
                 {
                     if (File.GetLastWriteTime(String.Concat(sourcePath, filename)) != File.GetLastWriteTime(saveRefToCheck))
                     {
-                        CopyAndWrite(ref modelLogState, name, sourcePath, filename, String.Concat(targetPath, name), String.Concat(targetPath, name, "/", filename));
+                        CopyAndWrite(ref modelLogState, name, sourcePath, filename, targetPath, String.Concat(targetPath, "/", filename));
                     }
                 }
                 //If the file does not exist in the saveref, copy
                 else
                 {
-                    CopyAndWrite(ref modelLogState, name, sourcePath, filename, String.Concat(targetPath, name), String.Concat(targetPath, name, "/", filename));
+                    CopyAndWrite(ref modelLogState, name, sourcePath, filename, targetPath, String.Concat(targetPath, "/", filename));
                 }
             }
             foreach(string d in Directory.EnumerateDirectories(sourcePath))
             {
-                CopyFolder(d, String.Concat(targetPath, Path.GetDirectoryName(d)), ref modelLogState);
+                CopyFolder(d, String.Concat(targetPath, "/", new DirectoryInfo(d).Name), ref modelLogState);
             }
         }
 

@@ -101,9 +101,9 @@ namespace EasySave_1_0.model {
 		public void DirectoryCreated(string dirPath)
         {
 			//if the save directory doesn't exit, create one
-			if (!Directory.Exists(String.Concat(dirPath, name)))
+			if (!Directory.Exists(dirPath))
 			{
-				Directory.CreateDirectory(String.Concat(dirPath, name));
+				Directory.CreateDirectory(dirPath);
 			}
 		}
 

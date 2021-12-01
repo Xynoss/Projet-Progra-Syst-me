@@ -21,7 +21,7 @@ namespace EasySave_1_0.model
 
             try
             {
-                CopyFolder(sourcePath, targetPath, ref state);
+                CopyFolder(sourcePath, String.Concat(targetPath, name), ref state);
             }
             catch (DirectoryNotFoundException dirNotFound)
             {
@@ -57,11 +57,11 @@ namespace EasySave_1_0.model
             foreach (string f in Directory.EnumerateFiles(sourcePath))
             {
                 filename = Path.GetFileName(f);
-                CopyAndWrite(ref modelLogState, name, sourcePath, filename, String.Concat(targetPath, name), String.Concat(targetPath, name, "/", filename));
+                CopyAndWrite(ref modelLogState, name, sourcePath, filename, targetPath, String.Concat(targetPath, "/", filename));
             }
             foreach (string d in Directory.EnumerateDirectories(sourcePath))
             {
-                CopyFolder(d, String.Concat(targetPath, Path.GetDirectoryName(d)), ref modelLogState);
+                CopyFolder(d, String.Concat(targetPath, "/", new DirectoryInfo(d).Name), ref modelLogState);
             }
         }
 
