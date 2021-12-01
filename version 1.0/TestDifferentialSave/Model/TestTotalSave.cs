@@ -18,6 +18,7 @@ namespace TestEasySave.Model
         public void Setup()
         {
             Directory.CreateDirectory(sourcePath);
+            Directory.CreateDirectory(String.Concat(sourcePath, "dirTest"));
             File.WriteAllText(@String.Concat(sourcePath, file), "Je suis un poisson");
             var stream = File.Create(@String.Concat(sourcePath, file));
             stream.Close();
@@ -35,6 +36,7 @@ namespace TestEasySave.Model
 
             Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", file)));
             Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", "test213.txt")));
+            Assert.IsTrue(Directory.Exists(@String.Concat(targetPath, saveName, "/", "dirTest")));
         }
 
         [TearDown]

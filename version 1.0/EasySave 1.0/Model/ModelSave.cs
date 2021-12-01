@@ -53,8 +53,7 @@ namespace EasySave_1_0.model {
 			}
 		}
 
-		//protected atribut
-		protected string[] fileList;
+		//protected attributs
 		protected string targetPathSave;
 
 		/// <summary>
@@ -97,16 +96,15 @@ namespace EasySave_1_0.model {
 			LogState(Controller.Controller.States);
 		}
 
-		public void DirectoryCreated()
+		public abstract void CopyFolder(string sourcePath, string targetPath, ref ModelLogState modelLogState);
+       
+		public void DirectoryCreated(string dirPath)
         {
-			//path to create a save folder
-			targetPathSave = String.Concat(targetPath, name);
 			//if the save directory doesn't exit, create one
-			if (!Directory.Exists(targetPathSave))
+			if (!Directory.Exists(String.Concat(dirPath, name)))
 			{
-				Directory.CreateDirectory(targetPathSave);
+				Directory.CreateDirectory(String.Concat(dirPath, name));
 			}
-			fileList = Directory.GetFiles(sourcePath);
 		}
 
 	}
