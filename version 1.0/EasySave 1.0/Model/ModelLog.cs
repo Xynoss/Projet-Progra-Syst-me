@@ -66,5 +66,9 @@ namespace EasySave_1_0.model
             this.fileTarget = fileTarget;
             this.timestamp = DateTime.Now;
         }
+
+        public ModelLog()
+        {
+        }
     }
 }

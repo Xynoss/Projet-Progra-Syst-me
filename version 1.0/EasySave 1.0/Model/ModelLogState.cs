@@ -80,6 +80,8 @@ namespace EasySave_1_0.model
             //this.Progression = 0;
             this.NbFilesLeft = CnC.NbFiles(fileSource);
         }
+
+        public ModelLogState(): base() { }
     }
 
 }

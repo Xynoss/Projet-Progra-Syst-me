@@ -115,9 +115,9 @@ namespace EasySave_1_0.Controller
                         for (byte i = 0; i < states.Count; i++)
                         {
                             ModelLogState current_states = states[i];
-                            this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), states[i]));
+                            this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), states[i].Name));
                             this.saves[i].Save(ref current_states);
-                            this.view.Output(string.Format(this.res_man.GetString("save_created", this.culture), states[i]));
+                            this.view.Output(string.Format(this.res_man.GetString("save_created", this.culture), states[i].Name));
                         }
                         break;
 
@@ -132,9 +132,9 @@ namespace EasySave_1_0.Controller
                         }
                         int selected_save = int.Parse(this.view.Input());
                         ModelLogState correct_state = states[selected_save];
-                        this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), selected_save));
+                        this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), saves[selected_save].Name));
                         Saves[selected_save].Save(ref correct_state);
-                        this.view.Output(string.Format(this.res_man.GetString("save_created", this.culture), selected_save));
+                        this.view.Output(string.Format(this.res_man.GetString("save_created", this.culture), saves[selected_save].Name));
                         break;
                 }
             }

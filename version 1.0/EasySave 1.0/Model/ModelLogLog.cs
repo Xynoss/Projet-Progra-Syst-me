@@ -58,5 +58,7 @@ namespace EasySave_1_0.model
             this.fileSize = (uint)CnC.FileSize(filename);
             this.timeTransfert = (int)span.TotalMilliseconds;
         }
+
+        ModelLogLog() : base() { }
     }
 }

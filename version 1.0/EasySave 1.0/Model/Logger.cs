@@ -2,7 +2,6 @@
 using System.IO;
 using System.Text.Json;
 using System.Xml.Serialization;
-using System.Xml;
 
 namespace EasySave_1_0.model
 {
@@ -24,18 +23,12 @@ namespace EasySave_1_0.model
                 Directory.CreateDirectory(pathLog);
             }
             string jsonlog = JsonSerializer.Serialize(modelLogLog);
-            string xml_log = "";
-            XmlSerializer serializer = new XmlSerializer(typeof(ModelLogLog));
-            using (var sww = new StringWriter())
-            {
-                using (XmlWriter writer = XmlWriter.Create(sww))
-                {
-                    serializer.Serialize(writer, modelLogLog);
-                    xml_log = sww.ToString(); // Your XML
-                }
-            }
+            XmlSerializer Xserializer = new XmlSerializer(typeof(ModelLogLog));
+            var stream = File.AppendText(string.Concat(pathLog, modelLogLog.Name, @"_log.xml"));
+            Xserializer.Serialize(stream, modelLogLog);
+            stream.Close();
+
             File.AppendAllText(string.Concat(pathLog, modelLogLog.Name, "_log.json"), jsonlog);
-            File.AppendAllText(string.Concat(pathLog, modelLogLog.Name, "_log.xml"), xml_log);
         }
         /// <summary>
         /// Method to write a state file.
@@ -47,6 +40,12 @@ namespace EasySave_1_0.model
             {
                 Directory.CreateDirectory(pathLog);
             }
+
+            XmlSerializer Xserializer = new XmlSerializer(typeof(List<ModelLogState>));
+            var stream = File.CreateText(string.Concat(pathLog, @"\state.xml"));
+            Xserializer.Serialize(stream, modelLogState);
+            stream.Close();
+
             string jsonlog = JsonSerializer.Serialize(modelLogState.ToArray());
             File.WriteAllText(string.Concat(pathLog, "state.json"), jsonlog);
         }
