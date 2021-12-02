@@ -10,7 +10,7 @@ namespace EasySave_1_0.Controller
     public class Controller
     {
 
-        string save_name = "";
+        private string save_name = "";
 
         private ResourceManager res_man;
         private CultureInfo culture;
@@ -52,7 +52,7 @@ namespace EasySave_1_0.Controller
         /// <param name="saves">list of saves</param>
         /// <param name="view">call of the view used for the IHM</param>
         /// <param name="saveType">Select the save type</param>
-        public Controller(List<EasySave_1_0.model.ModelSave> saves, EasySave_1_0.View.View view, bool saveType)
+        public Controller(List<EasySave_1_0.model.ModelSave> saves, EasySave_1_0.View.View view)
         {
             this.view = view;
             this.saves = saves;
