@@ -47,6 +47,7 @@ namespace TestEasySave
             ModelSave save = new ModelDifferentialSave(saveName, sourcePath, targetPath, @String.Concat(targetPath, saveCompleteName, "/"));
             ModelLogState logState = new ModelLogState(saveName, sourcePath, targetPath);
             save.Save(ref logState);
+            Directory.CreateDirectory(@String.Concat(sourcePath, "DirTest"));
             var stream = File.Create(@String.Concat(sourcePath, "test2.txt"));
             stream.Close();
             save.Save(ref logState);
@@ -55,6 +56,7 @@ namespace TestEasySave
             Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", "test2.txt")));
             Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", fileAdd)));
             Assert.IsFalse(File.Exists(@String.Concat(targetPath, saveName, "/", fileNoneModif)));
+            Assert.IsTrue(Directory.Exists(@String.Concat(targetPath, saveName, "/", "DirTest")));
         }
 
         [TearDown]

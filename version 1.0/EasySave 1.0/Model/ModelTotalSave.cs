@@ -21,14 +21,7 @@ namespace EasySave_1_0.model
 
             try
             {
-                DirectoryCreated();
-                //search in the source path to compare with the saveref
-                foreach (string f in fileList)
-                {
-                    filename = Path.GetFileName(f);
-                    //Copy the file form the source to the target
-                    CopyAndWrite(ref state, name, sourcePath, filename, targetPathSave, f);
-                }
+                CopyFolder(sourcePath, String.Concat(targetPath, name), ref state);
             }
             catch (DirectoryNotFoundException dirNotFound)
             {
@@ -56,6 +49,20 @@ namespace EasySave_1_0.model
         public override void LogLog(string name, TimeSpan span, string filename, string targetPath, string sourcePath)
         {
             Logger.GetInstance().WriteLog(new ModelLogLog(name, filename, sourcePath, targetPath, span));
+        }
+
+        public override void CopyFolder(string sourcePath, string targetPath, ref ModelLogState modelLogState)
+        {
+            DirectoryCreated(targetPath);
+            foreach (string f in Directory.EnumerateFiles(sourcePath))
+            {
+                filename = Path.GetFileName(f);
+                CopyAndWrite(ref modelLogState, name, sourcePath, filename, targetPath, String.Concat(targetPath, "/", filename));
+            }
+            foreach (string d in Directory.EnumerateDirectories(sourcePath))
+            {
+                CopyFolder(d, String.Concat(targetPath, "/", new DirectoryInfo(d).Name), ref modelLogState);
+            }
         }
 
     }

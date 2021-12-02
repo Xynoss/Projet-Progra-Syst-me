@@ -29,25 +29,7 @@ namespace EasySave_1_0.model
         {
             try
             {
-                DirectoryCreated();
-                //search in the source path to compare with the saveref
-                foreach (string f in fileList)
-                {
-                    filename = Path.GetFileName(f);
-                    //If the file already exist in the saveref but has been modified, copy
-                    if (File.Exists(String.Concat(saveRefPath, filename)))
-                    {
-                        if (File.GetLastWriteTime(String.Concat(saveRefPath, filename)) != File.GetLastWriteTime(String.Concat(sourcePath, filename)))
-                        {
-                            CopyAndWrite(ref state, name, sourcePath, filename, targetPathSave, String.Concat(targetPathSave, "/", filename));
-                        }
-                    }
-                    //If the file does not exist in the saveref, copy
-                    else
-                    {
-                        CopyAndWrite(ref state, name, sourcePath, filename, targetPathSave, String.Concat(targetPathSave, "/", filename));
-                    }
-                }
+                CopyFolder(sourcePath, String.Concat(targetPath, name), ref state);
             }
             catch (DirectoryNotFoundException dirNotFound)
             {
@@ -75,6 +57,44 @@ namespace EasySave_1_0.model
         public override void LogState(List<model.ModelLogState> state)
         {
             Logger.GetInstance().WriteState(state);
+        }
+
+        public override void CopyFolder(string sourcePath, string targetPath, ref ModelLogState modelLogState)
+        {
+            DirectoryCreated(targetPath);
+            bool pathSame = String.Equals(
+                        Path.GetFullPath(sourcePath).TrimEnd('\\'),
+                        Path.GetFullPath(this.sourcePath).TrimEnd('\\'),
+                        StringComparison.InvariantCultureIgnoreCase);
+            string subDir = "";
+            if (!pathSame)
+            {
+                string dirSrc = new DirectoryInfo(this.sourcePath).Name;
+                int index = sourcePath.LastIndexOf(dirSrc, StringComparison.InvariantCultureIgnoreCase) + dirSrc.Length + 1;
+                subDir = String.Concat(sourcePath.Substring(index), "/");
+            }
+            foreach (string f in Directory.EnumerateFiles(sourcePath))
+            {
+                filename = Path.GetFileName(f);
+                string saveRefToCheck = String.Concat(saveRefPath, subDir, filename);
+                //If the file already exist in the saveref but has been modified, copy
+                if (File.Exists(saveRefToCheck))
+                {
+                    if (File.GetLastWriteTime(String.Concat(sourcePath, filename)) != File.GetLastWriteTime(saveRefToCheck))
+                    {
+                        CopyAndWrite(ref modelLogState, name, sourcePath, filename, targetPath, String.Concat(targetPath, "/", filename));
+                    }
+                }
+                //If the file does not exist in the saveref, copy
+                else
+                {
+                    CopyAndWrite(ref modelLogState, name, sourcePath, filename, targetPath, String.Concat(targetPath, "/", filename));
+                }
+            }
+            foreach(string d in Directory.EnumerateDirectories(sourcePath))
+            {
+                CopyFolder(d, String.Concat(targetPath, "/", new DirectoryInfo(d).Name), ref modelLogState);
+            }
         }
 
     }
