@@ -53,9 +53,6 @@ namespace EasySave_1_0.model {
 			}
 		}
 
-		//protected attributs
-		protected string targetPathSave;
-
 		/// <summary>
 		/// Constructor for the save object.
 		/// </summary>
