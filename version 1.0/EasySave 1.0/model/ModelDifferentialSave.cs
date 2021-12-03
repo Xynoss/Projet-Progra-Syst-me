@@ -80,7 +80,7 @@ namespace EasySave_1_0.model
                 //If the file already exist in the saveref but has been modified, copy
                 if (File.Exists(saveRefToCheck))
                 {
-                    if (File.GetLastWriteTime(String.Concat(sourcePath, filename)) != File.GetLastWriteTime(saveRefToCheck))
+                    if (File.GetLastWriteTime(f) != File.GetLastWriteTime(saveRefToCheck))
                     {
                         CopyAndWrite(ref modelLogState, name, sourcePath, filename, targetPath, String.Concat(targetPath, "/", filename));
                     }
@@ -95,7 +95,14 @@ namespace EasySave_1_0.model
             {
                 string foldername = Path.GetFileName(d);
                 string saveRefToCheck = String.Concat(saveRefPath, subDir, foldername);
-                if (!Directory.Exists(saveRefToCheck))
+                if (Directory.Exists(saveRefToCheck))
+                {
+                    if (Directory.GetLastWriteTime(d) >= File.GetLastWriteTime(saveRefToCheck))
+                    {
+                        CopyFolder(d, String.Concat(targetPath, "/", new DirectoryInfo(d).Name), ref modelLogState);
+                    }
+                }
+                else
                 {
                     CopyFolder(d, String.Concat(targetPath, "/", new DirectoryInfo(d).Name), ref modelLogState);
                 }
