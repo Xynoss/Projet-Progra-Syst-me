@@ -91,12 +91,17 @@ namespace EasySave_1_0.model
                     CopyAndWrite(ref modelLogState, name, sourcePath, filename, targetPath, String.Concat(targetPath, "/", filename));
                 }
             }
-            foreach(string d in Directory.EnumerateDirectories(sourcePath))
+            foreach (string d in Directory.EnumerateDirectories(sourcePath))
             {
-                CopyFolder(d, String.Concat(targetPath, "/", new DirectoryInfo(d).Name), ref modelLogState);
+                string foldername = Path.GetFileName(d);
+                string saveRefToCheck = String.Concat(saveRefPath, subDir, foldername);
+                if (!Directory.Exists(saveRefToCheck))
+                {
+                    CopyFolder(d, String.Concat(targetPath, "/", new DirectoryInfo(d).Name), ref modelLogState);
+                }
             }
+
         }
 
     }
-
 }
