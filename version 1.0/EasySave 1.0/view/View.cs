@@ -17,10 +17,11 @@ namespace EasySave_1_0.View
             Console.WriteLine(input);
         }
 
-        public View()
+        public void Clearing()
         {
-            Console.WriteLine("initialisation... \n");
+            Console.Clear();
         }
+        public View() { }
     }
 
 }

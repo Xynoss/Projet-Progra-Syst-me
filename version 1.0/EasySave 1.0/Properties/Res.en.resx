@@ -177,6 +177,9 @@
   <data name="notsave_found" xml:space="preserve">
     <value>Backup {0} does not exist. Check your choice.</value>
   </data>
+  <data name="pls_enter_new_name" xml:space="preserve">
+    <value>please enter a new reference name </value>
+  </data>
   <data name="run_all_save" xml:space="preserve">
     <value>You have chosen to run all backups.</value>
   </data>

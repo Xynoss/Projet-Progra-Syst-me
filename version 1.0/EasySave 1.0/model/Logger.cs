@@ -7,7 +7,7 @@ namespace EasySave_1_0.model
 {
     public class Logger
     {
-        static string pathLog = @"..\..\..\..\..\Log\";
+        static string pathLog = @"..\..\..\Log\";
         static Logger _instance;
         private Logger()
         {
@@ -21,14 +21,17 @@ namespace EasySave_1_0.model
             if (!Directory.Exists(pathLog))
             {
                 Directory.CreateDirectory(pathLog);
+                Directory.CreateDirectory(pathLog + @"\Log_XML\");
+                Directory.CreateDirectory(pathLog + @"\Log_Json\");
             }
-            string jsonlog = JsonSerializer.Serialize(modelLogLog);
+
             XmlSerializer Xserializer = new XmlSerializer(typeof(ModelLogLog));
-            var stream = File.AppendText(string.Concat(pathLog, modelLogLog.Name, @"_log.xml"));
+            var stream = File.AppendText(string.Concat(pathLog, @"\Log_XML\", modelLogLog.Name, @"_log.xml"));
             Xserializer.Serialize(stream, modelLogLog);
             stream.Close();
 
-            File.AppendAllText(string.Concat(pathLog, modelLogLog.Name, "_log.json"), jsonlog);
+            string jsonlog = JsonSerializer.Serialize(modelLogLog);
+            File.AppendAllText(string.Concat(pathLog, @"\Log_Json\" , modelLogLog.Name, "_log.json"), jsonlog);
         }
         /// <summary>
         /// Method to write a state file.
@@ -39,15 +42,17 @@ namespace EasySave_1_0.model
             if (!Directory.Exists(pathLog))
             {
                 Directory.CreateDirectory(pathLog);
+                Directory.CreateDirectory(pathLog + @"\Log_XML\");
+                Directory.CreateDirectory(pathLog + @"\Log_Json\");
             }
 
             XmlSerializer Xserializer = new XmlSerializer(typeof(List<ModelLogState>));
-            var stream = File.CreateText(string.Concat(pathLog, @"\state.xml"));
+            var stream = File.CreateText(string.Concat(pathLog, @"\Log_XML\", "state.xml"));
             Xserializer.Serialize(stream, modelLogState);
             stream.Close();
 
             string jsonlog = JsonSerializer.Serialize(modelLogState.ToArray());
-            File.WriteAllText(string.Concat(pathLog, "state.json"), jsonlog);
+            File.WriteAllText(string.Concat(pathLog, @"\Log_Json\", "state.json"), jsonlog);
         }
         /// <summary>
         /// Method to return a existed instance or create a new one. (SINGLETON)
@@ -61,6 +66,8 @@ namespace EasySave_1_0.model
             }
             return _instance;
         }
+
+
     }
 
 }

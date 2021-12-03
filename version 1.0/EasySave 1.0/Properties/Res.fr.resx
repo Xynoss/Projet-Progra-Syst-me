@@ -177,6 +177,9 @@
   <data name="notsave_found" xml:space="preserve">
     <value>La sauvegarde {0} n'existe pas. Vérifiez votre choix.</value>
   </data>
+  <data name="pls_enter_new_name" xml:space="preserve">
+    <value>entrez de nouveau un nom de sauvegarde de référence</value>
+  </data>
   <data name="run_all_save" xml:space="preserve">
     <value>Vous avez choisi de lancer toutes les sauvegardes.</value>
   </data>
