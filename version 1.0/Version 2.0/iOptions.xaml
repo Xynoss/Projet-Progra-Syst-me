@@ -5,21 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Version_2._0"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
-    <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="301,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="28"/>
-        <TextBox HorizontalAlignment="Left" Margin="301,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="29"/>
-        <TextBox HorizontalAlignment="Left" Margin="301,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="30"/>
-        <TextBox HorizontalAlignment="Left" Margin="301,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="30"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="577,174,0,0" VerticalAlignment="Top" Width="53" Height="29"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="577,234,0,0" VerticalAlignment="Top" Width="53" Height="30"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="577,115,0,0" VerticalAlignment="Top" Width="53" Height="30"/>
-        <Button Content="Précédent" HorizontalAlignment="Left" Margin="208,377,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="Button_Click"/>
-        <Button Content="Sauvegarder" HorizontalAlignment="Left" Margin="534,377,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="Button_Click"/>
-        <Label Content="Chemin par defaut des sauvegardes" HorizontalAlignment="Left" Margin="73,116,0,0" VerticalAlignment="Top"/>
-        <Label Content="Clé utilisée pour la cryptographie" HorizontalAlignment="Left" Margin="73,177,0,0" VerticalAlignment="Top"/>
-        <Label Content="Chemin par logs" HorizontalAlignment="Left" Margin="73,234,0,0" VerticalAlignment="Top"/>
-        <Label Content="Lien vers la documentation" HorizontalAlignment="Left" Margin="73,298,0,0" VerticalAlignment="Top"/>
+        Title="Window1" Height="499" Width="690">
+    <Grid Margin="0,0,10,-6">
+        <TextBox HorizontalAlignment="Left" Margin="275,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" Height="28"/>
+        <TextBox HorizontalAlignment="Left" Margin="275,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="29"/>
+        <TextBox HorizontalAlignment="Left" Margin="275,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="30"/>
+        <TextBox HorizontalAlignment="Left" Margin="275,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="30"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="545,140,0,0" VerticalAlignment="Top" Width="52" Height="29"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="545,200,0,0" VerticalAlignment="Top" Width="52" Height="30"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="545,81,0,0" VerticalAlignment="Top" Width="52" Height="30"/>
+        <Button Content="Précédent" HorizontalAlignment="Left" Margin="197,346,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="Button_Click"/>
+        <Button Content="Sauvegarder" HorizontalAlignment="Left" Margin="523,346,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="Button_Click"/>
+        <Label Content="Chemin par defaut des sauvegardes" HorizontalAlignment="Left" Margin="62,85,0,0" VerticalAlignment="Top"/>
+        <Label Content="Clé utilisée pour la cryptographie" HorizontalAlignment="Left" Margin="62,146,0,0" VerticalAlignment="Top"/>
+        <Label Content="Chemin par logs" HorizontalAlignment="Left" Margin="62,203,0,0" VerticalAlignment="Top"/>
+        <Label Content="Lien vers la documentation" HorizontalAlignment="Left" Margin="62,267,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
