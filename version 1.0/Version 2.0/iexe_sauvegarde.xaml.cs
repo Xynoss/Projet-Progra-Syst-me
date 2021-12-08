@@ -22,9 +22,12 @@ namespace Version_2._0
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new MainWindow { Owner = this };
+            window.Show();
+            window.Close();
         }
     }
 }

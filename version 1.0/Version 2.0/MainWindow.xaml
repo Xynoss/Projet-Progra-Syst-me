@@ -23,7 +23,7 @@
         <Image HorizontalAlignment="Left" Height="34" Margin="726,388,0,0" VerticalAlignment="Top" Width="52" Source="/france.svg.webp" d:IsLocked="True"/>
         <Image HorizontalAlignment="Left" Height="42" Margin="655,388,0,0" VerticalAlignment="Top" Width="67" Source="/english.png" d:IsLocked="True"/>
         <ListBox Margin="400,39,64,81" d:IsLocked="True"/>
-        <Button Content="Option" HorizontalAlignment="Left" Margin="726,10,0,0" VerticalAlignment="Top" Height="24" Width="64" d:IsLocked="True"/>
+        <Button Content="Option" HorizontalAlignment="Left" Margin="726,10,0,0" VerticalAlignment="Top" Height="24" Width="64" />
 
     </Grid>
 </Window>

@@ -15,11 +15,18 @@ namespace Version_2._0
     /// <summary>
     /// Logique d'interaction pour Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class iOptions : Window
     {
-        public Window1()
+        public iOptions()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new MainWindow { Owner = this };
+            window.Show();
+            window.Close();
         }
     }
 }

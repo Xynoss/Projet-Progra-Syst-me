@@ -8,6 +8,6 @@
         Title="isaves_executed" Height="257" Width="530">
     <Grid Margin="0,0,0,-6">
         <Label Content="Toutes les sauvegardes ont été exécutées." HorizontalAlignment="Center" Margin="0,71,0,0" VerticalAlignment="Top"/>
-        <Button Content="Précédent" HorizontalAlignment="Center" Margin="0,124,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="Button_Click"/>
+        <Button Content="OK" HorizontalAlignment="Center" Margin="0,124,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="Button_Click"/>
     </Grid>
 </Window>
