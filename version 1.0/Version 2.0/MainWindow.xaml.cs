@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EasySave_1_0.Controller;
 using EasySave_1_0.model;
+using System.Resources;
 
 namespace Version_2._0
 {
@@ -34,15 +37,26 @@ namespace Version_2._0
             }
         }
 
+        
+
+        
+
         public MainWindow()
         {
             InitializeComponent();
+            
             LbxBackup.ItemsSource= Saves;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void French_flag_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            culture = CultureInfo.CreateSpecificCulture("en");
+            res_man = new ResourceManager("EasySave_1_0.Properties.Res", typeof(Controller).Assembly);
+        }
+
+        /*private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-        }
+        }*/
     }
 }
