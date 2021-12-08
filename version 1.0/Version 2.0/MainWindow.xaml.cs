@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using EasySave_1_0.Controller;
 using EasySave_1_0.model;
 using System.Resources;
+using Version_2._0.model;
 
 namespace Version_2._0
 {
@@ -43,6 +44,8 @@ namespace Version_2._0
 
         public MainWindow()
         {
+            ModelViewMainWindow modelView = new ModelViewMainWindow();
+            DataContext = modelView;
             InitializeComponent();
             
             LbxBackup.ItemsSource= Saves;
@@ -50,8 +53,7 @@ namespace Version_2._0
 
         private void French_flag_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            culture = CultureInfo.CreateSpecificCulture("en");
-            res_man = new ResourceManager("EasySave_1_0.Properties.Res", typeof(Controller).Assembly);
+            
         }
 
         /*private void Button_Click(object sender, RoutedEventArgs e)

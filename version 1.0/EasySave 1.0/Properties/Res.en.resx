@@ -138,6 +138,10 @@
   <data name="choose_save_ref" xml:space="preserve">
     <value>Enter the name of the reference backup:</value>
   </data>
+  <data name="create_save_btn" xml:space="preserve">
+    <value>create a backup</value>
+    <comment>bouton GUI</comment>
+  </data>
   <data name="differentiel_save" xml:space="preserve">
     <value>Differential backup: backup only different files.</value>
   </data>
@@ -185,6 +189,10 @@
   </data>
   <data name="run_onesave" xml:space="preserve">
     <value>You have chosen to launch a backup.</value>
+  </data>
+  <data name="run_save_btn" xml:space="preserve">
+    <value>run the save</value>
+    <comment>bouton GUI</comment>
   </data>
   <data name="save_complete_chosen" xml:space="preserve">
     <value>You have chosen to create a complete backup.</value>

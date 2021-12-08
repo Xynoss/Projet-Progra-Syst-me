@@ -24,9 +24,9 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Button Content="{Binding name_btn_createBackup}" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Top" Margin="0,0,0,0" Height="50" Width="150"/>
-        <Button Content="{Binding name_btn_runBackup}" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Center" Margin="0,90,0,0" Height="50" Width="150"/>
-        <Button Content="{Binding name_btn_runAllBackup}" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Center" Margin="0,-90,0,0" Height="50" Width="150"/>
+        <Button Content="{Binding Name_btn_createBackup}" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Top" Margin="0,0,0,0" Height="50" Width="150"/>
+        <Button Content="{Binding Name_btn_runBackup}" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Center" Margin="0,90,0,0" Height="50" Width="150"/>
+        <Button Content="{Binding Name_btn_runAllBackup}" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Center" Margin="0,-90,0,0" Height="50" Width="150"/>
         <Button Content="{Binding name_btn_Leave}" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Bottom" Margin="0,0,0,0" Height="50" Width="150"/>
         <Image x:Name="French_flag" Margin="320,10,8,10" Width="67" Height="42" Source="/france.svg.png" Grid.Column="1" Grid.Row="2" Stretch="Fill" MouseDown="French_flag_MouseDown"/>
         <Image x:Name="English_flag" Margin="150,10,0,10" Width="67" Height="42" Source="/english.svg.png" Grid.Column="1" Grid.Row="2" Stretch="Fill"/>
@@ -38,6 +38,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Content="Option" HorizontalAlignment="Left" Margin="15,20,0,0" VerticalAlignment="Top" Height="24" Width="64" Grid.Column="2" Grid.Row="0" Click="Button_Click"/>
+        <Button Content="Option" HorizontalAlignment="Left" Margin="15,20,0,0" VerticalAlignment="Top" Height="24" Width="64" Grid.Column="2" Grid.Row="0"/>
     </Grid>
 </Window>

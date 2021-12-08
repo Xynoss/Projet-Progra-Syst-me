@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Resources;
+using EasySave_1_0.Controller;
 
 namespace Version_2._0.model
 {
@@ -11,11 +12,12 @@ namespace Version_2._0.model
         public ModelRessources()
         {
             culture = CultureInfo.CreateSpecificCulture("en");
-            res_man = new RessourcesManager("EasySave_1_0.Properties.Res", typeof(ModelRessources).Assembly);
+            res_man = new ResourceManager("EasySave_1_0.Properties.Res", typeof(Controller).Assembly);
         }
 
-        public string GetRessources()
+        public string GetRessources(string s)
         {
-            return "ressources...";        }
+            return res_man.GetString(s, culture);
+        }
     }
 }

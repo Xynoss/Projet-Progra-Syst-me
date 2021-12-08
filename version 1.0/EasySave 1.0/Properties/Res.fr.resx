@@ -138,6 +138,10 @@
   <data name="choose_save_ref" xml:space="preserve">
     <value>Entrez le nom de la sauvegarde de référence :</value>
   </data>
+  <data name="create_save_btn" xml:space="preserve">
+    <value>créer une sauvegarde</value>
+    <comment>bouton GUI</comment>
+  </data>
   <data name="differentiel_save" xml:space="preserve">
     <value>Sauvegarde différentielle : sauvegarder uniquement les fichiers différents.</value>
   </data>
@@ -185,6 +189,10 @@
   </data>
   <data name="run_onesave" xml:space="preserve">
     <value>Vous avez choisi de lancer une sauvegarde</value>
+  </data>
+  <data name="run_save_btn" xml:space="preserve">
+    <value>executer la sauvegarde</value>
+    <comment>bouton GUI</comment>
   </data>
   <data name="save_complete_chosen" xml:space="preserve">
     <value>Vous avez choisi de créer une sauvegarde complète </value>
