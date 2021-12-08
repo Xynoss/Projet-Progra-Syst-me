@@ -15,7 +15,7 @@
         <Button Content="..." HorizontalAlignment="Left" Margin="577,234,0,0" VerticalAlignment="Top" Width="53" Height="30"/>
         <Button Content="..." HorizontalAlignment="Left" Margin="577,294,0,0" VerticalAlignment="Top" Width="53" Height="30"/>
         <RadioButton Content="Sauveagrde complète" HorizontalAlignment="Left" Margin="156,70,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="Sauvegarde differentielle" HorizontalAlignment="Left" Margin="350,70,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Sauvegarde differentielle" HorizontalAlignment="Center" Margin="0,70,0,0" VerticalAlignment="Top"/>
         <Button Content="Précédent" HorizontalAlignment="Left" Margin="89,376,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="Button_Click"/>
         <Button Content="Sauvegarder" HorizontalAlignment="Left" Margin="628,376,0,0" VerticalAlignment="Top" Width="99" Height="30" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>

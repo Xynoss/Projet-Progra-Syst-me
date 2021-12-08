@@ -13,11 +13,11 @@ using System.Windows.Shapes;
 namespace Version_2._0
 {
     /// <summary>
-    /// Logique d'interaction pour Window2.xaml
+    /// Logique d'interaction pour Window1.xaml
     /// </summary>
-    public partial class Window2 : Window
+    public partial class Window1 : Window
     {
-        public Window2()
+        public Window1()
         {
             InitializeComponent();
         }
