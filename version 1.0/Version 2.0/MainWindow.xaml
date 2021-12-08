@@ -9,21 +9,35 @@
         Height="450" 
         Width="800" 
         WindowStartupLocation="CenterScreen"
-        Icon="/disquette.png" ResizeMode="NoResize">
+        Icon="/disquette.png" 
+        ResizeMode="NoResize">
 
 
-    <Grid d:IsLocked="True">
+    <Grid >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="button1" Grid.Column="0" Margin="58,94,480,288" d:IsLocked="True"/>
-        <Button Content="button2" Grid.Column="0" Margin="58,151,480,231" d:IsLocked="True"/>
-        <Button Content="button3" Grid.Column="0" Margin="58,208,480,174" d:IsLocked="True"/>
-        <Button Content="button4" Grid.Column="0" Margin="58,265,480,117" d:IsLocked="True"/>
-        <Image HorizontalAlignment="Left" Height="34" Margin="726,388,0,0" VerticalAlignment="Top" Width="52" Source="/france.svg.webp" d:IsLocked="True"/>
-        <Image HorizontalAlignment="Left" Height="42" Margin="655,388,0,0" VerticalAlignment="Top" Width="67" Source="/english.png" d:IsLocked="True"/>
-        <ListBox Margin="400,39,64,81" d:IsLocked="True"/>
-        <Button Content="Option" HorizontalAlignment="Left" Margin="726,10,0,0" VerticalAlignment="Top" Height="24" Width="64" d:IsLocked="True"/>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Button Content="button1" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Top" Margin="0,0,0,0" Height="50" Width="150"/>
+        <Button Content="button2" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Center" Margin="0,90,0,0" Height="50" Width="150"/>
+        <Button Content="button3" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Center" Margin="0,-90,0,0" Height="50" Width="150"/>
+        <Button Content="button4" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Bottom" Margin="0,0,0,0" Height="50" Width="150"/>
+        <Image x:Name="French_flag" Margin="320,10,8,10" Width="67" Height="42" Source="/france.svg.png" Grid.Column="1" Grid.Row="2" Stretch="Fill"/>
+        <Image x:Name="English_flag" Margin="150,10,0,10" Width="67" Height="42" Source="/english.svg.png" Grid.Column="1" Grid.Row="2" Stretch="Fill"/>
+        <ListBox Grid.Column="1" Grid.Row="1"
+                 x:Name="LbxBackup">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Backup_Name}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="Option" HorizontalAlignment="Left" Margin="15,20,0,0" VerticalAlignment="Top" Height="24" Width="64" Grid.Column="2" Grid.Row="0" Click="Button_Click"/>
     </Grid>
 </Window>

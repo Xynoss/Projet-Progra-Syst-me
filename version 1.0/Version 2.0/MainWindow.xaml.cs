@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EasySave_1_0.model;
 
 namespace Version_2._0
 {
@@ -20,10 +21,28 @@ namespace Version_2._0
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<EasySave_1_0.model.ModelSave> saves;
+        public List<EasySave_1_0.model.ModelSave> Saves
+        {
+            get
+            {
+                return saves;
+            }
+            set
+            {
+                saves = value;
+            }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
-            
+            LbxBackup.ItemsSource= Saves;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
