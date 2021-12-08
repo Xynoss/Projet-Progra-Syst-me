@@ -23,6 +23,7 @@ namespace Version_2._0
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }
