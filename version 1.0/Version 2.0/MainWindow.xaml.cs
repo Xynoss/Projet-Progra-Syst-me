@@ -17,6 +17,7 @@ using EasySave_1_0.Controller;
 using EasySave_1_0.model;
 using System.Resources;
 using Version_2._0.model;
+using Version_2._0.ViewModel;
 
 namespace Version_2._0
 {

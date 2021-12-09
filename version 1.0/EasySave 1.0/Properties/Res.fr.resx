@@ -190,6 +190,10 @@
   <data name="run_onesave" xml:space="preserve">
     <value>Vous avez choisi de lancer une sauvegarde</value>
   </data>
+  <data name="run_save_all_btn" xml:space="preserve">
+    <value>executer toutes les sauvegardes</value>
+    <comment>bouton GUI</comment>
+  </data>
   <data name="run_save_btn" xml:space="preserve">
     <value>executer la sauvegarde</value>
     <comment>bouton GUI</comment>

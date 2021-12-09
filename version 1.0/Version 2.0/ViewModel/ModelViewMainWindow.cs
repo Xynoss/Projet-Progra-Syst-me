@@ -10,6 +10,8 @@ namespace Version_2._0.ViewModel
         private ICommand command;
         private string name_btn_createBackup;
         private string name_btn_runBackup;
+        private string name_btn_runAllBackup;
+        private string name_btn_Leave;
         private List<ModelBackup> backup = new List<ModelBackup>();
         private ModelRessources ressources = new ModelRessources();
 
@@ -33,14 +35,33 @@ namespace Version_2._0.ViewModel
             }
         }
 
+        public string Name_btn_runAllBackup
+        {
+            get { return name_btn_runAllBackup; }
+            set
+            {
+                name_btn_runAllBackup = value;
+                OnPropertyChanged("Name_btn_runAllBackup");
+            }
+        }
+
+        public string Name_btn_Leave
+        {
+            get { return name_btn_Leave; }
+            set
+            {
+                name_btn_Leave = value;
+                OnPropertyChanged("Name_btn_Leave");
+            }
+        }
+
         public ICommand GetResCommand
         {
             get
             {
                 if (command == null)
                 {
-                    command = new RelayCommand(param => DoCommand(),
-                        param => CanDoCommand);
+                    command = new RelayCommand(param => DoCommand(), param => CanDoCommand);
                 }
                 return command;
             }
@@ -53,15 +74,15 @@ namespace Version_2._0.ViewModel
         {
             name_btn_createBackup = this.ressources.GetRessources("create_save_btn");
             name_btn_runBackup = this.ressources.GetRessources("run_save_btn");
+            name_btn_runAllBackup = this.ressources.GetRessources("run_save_all_btn");
         }
-
 
         private bool CanDoCommand
         {
             get { return ressources != null; }
         }
 
-        public ModelBackup Backup { get => backup; set => backup = value; }
+        public List<ModelBackup> Backup { get => backup; set => backup = value; }
 
         #region INotifyPropertyChanged Members 
         public event PropertyChangedEventHandler PropertyChanged;

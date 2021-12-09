@@ -190,8 +190,12 @@
   <data name="run_onesave" xml:space="preserve">
     <value>You have chosen to launch a backup.</value>
   </data>
+  <data name="run_save_all_btn" xml:space="preserve">
+    <value>run all the backup</value>
+    <comment>bouton GUI</comment>
+  </data>
   <data name="run_save_btn" xml:space="preserve">
-    <value>run the save</value>
+    <value>run the backup</value>
     <comment>bouton GUI</comment>
   </data>
   <data name="save_complete_chosen" xml:space="preserve">
