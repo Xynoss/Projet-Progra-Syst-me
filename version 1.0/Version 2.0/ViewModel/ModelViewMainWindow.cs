@@ -1,13 +1,16 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Input;
+using Version_2._0.model;
 
-namespace Version_2._0.model
+namespace Version_2._0.ViewModel
 {
     public class ModelViewMainWindow : INotifyPropertyChanged
     {
         private ICommand command;
         private string name_btn_createBackup;
         private string name_btn_runBackup;
+        private List<ModelBackup> backup = new List<ModelBackup>();
         private ModelRessources ressources = new ModelRessources();
 
         public string Name_btn_createBackup
@@ -27,7 +30,6 @@ namespace Version_2._0.model
             {
                 name_btn_runBackup = value;
                 OnPropertyChanged("Name_btn_runBackup");
-
             }
         }
 
@@ -58,6 +60,8 @@ namespace Version_2._0.model
         {
             get { return ressources != null; }
         }
+
+        public ModelBackup Backup { get => backup; set => backup = value; }
 
         #region INotifyPropertyChanged Members 
         public event PropertyChangedEventHandler PropertyChanged;

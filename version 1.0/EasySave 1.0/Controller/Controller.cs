@@ -21,8 +21,8 @@ namespace EasySave_1_0.Controller
             set { states = value; }
         }
 
-        private List<EasySave_1_0.model.ModelSave> saves;
-        public List<EasySave_1_0.model.ModelSave> Saves
+        public List<ModelSave> saves;
+        public List<ModelSave> Saves
         {
             get
             {
@@ -33,6 +33,7 @@ namespace EasySave_1_0.Controller
                 saves = value;
             }
         }
+        
         private EasySave_1_0.View.View view;
         public EasySave_1_0.View.View View
         {
@@ -68,7 +69,7 @@ namespace EasySave_1_0.Controller
         {
             string Input_choise = "";
             //int save_selected = 0;
-            
+
             this.view.Output(this.res_man.GetString("language_choose", this.culture));
             this.view.Output(this.res_man.GetString("language_en", this.culture));
             this.view.Output(this.res_man.GetString("language_fr", this.culture));
@@ -80,7 +81,7 @@ namespace EasySave_1_0.Controller
                     culture = CultureInfo.CreateSpecificCulture("en");
                     this.view.Clearing();
                     this.view.Output(this.res_man.GetString("check_language", this.culture));
-                    
+
                     break;
                 case "2"://choose the french language 
                     culture = CultureInfo.CreateSpecificCulture("fr");
