@@ -23,11 +23,11 @@ namespace Version_2._0
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Back_Click(object sender, RoutedEventArgs e)
         {
             var window = new MainWindow { Owner = this };
             window.Show();
-            window.Close();
+            this.Close();
         }
     }
 }

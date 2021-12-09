@@ -27,7 +27,7 @@
         </Grid.RowDefinitions>
         <Button Content="{Binding Name_btn_createBackup}" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Top" Margin="0,0,0,0" Height="50" Width="150" BorderBrush="{x:Null}"/>
         <Button Content="{Binding Name_btn_runAllBackup}" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Center" Margin="0,90,0,0" Height="50" Width="150" BorderBrush="{x:Null}"/>
-        <Button Content="{Binding Name_btn_runBackup}" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Center" Margin="0,-90,0,0" Height="50" Width="150" BorderBrush="{x:Null}"/>
+        <Button Content="{Binding Name_btn_runBackup}" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Center" Margin="0,-90,0,0" Height="50" Width="150" BorderBrush="{x:Null}" Click="Button_Exe_Save_Click"/>
         <Button Content="{Binding Name_btn_Leave}" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Bottom" Margin="0,0,0,0" Height="50" Width="150" BorderBrush="{x:Null}"/>
         <Image x:Name="French_flag" Margin="320,10,8,10" Width="67" Height="42" Source="/france.svg.png" Grid.Column="1" Grid.Row="2" Stretch="Fill" MouseDown="French_flag_MouseDown"/>
         <Image x:Name="English_flag" Margin="150,10,0,10" Width="67" Height="42" Source="/english.svg.png" Grid.Column="1" Grid.Row="2" Stretch="Fill"/>

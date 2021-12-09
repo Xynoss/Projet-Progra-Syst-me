@@ -39,17 +39,13 @@ namespace Version_2._0
             }
         }
 
-        
-
-        
 
         public MainWindow()
         {
             ModelViewMainWindow modelView = new ModelViewMainWindow();
             DataContext = modelView;
             InitializeComponent();
-            
-            LbxBackup.ItemsSource= Saves;
+            LbxBackup.ItemsSource = Saves;
         }
 
         private void French_flag_MouseDown(object sender, MouseButtonEventArgs e)
@@ -57,6 +53,12 @@ namespace Version_2._0
             
         }
 
+        private void Button_Exe_Save_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new iexe_sauvegarde { Owner = this };
+            window.Show();
+            this.Close();
+        }
         /*private void Button_Click(object sender, RoutedEventArgs e)
         {
 
