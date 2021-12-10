@@ -5,7 +5,7 @@ using Version_2._0.model;
 
 namespace Version_2._0.ViewModel
 {
-    public class ModelViewMainWindow : INotifyPropertyChanged
+    public class ModelViewMainWindow : ViewModelBase //INotifyPropertyChanged
     {
         private ICommand command;
         private string name_btn_createBackup;
@@ -14,6 +14,8 @@ namespace Version_2._0.ViewModel
         private string name_btn_Leave;
         private List<ModelBackup> backup = new List<ModelBackup>();
         private ModelRessources ressources = new ModelRessources();
+
+        public ViewModelBase CurrentViewModel { get; }
 
         public string Name_btn_createBackup
         {
