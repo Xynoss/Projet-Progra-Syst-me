@@ -20,9 +20,7 @@ namespace TestEasySave.Model
         {
             Directory.CreateDirectory(sourcePath);
             Directory.CreateDirectory(String.Concat(sourcePath, "dirTest"));
-            File.WriteAllText(@String.Concat(sourcePath, file), "Je suis un poisson");
-            var stream = File.Create(@String.Concat(sourcePath, file));
-            stream.Close();
+            File.WriteAllText(@String.Concat(sourcePath, file), "Hello");
             var stream2 = File.Create(@String.Concat(sourcePath, file2));
             stream2.Close();
 
@@ -41,6 +39,16 @@ namespace TestEasySave.Model
             Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", file2)));
             Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", "test213.txt")));
             Assert.IsTrue(Directory.Exists(@String.Concat(targetPath, saveName, "/", "dirTest")));
+        }
+
+        [Test]
+        public void TestCrypt1()
+        {
+            ModelSave save = new ModelTotalSave(saveName, sourcePath, targetPath);
+            ModelLogState logState = new ModelLogState(saveName, sourcePath, targetPath);
+            save.Save(ref logState);
+            Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", file)));
+            Assert.AreEqual(File.ReadAllText(@String.Concat(targetPath, saveName, "/", file)), "{\u0010�#n\u000e\0\bTs7�]\u0001+");
         }
 
         [TearDown]
