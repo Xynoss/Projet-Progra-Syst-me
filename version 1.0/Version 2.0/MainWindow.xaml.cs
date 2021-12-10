@@ -45,7 +45,7 @@ namespace Version_2._0
             ModelViewMainWindow modelView = new ModelViewMainWindow();
             DataContext = modelView;
             InitializeComponent();
-            LbxBackup.ItemsSource = Saves;
+            //LbxBackup.ItemsSource = Saves;
         }
 
         private void French_flag_MouseDown(object sender, MouseButtonEventArgs e)

@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Version_2._0"
+        xmlns:viewmodels="clr-namespace:Version_2._0.ViewModel"
+        xmlns:view="clr-namespace:Version_2._0.view"
         mc:Ignorable="d"
         Title="EasySave" 
         Height="450" 
@@ -12,34 +14,11 @@
         Icon="/disquette.png" 
         ResizeMode="NoResize"
         Background="#FF292929">
-
-
-    <ContentControl Content="{Binding CurrentViewModel}"
-    <Grid >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="9*"/>
-            <ColumnDefinition Width="2*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="1*"/>
-        </Grid.RowDefinitions>
-        <Button Content="{Binding Name_btn_createBackup}" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Top" Margin="0,0,0,0" Height="50" Width="150" BorderBrush="{x:Null}"/>
-        <Button Content="{Binding Name_btn_runAllBackup}" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Center" Margin="0,90,0,0" Height="50" Width="150" BorderBrush="{x:Null}"/>
-        <Button Content="{Binding Name_btn_runBackup}" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Center" Margin="0,-90,0,0" Height="50" Width="150" BorderBrush="{x:Null}" Click="Button_Exe_Save_Click"/>
-        <Button Content="{Binding Name_btn_Leave}" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="center" VerticalAlignment="Bottom" Margin="0,0,0,0" Height="50" Width="150" BorderBrush="{x:Null}"/>
-        <Image x:Name="French_flag" Margin="320,10,8,10" Width="67" Height="42" Source="/france.svg.png" Grid.Column="1" Grid.Row="2" Stretch="Fill" MouseDown="French_flag_MouseDown"/>
-        <Image x:Name="English_flag" Margin="150,10,0,10" Width="67" Height="42" Source="/english.svg.png" Grid.Column="1" Grid.Row="2" Stretch="Fill"/>
-        <ListBox Grid.Column="1" Grid.Row="1"
-                 x:Name="LbxBackup">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Label Content="{Binding Backup_Name}"/>
+        <ContentControl Content="{Binding CurrentViewModel}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+                    <view:HomeView/>
                 </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <Button Content="Option" HorizontalAlignment="Left" Margin="15,20,0,0" VerticalAlignment="Top" Height="24" Width="64" Grid.Column="2" Grid.Row="0"/>
-    </Grid>
+            </ContentControl.Resources>
+        </ContentControl>
 </Window>

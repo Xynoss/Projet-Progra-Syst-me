@@ -1,19 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Input;
-using Version_2._0.model;
+using Version_20.model;
 
-namespace Version_2._0.ViewModel
+namespace Version_20.ViewModel
 {
-    public class ModelViewMainWindow : ViewModelBase //INotifyPropertyChanged
+    public class ModelViewMainWindow : ViewModelBase
     {
-        public ViewModelBase CurrentViewModel { get; }
-
-        public ModelViewMainWindow()
-        {
-            CurrentViewModel = new HomeViewModel();
-        }
-        /*
         private ICommand command;
         private string name_btn_createBackup;
         private string name_btn_runBackup;
@@ -81,7 +74,7 @@ namespace Version_2._0.ViewModel
 
         public ModelViewMainWindow()
         {
-            
+            CurrentViewModel = new HomePageViewModel();
             name_btn_createBackup = this.ressources.GetRessources("create_save_btn");
             name_btn_runBackup = this.ressources.GetRessources("run_save_btn");
             name_btn_runAllBackup = this.ressources.GetRessources("run_save_all_btn");
@@ -107,6 +100,5 @@ namespace Version_2._0.ViewModel
             }
         }
         #endregion
-        */
     }
 }
