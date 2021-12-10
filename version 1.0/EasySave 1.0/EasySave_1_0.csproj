@@ -7,6 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="CryptoSoft\CryptoSoft.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="CryptoSoft\CryptoSoft.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Res.fr.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
