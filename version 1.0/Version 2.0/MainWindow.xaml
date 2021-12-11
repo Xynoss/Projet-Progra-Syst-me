@@ -15,10 +15,13 @@
         ResizeMode="NoResize"
         Background="#FF292929">
         <ContentControl Content="{Binding CurrentViewModel}">
-            <ContentControl.Resources>
-                <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
-                    <view:HomeView/>
-                </DataTemplate>
-            </ContentControl.Resources>
+        <ContentControl.Resources>
+            <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ExeSaveViewModel}">
+                <view:ExeSaveView/>
+            </DataTemplate>
+        </ContentControl.Resources>
         </ContentControl>
 </Window>

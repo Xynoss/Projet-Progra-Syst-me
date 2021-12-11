@@ -17,7 +17,7 @@ using EasySave_1_0.Controller;
 using EasySave_1_0.model;
 using System.Resources;
 using Version_2._0.model;
-using Version_2._0.ViewModel;
+using Version_2._0.view;
 
 namespace Version_2._0
 {
@@ -26,42 +26,6 @@ namespace Version_2._0
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<EasySave_1_0.model.ModelSave> saves;
-        public List<EasySave_1_0.model.ModelSave> Saves
-        {
-            get
-            {
-                return saves;
-            }
-            set
-            {
-                saves = value;
-            }
-        }
-
-
-        public MainWindow()
-        {
-            ModelViewMainWindow modelView = new ModelViewMainWindow();
-            DataContext = modelView;
-            InitializeComponent();
-            //LbxBackup.ItemsSource = Saves;
-        }
-
-        private void French_flag_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            
-        }
-
-        private void Button_Exe_Save_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new iexe_sauvegarde { Owner = this };
-            window.Show();
-            this.Close();
-        }
-        /*private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }*/
+        
     }
 }

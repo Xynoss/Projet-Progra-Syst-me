@@ -10,14 +10,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Version_2._0
+namespace Version_2._0.view
 {
     /// <summary>
     /// Logique d'interaction pour iexe_sauvegarde.xaml
     /// </summary>
-    public partial class iexe_sauvegarde : Window
+    public partial class ExeSaveView : Window
     {
-        public iexe_sauvegarde()
+        public ExeSaveView()
         {
             InitializeComponent();
         }
