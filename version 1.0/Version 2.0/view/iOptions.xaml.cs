@@ -10,23 +10,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Version_2._0
+namespace Version_2._0.view
 {
     /// <summary>
     /// Logique d'interaction pour Window1.xaml
     /// </summary>
-    public partial class iOptions : Window
+    public partial class iOptions : UserControl
     {
         public iOptions()
         {
-            InitializeComponent();
+           InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var window = new MainWindow { Owner = this };
-            window.Show();
-            window.Close();
+           
         }
     }
 }

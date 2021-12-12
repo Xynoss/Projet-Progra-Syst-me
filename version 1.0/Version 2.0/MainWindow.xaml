@@ -14,14 +14,38 @@
         Icon="/disquette.png" 
         ResizeMode="NoResize"
         Background="#FF292929">
-        <ContentControl Content="{Binding CurrentViewModel}">
-        <ContentControl.Resources>
-            <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
-                <view:HomeView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewmodels:ExeSaveViewModel}">
-                <view:ExeSaveView/>
-            </DataTemplate>
-        </ContentControl.Resources>
-        </ContentControl>
+    <Window.Resources>
+        <Style x:Key="NavigationContentStyle" TargetType="ContentControl">
+            <Setter Property="ContentTemplate" Value="{StaticResource HomeViewTemplate}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}"
+                             Value="create">
+                    <Setter Property="ContentTemplate" Value="{StaticResource CreateSaveViewTemplate}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}" 
+                             Value="execute">
+                    <Setter Property="ContentTemplate" Value="{StaticResource ExecuteSaveViewTemplate}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}" 
+                             Value="execute">
+                    <Setter Property="ContentTemplate" Value="{StaticResource OptionViewTemplate}"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="NavigationMenuListBox" 
+                 Style="{StaticResource NavigationListBoxStyle}"
+                 ItemContainerStyle="{DynamicResource NavigationListBoxItemStyle}"
+                 ItemTemplate="{DynamicResource NavigationDataTemplate}"
+                 ItemsSource="{StaticResource NavigationMenuItems}"/>
+
+        <ContentControl Grid.Column="1" Style="{StaticResource NavigationContentStyle}"/>
+    </Grid>
 </Window>

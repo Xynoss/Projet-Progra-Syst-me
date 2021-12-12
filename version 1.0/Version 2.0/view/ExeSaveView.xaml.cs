@@ -15,7 +15,7 @@ namespace Version_2._0.view
     /// <summary>
     /// Logique d'interaction pour iexe_sauvegarde.xaml
     /// </summary>
-    public partial class ExeSaveView : Window
+    public partial class ExeSaveView : UserControl
     {
         public ExeSaveView()
         {
@@ -23,11 +23,11 @@ namespace Version_2._0.view
         }
 
 
-        private void Button_Back_Click(object sender, RoutedEventArgs e)
+        /*private void Button_Back_Click(object sender, RoutedEventArgs e)
         {
             var window = new MainWindow { Owner = this };
             window.Show();
             this.Close();
-        }
+        }*/
     }
 }

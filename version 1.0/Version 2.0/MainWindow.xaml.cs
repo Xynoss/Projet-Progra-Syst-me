@@ -26,6 +26,9 @@ namespace Version_2._0
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
     }
 }

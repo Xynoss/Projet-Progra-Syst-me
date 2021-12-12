@@ -10,7 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Version_2._0
+namespace Version_2._0.view
 {
     /// <summary>
     /// Logique d'interaction pour isave_executed.xaml
