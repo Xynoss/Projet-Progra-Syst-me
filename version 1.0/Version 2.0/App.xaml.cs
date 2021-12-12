@@ -13,6 +13,17 @@ namespace Version_2._0
     /// </summary>
     public partial class App : Application
     {
-        
+        public List<EasySave_1_0.model.ModelSave> saves;
+        public List<EasySave_1_0.model.ModelSave> Saves
+        {
+            get
+            {
+                return saves;
+            }
+            set
+            {
+                saves = value;
+            }
+        }
     }
 }

@@ -104,6 +104,8 @@ namespace EasySave_1_0.model {
 			}
 		}
 
+		public abstract ModelLogState ToState();
+
 	}
 
 }
