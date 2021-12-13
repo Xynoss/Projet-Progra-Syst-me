@@ -8,14 +8,14 @@
         Title="Sauvegarde différentielle" Height="510" Width="587">
     <Grid HorizontalAlignment="Left" Width="581">
         <TextBox HorizontalAlignment="Left" Margin="106,147,0,0" Text="Nom de la sauvegarde..." TextWrapping="Wrap" VerticalAlignment="Top" Width="322" Height="28"/>
-        <TextBox HorizontalAlignment="Left" Margin="106,206,0,0" Text="Chemin de la sauvegarde de reference..." TextWrapping="Wrap" VerticalAlignment="Top" Width="322" Height="29"/>
-        <TextBox HorizontalAlignment="Left" Margin="106,266,0,0" Text="Chemin du dossier à sauvegarder..." TextWrapping="Wrap" VerticalAlignment="Top" Width="322" Height="30"/>
-        <TextBox HorizontalAlignment="Left" Margin="106,326,0,0" Text="Chemin du dossier dans lequel sauvegarder..." TextWrapping="Wrap" VerticalAlignment="Top" Width="322" Height="30"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="475,206,0,0" VerticalAlignment="Top" Width="53" Height="29"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="475,266,0,0" VerticalAlignment="Top" Width="53" Height="30"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="475,326,0,0" VerticalAlignment="Top" Width="53" Height="30"/>
-        <RadioButton Content="Sauveagrde complète" HorizontalAlignment="Left" Margin="109,108,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="Sauvegarde differentielle" HorizontalAlignment="Left" Margin="277,108,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtEditor" HorizontalAlignment="Left" Margin="106,206,0,0" Text="Chemin de la sauvegarde de reference..." TextWrapping="Wrap" VerticalAlignment="Top" Width="322" Height="29"/>
+        <TextBox x:Name="txtEditor1" HorizontalAlignment="Left" Margin="106,266,0,0" Text="Chemin du dossier à sauvegarder..." TextWrapping="Wrap" VerticalAlignment="Top" Width="322" Height="30"/>
+        <TextBox x:Name="txtEditor2" HorizontalAlignment="Left" Margin="106,326,0,0" Text="Chemin du dossier dans lequel sauvegarder..." TextWrapping="Wrap" VerticalAlignment="Top" Width="322" Height="30"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="475,206,0,0" VerticalAlignment="Top" Width="53" Height="29" Click="Button_Click_1"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="475,266,0,0" VerticalAlignment="Top" Width="53" Height="30" Click="Button_Click_2"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="475,326,0,0" VerticalAlignment="Top" Width="53" Height="30" Click="Button_Click_3"/>
+        <RadioButton Content="Sauveagrde complète" HorizontalAlignment="Left" Margin="109,108,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+        <RadioButton Content="Sauvegarde differentielle" HorizontalAlignment="Left" Margin="277,108,0,0" VerticalAlignment="Top" IsChecked="True"/>
         <Button Content="Précédent" HorizontalAlignment="Left" Margin="58,394,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="Button_Click"/>
         <Button Content="Sauvegarder" HorizontalAlignment="Left" Margin="432,394,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="Button_Click"/>
 

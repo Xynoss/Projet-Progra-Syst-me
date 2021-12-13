@@ -12,18 +12,18 @@
         Icon="/disquette.png" ResizeMode="NoResize">
 
 
-    <Grid d:IsLocked="True">
+    <Grid d:IsLocked="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Content="Creer une Sauvegarde" Grid.Column="0" Margin="58,94,480,288" d:IsLocked="True"/>
-        <Button Content="Executer une sauvegarde" Grid.Column="0" Margin="58,151,480,231" d:IsLocked="True"/>
-        <Button Content="Executer toutes les sauvegardes" Grid.Column="0" Margin="58,208,480,174" d:IsLocked="True"/>
+        <Button Content="Creer une Sauvegarde" Grid.Column="0" Margin="58,94,480,288" Click="Button_Click" />
+        <Button Content="Executer une sauvegarde" Grid.Column="0" Margin="58,151,480,231" />
+        <Button Content="Executer toutes les sauvegardes" Grid.Column="0" Margin="58,208,480,174" />
         <Button Content="Quitter" Grid.Column="0" Margin="58,265,480,117" d:IsLocked="True"/>
-        <Image HorizontalAlignment="Left" Height="34" Margin="726,388,0,0" VerticalAlignment="Top" Width="52" Source="/france.svg.webp" d:IsLocked="True"/>
-        <Image HorizontalAlignment="Left" Height="42" Margin="655,388,0,0" VerticalAlignment="Top" Width="67" Source="/english.png" d:IsLocked="True"/>
+        <Image HorizontalAlignment="Left" Height="34" Margin="726,388,0,0" VerticalAlignment="Top" Width="52" Source="/france.svg.webp" />
+        <Image HorizontalAlignment="Left" Height="42" Margin="655,388,0,0" VerticalAlignment="Top" Width="67" Source="/english.png" />
         <ListBox Margin="400,39,64,81" d:IsLocked="True"/>
-        <Button Content="Option" HorizontalAlignment="Left" Margin="726,10,0,0" VerticalAlignment="Top" Height="24" Width="64" />
+        <Button Content="Option" HorizontalAlignment="Left" Margin="726,10,0,0" VerticalAlignment="Top" Height="24" Width="64" Click="Button_Click_1" />
 
     </Grid>
 </Window>

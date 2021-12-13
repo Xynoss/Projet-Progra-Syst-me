@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -9,6 +10,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Win32;
+
 
 namespace Version_2._0
 {
@@ -24,9 +27,37 @@ namespace Version_2._0
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            var win = new iSave_diff { Owner = this };
+            win.Close();
             var window = new MainWindow { Owner = this };
             window.Show();
-            window.Close();
+            
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                txtEditor.Text = System.IO.Path.GetDirectoryName(openFileDialog.FileName);
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                txtEditor1.Text = System.IO.Path.GetDirectoryName(openFileDialog.FileName);
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                txtEditor2.Text = System.IO.Path.GetDirectoryName(openFileDialog.FileName);
         }
     }
 }

@@ -28,5 +28,13 @@ namespace Version_2._0
             window.Show();
             window.Close();
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            var window = new iSave_comp { Owner = this };
+            window.Close();
+            var window2 = new iSave_diff { Owner = this };
+            window2.Show();
+        }
     }
 }

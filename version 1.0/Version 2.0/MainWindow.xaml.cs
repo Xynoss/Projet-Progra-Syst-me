@@ -25,5 +25,17 @@ namespace Version_2._0
             InitializeComponent();
             
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new iSave_comp { Owner = this };
+            window.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var window = new iOptions { Owner = this };
+            window.Show();
+        }
     }
 }
