@@ -10,11 +10,11 @@ namespace Version_2._0.view
     /// <summary>
     /// Logique d'interaction pour Window2.xaml
     /// </summary>
-    public partial class iSave_comp : UserControl
+    public partial class CreateBackupView : UserControl
     {
         CreateBackupModelView Backuper;
         
-        public iSave_comp()
+        public CreateBackupView()
         {
             InitializeComponent();
             Backuper = new CreateBackupModelView();

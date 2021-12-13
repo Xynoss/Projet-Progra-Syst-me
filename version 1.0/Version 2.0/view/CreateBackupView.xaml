@@ -1,10 +1,11 @@
-﻿<UserControl x:Class="Version_2._0.view.iSave_comp"
+﻿<UserControl x:Class="Version_2._0.view.CreateBackupView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Version_2._0"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:lang="clr-namespace:Version_2._0.Properties"
         mc:Ignorable="d"
         Height="350" Width="650">
     <Grid x:Name="grid_compl">
@@ -21,26 +22,26 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="nom de la save" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" Foreground="#FFBDBDBD"/>
+        <TextBlock Text="{x:Static lang:Resources.Save_name}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" Foreground="#FFBDBDBD"/>
         <TextBox x:Name="Txtbox_save_name" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"  Width="322" Height="29"/>
 
-        <TextBlock Text="nom de la save de référence" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" Foreground="#FFBDBDBD"/>
+        <TextBlock Text="{x:Static lang:Resources.Save_saveref}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" Foreground="#FFBDBDBD"/>
         <TextBox x:Name="tb_refSave" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"  Width="322" Height="29" />
-        
-        <TextBlock x:Name="Txtbox_DosSource" Text="dossier source" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" Foreground="#FFBDBDBD" Visibility="Visible"/>
-        <TextBlock x:Name="Txtbox_Savesource" Text="sauvegarde source" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" Foreground="#FFBDBDBD" Visibility="Hidden"/>
+
+        <TextBlock x:Name="Txtbox_DosSource" Text="{x:Static lang:Resources.Save_source}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" Foreground="#FFBDBDBD" Visibility="Visible"/>
+        <TextBlock x:Name="Txtbox_Savesource" Text="{x:Static lang:Resources.Save_source}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" Foreground="#FFBDBDBD" Visibility="Hidden"/>
         <Button Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Btn_SearchSource">
             <iconPacks:PackIconMaterialDesign  Margin="12" Grid.Column="2" Kind="Folder" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         </Button>
         <TextBox x:Name="tb_source" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Chemin du dossier à sauvegarder..." TextWrapping="Wrap"  Width="322" Height="30"/>
 
-        <TextBlock Text="dossier target" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" Foreground="#FFBDBDBD"/>
+        <TextBlock Text="{x:Static lang:Resources.Save_target}" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" Foreground="#FFBDBDBD"/>
         <Button Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Btn_SearchTarget" >
             <iconPacks:PackIconMaterialDesign  Margin="12" Grid.Column="2" Kind="Folder" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         </Button>
         <TextBox x:Name="Txtbox_target" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Chemin du dossier dans lequel sauvegarde..." TextWrapping="Wrap"  Width="322" Height="30"/>
-        <RadioButton x:Name="save_comp" Grid.Column="1" Grid.Row="0" Content="Sauveagrde complète" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFBDBDBD" IsChecked="true" Checked="display_DosSource"/>
-        <RadioButton x:Name="save_diff" Grid.Column="1" Grid.Row="0" Content="Sauvegarde differentielle" HorizontalAlignment="right" VerticalAlignment="Center" Foreground="#FFBDBDBD" Checked="display_SaveSource"/>
-        <Button Grid.Column="1" Grid.Row="5" Content="Sauvegarder" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50" Click="Btn_Save"/>
+        <RadioButton x:Name="save_comp" Grid.Column="1" Grid.Row="0" Content="{x:Static lang:Resources.Radio_complete}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFBDBDBD" IsChecked="true" Checked="display_DosSource"/>
+        <RadioButton x:Name="save_diff" Grid.Column="1" Grid.Row="0" Content="{x:Static lang:Resources.Radio_differential}" HorizontalAlignment="right" VerticalAlignment="Center" Foreground="#FFBDBDBD" Checked="display_SaveSource"/>
+        <Button Grid.Column="1" Grid.Row="5" Content="{x:Static lang:Resources.btn_save}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50" Click="Btn_Save"/>
     </Grid>
 </UserControl>

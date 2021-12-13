@@ -15,9 +15,10 @@ namespace Version_2._0.ViewModel
             ListFoundSave = viemmodelhome_save.saves.FindAll(x => x.Name == name);
             if (ListFoundSave.Count <= 0)
             {
-                ModelSave Save = new ModelTotalSave(name, sourcePath, targetPath);
+                ModelSave Save = new ModelTotalSave(name, sourcePath, String.Concat(targetPath, "\\"));
                 viemmodelhome_save.Saves.Add(Save);
                 ModelLogState toState = Save.ToState();
+                viemmodelhome_save.States.Add(toState);
                 Save.Save(ref toState);
             }
 
@@ -32,9 +33,10 @@ namespace Version_2._0.ViewModel
                 sourcePath = ListFoundSave[0].SourcePath;
             }
 
-            ModelSave Save = new ModelDifferentialSave(name, sourcePath, targetPath, String.Concat(ListFoundSave[0].TargetPath, refSave, "/"));
+            ModelSave Save = new ModelDifferentialSave(name, sourcePath, targetPath, String.Concat(ListFoundSave[0].TargetPath,"/" ,refSave, "/"));
             viemmodelhome_save.Saves.Add(Save);
             ModelLogState toState = Save.ToState();
+            viemmodelhome_save.States.Add(toState);
             Save.Save(ref toState);
 
         }

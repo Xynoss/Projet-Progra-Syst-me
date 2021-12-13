@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace Version_2._0.ViewModel
@@ -25,6 +24,19 @@ namespace Version_2._0.ViewModel
             }
         }
 
+        private List<EasySave_1_0.model.ModelLogState> states;
+        public List<EasySave_1_0.model.ModelLogState> States
+        {
+            get
+            {
+                return states;
+            }
+            set
+            {
+                states = value;
+            }
+        }
+
         private void OnPropertyChanged(string propertyName)
         {
             var propertyChangedEventArgs =
@@ -35,8 +47,10 @@ namespace Version_2._0.ViewModel
             }
         }
 
-        private HomeViewModel() {
+        private HomeViewModel()
+        {
             saves = new List<EasySave_1_0.model.ModelSave>();
+            states = new List<EasySave_1_0.model.ModelLogState> { };
         }
 
         public static HomeViewModel getInstance()

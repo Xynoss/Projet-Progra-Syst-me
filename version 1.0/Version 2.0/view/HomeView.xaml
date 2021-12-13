@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Version_2._0.view"
+      xmlns:lang="clr-namespace:Version_2._0.Properties"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
 
@@ -19,15 +20,15 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-            <Image x:Name="French_flag" Margin="320,10,8,10" Width="67" Height="42" Source="/france.svg.png" Grid.Column="1" Grid.Row="2" Stretch="Fill"/>
-            <Image x:Name="English_flag" Margin="150,10,0,10" Width="67" Height="42" Source="/english.svg.png" Grid.Column="1" Grid.Row="2" Stretch="Fill"/>
+            <Image x:Name="French_flag" Margin="545,12,10,10" Width="67" Height="42" Source="/france.svg.png" Grid.Column="1" Grid.Row="2" Stretch="Fill" />
+            <Image x:Name="English_flag" Margin="473,12,82,10" Width="67" Height="42" Source="/english.svg.png" Grid.Column="1" Grid.Row="2" Stretch="Fill"/>
             <DataGrid Name="dgSaves" AutoGenerateColumns="False" Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Saves}">
                 <DataGrid.Columns>
-                <DataGridCheckBoxColumn />
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Source" Binding="{Binding SourcePath}" />
-                <DataGridTextColumn Header="Target" Binding="{Binding TargetPath}" />
-                <DataGridTextColumn Header="reference" Binding="{Binding SaveRefPath}" />
+                <DataGridCheckBoxColumn x:Name="check_list" CanUserResize="False"/>
+                <DataGridTextColumn Header="{x:Static lang:Resources.Save_name}" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="{x:Static lang:Resources.Save_source}" Binding="{Binding SourcePath}" />
+                <DataGridTextColumn Header="{x:Static lang:Resources.Save_target}" Binding="{Binding TargetPath}" />
+                <DataGridTextColumn Header="{x:Static lang:Resources.Save_saveref}" Binding="{Binding SaveRefPath}" />
             </DataGrid.Columns>
                 <DataGrid.RowDetailsTemplate>
                     <DataTemplate>
@@ -36,5 +37,6 @@
                 </DataGrid.RowDetailsTemplate>
             </DataGrid>
         <Button Content="Option" HorizontalAlignment="Left" Margin="15,20,0,0" VerticalAlignment="Top" Height="24" Width="64" Grid.Column="2" Grid.Row="0"/>
-        </Grid>
+        <Button Content="{x:Static lang:Resources.btn_execute}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Margin="20,0,0,0" Click="btn_execute"/>
+    </Grid>
 </UserControl>

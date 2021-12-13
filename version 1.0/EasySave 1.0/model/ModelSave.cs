@@ -53,6 +53,14 @@ namespace EasySave_1_0.model {
 			}
 		}
 
+        public string Details
+        {
+			get 
+			{
+				return String.Format("back up {0} from {1} to {2} folder", Name, SourcePath, targetPath);
+			}
+        }
+
 		/// <summary>
 		/// Constructor for the save object.
 		/// </summary>

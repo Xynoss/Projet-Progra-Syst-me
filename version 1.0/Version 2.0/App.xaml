@@ -110,7 +110,7 @@
             <view:HomeView/>
         </DataTemplate>
         <DataTemplate x:Key="CreateSaveViewTemplate">
-            <view:iSave_comp/>
+            <view:CreateBackupView/>
         </DataTemplate>
         <DataTemplate x:Key="ExecuteSaveViewTemplate">
             <view:ExeSaveView/>
