@@ -109,6 +109,10 @@ namespace EasySave_1_0.model
             }
 
         }
+        public override ModelLogState ToState()
+        {
+            return new ModelLogState(name, sourcePath, targetPath);
+        }
 
     }
 }

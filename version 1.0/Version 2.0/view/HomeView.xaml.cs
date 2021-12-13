@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Version_2._0.ViewModel;
 
 namespace Version_2._0.view
 {
@@ -20,7 +21,10 @@ namespace Version_2._0.view
     {
         public HomeView()
         {
+            HomeViewModel ViewModel = HomeViewModel.getInstance();
+            DataContext = ViewModel;
             InitializeComponent();
+            
         }
     }
 }
