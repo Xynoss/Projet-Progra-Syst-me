@@ -42,7 +42,7 @@
         <TextBox x:Name="Txtbox_target" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Chemin du dossier dans lequel sauvegarde..." TextWrapping="Wrap"  Width="322" Height="30"/>
         <RadioButton x:Name="save_comp" Grid.Column="1" Grid.Row="0" Content="{x:Static lang:Resources.Radio_complete}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFBDBDBD" IsChecked="true" Checked="display_DosSource"/>
         <RadioButton x:Name="save_diff" Grid.Column="1" Grid.Row="0" Content="{x:Static lang:Resources.Radio_differential}" HorizontalAlignment="right" VerticalAlignment="Center" Foreground="#FFBDBDBD" Checked="display_SaveSource"/>
-        <Button Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Btn_Save" Background="{x:Null}" Foreground="Orange" BorderBrush="{x:Null}">
+        <Button Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Btn_Save" Background="{DynamicResource PrimaryDarkBrush}" Foreground="{DynamicResource PrimaryLightBrush}" BorderBrush="{x:Null}">
             <iconPacks:PackIconMaterialDesign Grid.Column="2" Kind="Save" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="25" Height="25"/>
         </Button>
     </Grid>
