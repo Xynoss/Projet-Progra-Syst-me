@@ -49,7 +49,12 @@ namespace EasySave_1_0.model
         {
             Logger.GetInstance().WriteLog(new ModelLogLog(name, filename, sourcePath, targetPath, span));
         }
-
+        /// <summary>
+        /// Method for saving files or directories
+        /// </summary>
+        /// <param name="sourcePath">source path of the element to save</param>
+        /// <param name="targetPath">target path of the element where we have to save it</param>
+        /// <param name="modelLogState">an object Log State to refer to</param>
         public override void CopyFolder(string sourcePath, string targetPath, ref ModelLogState modelLogState)
         {
             DirectoryCreated(targetPath);

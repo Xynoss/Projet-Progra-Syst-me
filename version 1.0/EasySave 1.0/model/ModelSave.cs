@@ -1,57 +1,67 @@
 using System;
-using System.IO;
-using System.Diagnostics;
-using System.Reflection;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 
-namespace EasySave_1_0.model {
-	/// <summary>
-	/// Abstract class for the save process.
-	/// </summary>
-	public abstract class ModelSave {
-		protected string name;
-		public string Name {
-			get {
-				return name;
-			}
-			set {
-				name = value;
-			}
-		}
-		
-		protected string sourcePath;
-		public string SourcePath {
-			get {
-				return sourcePath;
-			}
-			set {
-				sourcePath = value;
-			}
-		}
-		
-		protected string targetPath;
-		public string TargetPath {
-			get {
-				return targetPath;
-			}
-			set {
-				targetPath = value;
-			}
-		}
+namespace EasySave_1_0.model
+{
+    /// <summary>
+    /// Abstract class for the save process.
+    /// </summary>
+    public abstract class ModelSave
+    {
+        protected string name;
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+
+        protected string sourcePath;
+        public string SourcePath
+        {
+            get
+            {
+                return sourcePath;
+            }
+            set
+            {
+                sourcePath = value;
+            }
+        }
+
+        protected string targetPath;
+        public string TargetPath
+        {
+            get
+            {
+                return targetPath;
+            }
+            set
+            {
+                targetPath = value;
+            }
+        }
 
 
-		protected string filename;
-		public string Filename
-		{
-			get
-			{
-				return filename;
-			}
-			set
-			{
-				filename = value;
-			}
-		}
+        protected string filename;
+        public string Filename
+        {
+            get
+            {
+                return filename;
+            }
+            set
+            {
+                filename = value;
+            }
+        }
 
         public string Details
         {
@@ -92,19 +102,37 @@ namespace EasySave_1_0.model {
 		public abstract void LogLog(string name, TimeSpan span, string filename, string targetPath, string sourcePath);
 		public void CopyAndWrite(ref model.ModelLogState state, string Name, string sourcePath, string filename, string targetPath, string f)
         {
-			DateTime start = DateTime.Now;
-			state.State = "ACTIVE";
-			File.Copy(Path.Combine(sourcePath, filename), Path.Combine(targetPath, filename), true);
-			state.NbFilesLeft--;
-			state.Prog();
-			TimeSpan span = DateTime.Now - start;
-			LogLog(Name, span, f, targetPath, sourcePath);
-			LogState(Controller.Controller.States);
-		}
+            DateTime start = DateTime.Now;
+            state.State = "ACTIVE";
+            string ext = Path.GetExtension($"{sourcePath}\\{filename}");
+            if (ext == ".txt")
+            {
+                Process process = new Process();
+                string d = Directory.GetCurrentDirectory();
+                process.StartInfo.FileName = "CryptoSoft/CryptoSoft.exe";
+                string file = Path.GetFullPath(String.Concat(sourcePath, filename));
+                string target = Path.GetFullPath(targetPath);
+                process.StartInfo.Arguments = $"/e \"{file}\" \"{target}\\{Path.GetFileName(filename)}\" 1234567891234567";
+                process.Start();
+                process.WaitForExit();
+                File.SetLastWriteTime($"{target}\\{Path.GetFileName(file)}", File.GetLastWriteTime(file));
+            }
+            else
+            {
+                File.Copy(Path.Combine(sourcePath, filename), Path.Combine(targetPath, filename), true);
+            }
+            state.NbFilesLeft--;
+            TimeSpan span = DateTime.Now - start;
+            LogLog(Name, span, f, targetPath, sourcePath);
+            LogState(Controller.Controller.States);
+        }
 
-		public abstract void CopyFolder(string sourcePath, string targetPath, ref ModelLogState modelLogState);
-       
-		public void DirectoryCreated(string dirPath)
+        public abstract void CopyFolder(string sourcePath, string targetPath, ref ModelLogState modelLogState);
+        /// <summary>
+        /// Method to create directory when it does not exist
+        /// </summary>
+        /// <param name="dirPath">path of the directory</param>
+        public void DirectoryCreated(string dirPath)
         {
 			//if the save directory doesn't exit, create one
 			if (!Directory.Exists(dirPath))

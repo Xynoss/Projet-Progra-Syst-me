@@ -13,6 +13,7 @@ namespace TestEasySave
         const string targetPath = "../../../TestPathTarget/";
         const string fileNoneModif = "testNoModif.txt";
         const string file = "test.txt";
+        const string file2 = "test.pdf";
         const string fileAdd = "Bonsoir.txt";
         const string saveName = "savetest";
         const string saveCompleteName = "savereftest";
@@ -23,6 +24,8 @@ namespace TestEasySave
             File.WriteAllText(@String.Concat(sourcePath, fileNoneModif), "Je suis un poisson");
             var stream = File.Create(@String.Concat(sourcePath, file));
             stream.Close();
+            var stream2 = File.Create(@String.Concat(sourcePath, file2));
+            stream2.Close();
             ModelSave saveComplete = new ModelTotalSave(saveCompleteName, sourcePath, targetPath);
             ModelLogState stateComplete = new ModelLogState(saveCompleteName, sourcePath, targetPath, "savetype");
             List<ModelLogState> fullListStates = Controller.States;
@@ -42,6 +45,7 @@ namespace TestEasySave
 
             Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", file)));
             Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", fileAdd)));
+            Assert.IsFalse(File.Exists(@String.Concat(targetPath, saveName, "/", file2)));
             Assert.IsFalse(File.Exists(@String.Concat(targetPath, saveName, "/", fileNoneModif)));
         }
 
@@ -58,6 +62,7 @@ namespace TestEasySave
             save.Save(ref logState,ref fullListStates);
 
             Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", file)));
+            Assert.IsFalse(File.Exists(@String.Concat(targetPath, saveName, "/", file2)));
             Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", "test2.txt")));
             Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", fileAdd)));
             Assert.IsFalse(File.Exists(@String.Concat(targetPath, saveName, "/", fileNoneModif)));
