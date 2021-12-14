@@ -89,15 +89,14 @@ namespace EasySave_1_0.model
             this.Progression = 0;
             this.NbFilesLeft = CnC.NbFiles(fileSource);
             this.SaveType = SaveType;
+            
         }
 
         public ModelLogState() : base() { }
 
-        public void StateToSave()
+        public ModelSave StateToSave()
         {
-            Logger _intenceLog = Logger.GetInstance();
-            List<ModelLogState> State = _intenceLog.JsonToSave();
-            ModelSave _modelsave;
+            ModelSave _modelsave = null;
             switch (this.SaveType)
             {
                 case "Diff":
@@ -107,6 +106,7 @@ namespace EasySave_1_0.model
                     _modelsave = new ModelTotalSave(Name, FileSource, FileTarget);
                     break;
             }
+            return _modelsave;
         }
 
         public int Prog()

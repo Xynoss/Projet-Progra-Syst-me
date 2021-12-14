@@ -90,9 +90,6 @@
                 <DataTrigger Binding="{Binding}" Value="create">
                     <Setter TargetName="MenuItemIcon" Property="Kind" Value="Add"/>
                 </DataTrigger>
-                <DataTrigger Binding="{Binding}" Value="execute">
-                    <Setter TargetName="MenuItemIcon" Property="Kind" Value="PlayArrow"/>
-                </DataTrigger>
                 <DataTrigger Binding="{Binding}" Value="option">
                     <Setter TargetName="MenuItemIcon" Property="Kind" Value="Settings"/>
                 </DataTrigger>
@@ -102,7 +99,6 @@
         <x:Array x:Key="NavigationMenuItems" Type="system:String">
             <system:String>Home</system:String>
             <system:String>create</system:String>
-            <system:String>execute</system:String>
             <system:String>option</system:String>
         </x:Array>
 
@@ -111,9 +107,6 @@
         </DataTemplate>
         <DataTemplate x:Key="CreateSaveViewTemplate">
             <view:CreateBackupView/>
-        </DataTemplate>
-        <DataTemplate x:Key="ExecuteSaveViewTemplate">
-            <view:ExeSaveView/>
         </DataTemplate>
         <DataTemplate x:Key="OptionViewTemplate">
             <view:iOptions/>

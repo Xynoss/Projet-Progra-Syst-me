@@ -24,11 +24,7 @@
                     <Setter Property="ContentTemplate" Value="{StaticResource CreateSaveViewTemplate}"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}" 
-                             Value="execute">
-                    <Setter Property="ContentTemplate" Value="{StaticResource ExecuteSaveViewTemplate}"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}" 
-                             Value="execute">
+                             Value="option">
                     <Setter Property="ContentTemplate" Value="{StaticResource OptionViewTemplate}"/>
                 </DataTrigger>
             </Style.Triggers>

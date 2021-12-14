@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using EasySave_1_0.model;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace Version_2._0.ViewModel
@@ -49,8 +50,10 @@ namespace Version_2._0.ViewModel
 
         private HomeViewModel()
         {
-            saves = new List<EasySave_1_0.model.ModelSave>();
-            states = new List<EasySave_1_0.model.ModelLogState> { };
+            Logger _intenceLog = Logger.GetInstance();
+            States = _intenceLog.JsonToSave();
+            Saves = new List<ModelSave>();
+            States.ForEach(x => Saves.Add(x.StateToSave()));
         }
 
         public static HomeViewModel getInstance()

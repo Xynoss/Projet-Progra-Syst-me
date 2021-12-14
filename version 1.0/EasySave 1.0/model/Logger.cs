@@ -77,8 +77,15 @@ namespace EasySave_1_0.model
 
         public List<ModelLogState> JsonToSave()
         {
-            string JsonFile = File.ReadAllText(PathLog);
-            return JsonSerializer.Deserialize<List<ModelLogState>>(JsonFile);
+            try
+            {
+                string JsonFile = File.ReadAllText(string.Concat(PathLog, @"\Log_Json\", "state.json"));
+                return JsonSerializer.Deserialize<List<ModelLogState>>(JsonFile);
+            }
+            catch
+            {
+                return new List<ModelLogState>();
+            }
         }
     }
 
