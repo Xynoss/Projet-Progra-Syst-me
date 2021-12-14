@@ -8,6 +8,14 @@ namespace EasySave_1_0.model
     public class Logger
     {
         static string pathLog = @"..\..\..\Log\";
+        public string PathLog
+        {
+            get
+            {
+                return pathLog;
+            }
+        }
+
         static Logger _instance;
         private Logger()
         {
@@ -67,7 +75,11 @@ namespace EasySave_1_0.model
             return _instance;
         }
 
-
+        public List<ModelLogState> JsonToSave()
+        {
+            string JsonFile = File.ReadAllText(PathLog);
+            return JsonSerializer.Deserialize<List<ModelLogState>>(JsonFile);
+        }
     }
 
 }

@@ -1,6 +1,8 @@
-﻿using EasySave_1_0.model;
+﻿using EasySave_1_0.Controller;
+using EasySave_1_0.model;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 
@@ -30,9 +32,10 @@ namespace TestEasySave.Model
         {
             ModelSave save = new ModelTotalSave(saveName, sourcePath, targetPath);
             ModelLogState logState = new ModelLogState(saveName, sourcePath, targetPath);
-            save.Save(ref logState);
+            List<ModelLogState> fullListStates = Controller.States;
+            save.Save(ref logState , ref fullListStates);
             File.WriteAllText(@String.Concat(sourcePath, "test213.txt"), "texttest<erze");
-            save.Save(ref logState);
+            save.Save(ref logState, ref fullListStates);
 
             Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", file)));
             Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", "test213.txt")));

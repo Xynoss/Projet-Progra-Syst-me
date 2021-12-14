@@ -9,6 +9,7 @@ namespace Version_2._0.ViewModel
         HomeViewModel viemmodelhome_save = HomeViewModel.getInstance();
         public CreateBackupModelView() { }
         List<ModelSave> ListFoundSave = new List<ModelSave>();
+        
 
         public void CreateComp(string name, string sourcePath, string targetPath)
         {
@@ -19,7 +20,8 @@ namespace Version_2._0.ViewModel
                 viemmodelhome_save.Saves.Add(Save);
                 ModelLogState toState = Save.ToState();
                 viemmodelhome_save.States.Add(toState);
-                Save.Save(ref toState);
+                List<ModelLogState> fullListStates = viemmodelhome_save.States;
+                Save.Save(ref toState, ref fullListStates);
             }
 
         }
@@ -33,12 +35,12 @@ namespace Version_2._0.ViewModel
                 sourcePath = ListFoundSave[0].SourcePath;
             }
 
-            ModelSave Save = new ModelDifferentialSave(name, sourcePath, targetPath, String.Concat(ListFoundSave[0].TargetPath,"/" ,refSave, "/"));
+            ModelSave Save = new ModelDifferentialSave(name, sourcePath, targetPath, String.Concat(ListFoundSave[0].TargetPath, "/", refSave, "/"));
             viemmodelhome_save.Saves.Add(Save);
             ModelLogState toState = Save.ToState();
             viemmodelhome_save.States.Add(toState);
-            Save.Save(ref toState);
-
+            List<ModelLogState> fullListStates = viemmodelhome_save.States;
+            Save.Save(ref toState, ref fullListStates);
         }
     }
 }

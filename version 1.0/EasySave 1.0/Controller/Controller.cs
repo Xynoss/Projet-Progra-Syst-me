@@ -14,6 +14,7 @@ namespace EasySave_1_0.Controller
 
         private ResourceManager res_man;
         private CultureInfo culture;
+        List<ModelLogState> lStates_tmp;
         private static List<EasySave_1_0.model.ModelLogState> states = new List<model.ModelLogState>();
         public static List<EasySave_1_0.model.ModelLogState> States
         {
@@ -99,7 +100,7 @@ namespace EasySave_1_0.Controller
                 this.view.Output(this.res_man.GetString("list_run_one", this.culture));
                 this.view.Output(this.res_man.GetString("list_exit", this.culture));
                 Input_choise = this.view.Input();
-
+                
 
 
 
@@ -124,7 +125,8 @@ namespace EasySave_1_0.Controller
                         {
                             ModelLogState current_states = states[i];
                             this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), states[i].Name));
-                            this.saves[i].Save(ref current_states);
+                            lStates_tmp = States;
+                            this.saves[i].Save(ref current_states,ref lStates_tmp);
                             this.view.Clearing();
                             this.view.Output(string.Format(this.res_man.GetString("save_run", this.culture), states[i].Name));
                         }
@@ -142,8 +144,10 @@ namespace EasySave_1_0.Controller
                         }
                         int selected_save = int.Parse(this.view.Input());
                         ModelLogState correct_state = states[selected_save];
+                        
                         this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), saves[selected_save].Name));
-                        Saves[selected_save].Save(ref correct_state);
+                        lStates_tmp = States;
+                        Saves[selected_save].Save(ref correct_state, ref lStates_tmp);
                         this.view.Clearing();
                         this.view.Output(string.Format(this.res_man.GetString("save_run", this.culture), saves[selected_save].Name));
                         break;
@@ -176,10 +180,12 @@ namespace EasySave_1_0.Controller
                 string save_targetpath = this.view.Input();
                 ModelSave currentSave = new ModelTotalSave(save_name, save_sourcepath, save_targetpath);
                 saves.Add(currentSave);
-                ModelLogState statefile = new ModelLogState(save_name, save_sourcepath, save_targetpath);
+                string SaveType = "Total";
+                ModelLogState statefile = new ModelLogState(save_name, save_sourcepath, save_targetpath, SaveType);
                 this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), save_name));
                 states.Add(statefile);
-                currentSave.Save(ref statefile);
+                lStates_tmp = States;
+                currentSave.Save(ref statefile, ref lStates_tmp);
             }
             else
             {
@@ -218,10 +224,12 @@ namespace EasySave_1_0.Controller
                 string save_targetpath = this.view.Input();
                 ModelSave modelSave = new model.ModelDifferentialSave(save_name, save_sourcepath, save_targetpath, String.Concat(ListFoundSave[0].TargetPath, save_ref, "/"));
                 saves.Add(modelSave);
-                model.ModelLogState statefile = new model.ModelLogState(save_name, save_sourcepath, save_targetpath);
+                string SaveType = "Diff";
+                model.ModelLogState statefile = new model.ModelLogState(save_name, save_sourcepath, save_targetpath, SaveType);
                 this.view.Output(string.Format(this.res_man.GetString("save_loading", this.culture), save_name));
                 states.Add(statefile);
-                modelSave.Save(ref statefile);
+                lStates_tmp = States;
+                modelSave.Save(ref statefile, ref lStates_tmp);
                 this.view.Clearing();
                 this.view.Output(string.Format(this.res_man.GetString("save_created", this.culture), save_name));
             }

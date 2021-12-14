@@ -53,6 +53,15 @@ namespace EasySave_1_0.model
                 timestamp = value;
             }
         }
+
+        private string saveType;
+        public string SaveType
+        {
+            get { return saveType; }
+            set { saveType = value; }
+        }
+
+
         /// <summary>
         /// Constructor of the ModelLog class
         /// </summary>

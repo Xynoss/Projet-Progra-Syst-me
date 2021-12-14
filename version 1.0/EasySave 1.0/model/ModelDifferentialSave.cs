@@ -25,7 +25,7 @@ namespace EasySave_1_0.model
         /// methods to copy the files, trying to create the save and take every file form the source path.
         /// </summary>
         /// <param name="state">an object Log State to refer to</param>
-        public override void Save(ref model.ModelLogState state)
+        public override void Save(ref model.ModelLogState state, ref List<model.ModelLogState> l_state)
         {
             try
             {
@@ -36,7 +36,7 @@ namespace EasySave_1_0.model
                 Console.WriteLine(dirNotFound.Message);
             }
             state.State = "END";
-            LogState(Controller.Controller.States);
+            LogState(l_state);
         }
         /// <summary>
         /// Method to initialize the writing of the log's files.
@@ -111,7 +111,8 @@ namespace EasySave_1_0.model
         }
         public override ModelLogState ToState()
         {
-            return new ModelLogState(name, sourcePath, targetPath);
+            string SaveType = "Diff";
+            return new ModelLogState(name, sourcePath, targetPath, SaveType);
         }
 
     }

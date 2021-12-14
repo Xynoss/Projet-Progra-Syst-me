@@ -1,6 +1,8 @@
-﻿using EasySave_1_0.model;
+﻿using EasySave_1_0.Controller;
+using EasySave_1_0.model;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
@@ -32,7 +34,8 @@ namespace TestEasySave.Model
         {
             ModelSave saveComplete = new ModelTotalSave(saveCompleteName, sourcePath, targetPath);
             ModelLogState stateComplete = new ModelLogState(saveCompleteName, sourcePath, targetPath);
-            saveComplete.Save(ref stateComplete);
+            List<ModelLogState> fullListStates = Controller.States;
+            saveComplete.Save(ref stateComplete, ref fullListStates);
             string log_path_complete = @String.Concat(pathlog, saveName, "_log.json");
             string state_path_complete = @String.Concat(pathlog, "state.json");
             Assert.IsTrue(File.Exists(log_path_complete));

@@ -80,7 +80,7 @@ namespace EasySave_1_0.model {
 		/// <summary>
 		/// Abstract method to save folders and files
 		/// </summary>
-		public abstract void Save(ref model.ModelLogState state);
+		public abstract void Save(ref model.ModelLogState state, ref List<model.ModelLogState> l_state);
 		/// <summary>
 		/// Abstract method to initialize the writing of the state's file
 		/// </summary>

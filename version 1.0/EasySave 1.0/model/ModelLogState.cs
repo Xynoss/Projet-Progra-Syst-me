@@ -1,10 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace EasySave_1_0.model
 {
     public class ModelLogState : ModelLog
     {
+        
         private string state;
         public string State {
             get
@@ -16,6 +18,7 @@ namespace EasySave_1_0.model
                 state = value;
             }
         }
+        
         private int totalFileToCopy;
         public int TotalFileToCopy
         {
@@ -28,6 +31,7 @@ namespace EasySave_1_0.model
                 totalFileToCopy = value;
             }
         }
+        
         private int totalFileSize;
         public int TotalFileSize
         {
@@ -40,6 +44,7 @@ namespace EasySave_1_0.model
                 totalFileSize = value;
             }
         }
+        
         private int progression;
         public int Progression
         {
@@ -52,6 +57,7 @@ namespace EasySave_1_0.model
                 progression = value;
             }
         }
+        
         private int nbFilesLeft;
         public int NbFilesLeft
         {
@@ -65,13 +71,14 @@ namespace EasySave_1_0.model
             }
         }
 
+
         /// <summary>
         /// constructor of the modelLogState class
         /// </summary>
         /// <param name="name">name of the save</param>
         /// <param name="fileSource">source path of the file</param>
         /// <param name="fileTarget">target path of the file</param>
-        public ModelLogState(string name, string fileSource, string fileTarget) : base(name, fileSource, fileTarget)
+        public ModelLogState(string name, string fileSource, string fileTarget , string SaveType) : base(name, fileSource, fileTarget)
         {
             Calcul_Check CnC = new Calcul_Check();
             this.state = "";
@@ -79,9 +86,26 @@ namespace EasySave_1_0.model
             this.TotalFileSize = CnC.FileSize(fileSource);
             //this.Progression = 0;
             this.NbFilesLeft = CnC.NbFiles(fileSource);
+            this.SaveType = SaveType;
         }
 
         public ModelLogState(): base() { }
+
+        public void StateToSave()
+        {
+            Logger _intenceLog = Logger.GetInstance();
+            List<ModelLogState> State = _intenceLog.JsonToSave();
+            ModelSave _modelsave;
+            switch (this.SaveType)
+            {
+                case "Diff":
+                    _modelsave = new ModelDifferentialSave(Name, FileSource, FileTarget, SaveRef);
+                    break;
+                case "Total":
+                    _modelsave = new ModelTotalSave(Name, FileSource, FileTarget);
+                    break;
+            }
+        }
     }
 
 }
