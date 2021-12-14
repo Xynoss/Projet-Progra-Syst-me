@@ -14,6 +14,8 @@ namespace Version_2._0.ViewModel
         private bool jpeg;
         private bool docx;
         private bool txt;
+        private bool fr;
+        private bool en;
 
         public bool Pdf
         {
@@ -52,6 +54,25 @@ namespace Version_2._0.ViewModel
             }
         }
 
+        public bool Fr
+        {
+            get => this.fr;
+            set
+            {
+                this.fr = value;
+                OnPropertyChanged("Fr");
+            }
+        }
+        public bool En
+        {
+            get => this.en;
+            set
+            {
+                this.en = value;
+                OnPropertyChanged("En");
+            }
+        }
+
         private iOptionViewModel() { }
         public static iOptionViewModel getInstance()
         {
@@ -60,10 +81,10 @@ namespace Version_2._0.ViewModel
                 _instance = new iOptionViewModel();
             }
             List<string> list_ext = Encrypt.ListExt;
-            _instance.pdf = list_ext.Exists(val => val == "pdf");
-            _instance.jpeg = list_ext.Exists(val => val == "jpeg");
-            _instance.docx = list_ext.Exists(val => val == "docx");
-            _instance.txt = list_ext.Exists(val => val == "txt");
+            _instance.pdf = list_ext.Exists(val => val == ".pdf");
+            _instance.jpeg = list_ext.Exists(val => val == ".jpeg");
+            _instance.docx = list_ext.Exists(val => val == ".docx");
+            _instance.txt = list_ext.Exists(val => val == ".txt");
             return _instance;
         }
 
@@ -103,7 +124,8 @@ namespace Version_2._0.ViewModel
             }
             SetToEncryptExt(ExtToEnc);
             Encrypt.SetExtensions();
-            
+            SwitchLang();
+
         }
 
         public void SetToEncryptExt(List<string> l_encrypts )
@@ -114,6 +136,21 @@ namespace Version_2._0.ViewModel
                 Settings.Default.exToEnc.Add(s);
             }
             Settings.Default.Save();
+        }
+
+        public void SwitchLang()
+        {
+            if (En)
+            {
+                Version_2._0.Properties.Settings.Default.Lang = "en";
+                Version_2._0.Properties.Settings.Default.Save();
+            }
+            else if (Fr)
+            {
+                Version_2._0.Properties.Settings.Default.Lang = "fr";
+                Version_2._0.Properties.Settings.Default.Save();
+            }
+            Version_2._0.Properties.Resources.Culture = new System.Globalization.CultureInfo(Version_2._0.Properties.Settings.Default.Lang);
         }
 
         private bool CanDoCommand

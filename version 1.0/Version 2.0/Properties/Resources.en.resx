@@ -123,6 +123,15 @@
   <data name="btn_save" xml:space="preserve">
     <value>Save the back up</value>
   </data>
+  <data name="Crypt_ext" xml:space="preserve">
+    <value>Cryptable extension</value>
+  </data>
+  <data name="Lang_en" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Lang_fr" xml:space="preserve">
+    <value>French</value>
+  </data>
   <data name="Radio_complete" xml:space="preserve">
     <value>Complete back up</value>
   </data>
@@ -140,5 +149,8 @@
   </data>
   <data name="Save_target" xml:space="preserve">
     <value>Back up target</value>
+  </data>
+  <data name="switch_lang" xml:space="preserve">
+    <value>Switch language</value>
   </data>
 </root>

@@ -123,6 +123,15 @@
   <data name="btn_save" xml:space="preserve">
     <value>Sauvegarder</value>
   </data>
+  <data name="Crypt_ext" xml:space="preserve">
+    <value>Les extensions à crypter</value>
+  </data>
+  <data name="Lang_en" xml:space="preserve">
+    <value>Anglais</value>
+  </data>
+  <data name="Lang_fr" xml:space="preserve">
+    <value>Français</value>
+  </data>
   <data name="Radio_complete" xml:space="preserve">
     <value>Sauvegarde complète</value>
   </data>
@@ -140,5 +149,8 @@
   </data>
   <data name="Save_target" xml:space="preserve">
     <value>Cible de la sauvegarde</value>
+  </data>
+  <data name="switch_lang" xml:space="preserve">
+    <value>Choix des langues</value>
   </data>
 </root>

@@ -79,6 +79,33 @@ namespace Version_2._0.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à extension Cryptable.
+        /// </summary>
+        public static string Crypt_ext {
+            get {
+                return ResourceManager.GetString("Crypt_ext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à English.
+        /// </summary>
+        public static string Lang_en {
+            get {
+                return ResourceManager.GetString("Lang_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Français.
+        /// </summary>
+        public static string Lang_fr {
+            get {
+                return ResourceManager.GetString("Lang_fr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Complete.
         /// </summary>
         public static string Radio_complete {
@@ -129,6 +156,15 @@ namespace Version_2._0.Properties {
         public static string Save_target {
             get {
                 return ResourceManager.GetString("Save_target", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Langage.
+        /// </summary>
+        public static string switch_lang {
+            get {
+                return ResourceManager.GetString("switch_lang", resourceCulture);
             }
         }
     }
