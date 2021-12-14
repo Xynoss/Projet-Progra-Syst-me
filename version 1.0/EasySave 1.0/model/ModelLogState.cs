@@ -1,14 +1,13 @@
-using System;
 using System.Collections.Generic;
-using System.IO;
 
 namespace EasySave_1_0.model
 {
     public class ModelLogState : ModelLog
     {
-        
+
         private string state;
-        public string State {
+        public string State
+        {
             get
             {
                 return state;
@@ -18,7 +17,7 @@ namespace EasySave_1_0.model
                 state = value;
             }
         }
-        
+
         private int totalFileToCopy;
         public int TotalFileToCopy
         {
@@ -31,7 +30,7 @@ namespace EasySave_1_0.model
                 totalFileToCopy = value;
             }
         }
-        
+
         private int totalFileSize;
         public int TotalFileSize
         {
@@ -44,7 +43,7 @@ namespace EasySave_1_0.model
                 totalFileSize = value;
             }
         }
-        
+
         private int progression;
         public int Progression
         {
@@ -57,7 +56,7 @@ namespace EasySave_1_0.model
                 progression = value;
             }
         }
-        
+
         private int nbFilesLeft;
         public int NbFilesLeft
         {
@@ -71,6 +70,9 @@ namespace EasySave_1_0.model
             }
         }
 
+        private string saveRef;
+        public string SaveRef { get { return saveRef; } set { saveRef = value; } }
+
 
         /// <summary>
         /// constructor of the modelLogState class
@@ -78,7 +80,7 @@ namespace EasySave_1_0.model
         /// <param name="name">name of the save</param>
         /// <param name="fileSource">source path of the file</param>
         /// <param name="fileTarget">target path of the file</param>
-        public ModelLogState(string name, string fileSource, string fileTarget , string SaveType) : base(name, fileSource, fileTarget)
+        public ModelLogState(string name, string fileSource, string fileTarget, string SaveType) : base(name, fileSource, fileTarget)
         {
             Calcul_Check CnC = new Calcul_Check();
             this.state = "";
@@ -89,7 +91,7 @@ namespace EasySave_1_0.model
             this.SaveType = SaveType;
         }
 
-        public ModelLogState(): base() { }
+        public ModelLogState() : base() { }
 
         public void StateToSave()
         {
@@ -107,5 +109,4 @@ namespace EasySave_1_0.model
             }
         }
     }
-
 }

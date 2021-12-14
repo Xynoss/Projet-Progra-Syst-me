@@ -24,7 +24,7 @@ namespace TestEasySave
             var stream = File.Create(@String.Concat(sourcePath, file));
             stream.Close();
             ModelSave saveComplete = new ModelTotalSave(saveCompleteName, sourcePath, targetPath);
-            ModelLogState stateComplete = new ModelLogState(saveCompleteName, sourcePath, targetPath);
+            ModelLogState stateComplete = new ModelLogState(saveCompleteName, sourcePath, targetPath, "savetype");
             List<ModelLogState> fullListStates = Controller.States;
             saveComplete.Save(ref stateComplete, ref fullListStates);
             File.WriteAllText(@String.Concat(sourcePath, file), "Je suis une patate");
@@ -36,7 +36,7 @@ namespace TestEasySave
         public void TestDifferential()
         {
             ModelSave save = new ModelDifferentialSave(saveName, sourcePath, targetPath, @String.Concat(targetPath, saveCompleteName, "/"));
-            ModelLogState logState = new ModelLogState(saveName, sourcePath, targetPath);
+            ModelLogState logState = new ModelLogState(saveName, sourcePath, targetPath, "savetype");
             List<ModelLogState> fullListStates = Controller.States;
             save.Save(ref logState,ref fullListStates);
 
@@ -49,7 +49,7 @@ namespace TestEasySave
         public void TestDifferentialx2()
         {
             ModelSave save = new ModelDifferentialSave(saveName, sourcePath, targetPath, @String.Concat(targetPath, saveCompleteName, "/"));
-            ModelLogState logState = new ModelLogState(saveName, sourcePath, targetPath);
+            ModelLogState logState = new ModelLogState(saveName, sourcePath, targetPath, "savetype");
             List<ModelLogState> fullListStates = Controller.States;
             save.Save(ref logState, ref fullListStates);
             Directory.CreateDirectory(@String.Concat(sourcePath, "DirTest"));

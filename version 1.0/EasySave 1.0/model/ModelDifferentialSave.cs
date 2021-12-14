@@ -9,6 +9,7 @@ namespace EasySave_1_0.model
     /// </summary>
     public class ModelDifferentialSave : ModelSave
     {
+        private const string Separator = "\\\\";
         private string saveRefPath;
         public string SaveRefPath
         {
@@ -19,7 +20,11 @@ namespace EasySave_1_0.model
         public ModelDifferentialSave(string name, string sourcePath, string targetPath, string refSavePath) : base(name, sourcePath, targetPath)
         {
             saveRefPath = refSavePath;
+            string[] saveRef = refSavePath.Split(Separator);
         }
+
+
+        Logger _instanceLog = Logger.GetInstance();
 
         /// <summary>
         /// methods to copy the files, trying to create the save and take every file form the source path.
@@ -29,7 +34,7 @@ namespace EasySave_1_0.model
         {
             try
             {
-                CopyFolder(sourcePath, String.Concat(targetPath, name), ref state);
+                CopyFolder(sourcePath, String.Concat(targetPath ,name), ref state);
             }
             catch (DirectoryNotFoundException dirNotFound)
             {
@@ -48,7 +53,7 @@ namespace EasySave_1_0.model
         /// <param name="sourcePath">path to the source folder.</param>
         public override void LogLog(string name, TimeSpan span, string filename, string targetPath, string sourcePath)
         {
-            Logger.GetInstance().WriteLog(new ModelLogLog(name, filename, sourcePath, targetPath, span));
+            _instanceLog.WriteLog(new ModelLogLog(name, filename, sourcePath, targetPath, span));
         }
         /// <summary>
         /// Method to initialize the writing of the log's states files.
@@ -56,7 +61,8 @@ namespace EasySave_1_0.model
         /// <param name="state">list of modelLogState object</param>
         public override void LogState(List<model.ModelLogState> state)
         {
-            Logger.GetInstance().WriteState(state);
+            
+            _instanceLog.WriteState(state);
         }
 
         public override void CopyFolder(string sourcePath, string targetPath, ref ModelLogState modelLogState)

@@ -31,7 +31,7 @@ namespace TestEasySave.Model
         public void TestTotal()
         {
             ModelSave save = new ModelTotalSave(saveName, sourcePath, targetPath);
-            ModelLogState logState = new ModelLogState(saveName, sourcePath, targetPath);
+            ModelLogState logState = new ModelLogState(saveName, sourcePath, targetPath, "savetype");
             List<ModelLogState> fullListStates = Controller.States;
             save.Save(ref logState , ref fullListStates);
             File.WriteAllText(@String.Concat(sourcePath, "test213.txt"), "texttest<erze");

@@ -33,7 +33,7 @@ namespace TestEasySave.Model
         public void TestLog()
         {
             ModelSave saveComplete = new ModelTotalSave(saveCompleteName, sourcePath, targetPath);
-            ModelLogState stateComplete = new ModelLogState(saveCompleteName, sourcePath, targetPath);
+            ModelLogState stateComplete = new ModelLogState(saveCompleteName, sourcePath, targetPath, "savetype");
             List<ModelLogState> fullListStates = Controller.States;
             saveComplete.Save(ref stateComplete, ref fullListStates);
             string log_path_complete = @String.Concat(pathlog, saveName, "_log.json");
