@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Version_2._0.ViewModel;
 
 namespace Version_2._0.view
 {
@@ -17,14 +9,50 @@ namespace Version_2._0.view
     /// </summary>
     public partial class iOptions : UserControl
     {
+        iOptionViewModel _instance = iOptionViewModel.getInstance();
         public iOptions()
         {
-           InitializeComponent();
+            DataContext = iOptionViewModel.getInstance();
+            InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
+            if (pdf.IsChecked == true)
+            {
+                _instance.Pdf = true;
+            }
+            else
+            {
+                _instance.Pdf = false;
+            }
+            //
+            if (jpeg.IsChecked == true)
+            {
+                _instance.Jpeg = true;
+            }
+            else
+            {
+                _instance.Jpeg = false;
+            }
+            //
+            if (docx.IsChecked == true)
+            {
+                _instance.Docx = true;
+            }
+            else
+            {
+                _instance.Docx = false;
+            }
+            //
+            if (txt.IsChecked == true)
+            {
+                _instance.Txt = true;
+            }
+            else
+            {
+                _instance.Txt = false;
+            }
         }
     }
 }

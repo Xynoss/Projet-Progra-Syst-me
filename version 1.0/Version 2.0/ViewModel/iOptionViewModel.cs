@@ -1,34 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 using System.Windows.Input;
+using Version_2._0.model;
+using Version_2._0.Properties;
 
 namespace Version_2._0.ViewModel
 {
-    class iOptionViewModel:INotifyPropertyChanged
+    class iOptionViewModel : INotifyPropertyChanged
     {
         private ICommand command;
+        static iOptionViewModel _instance;
         private bool pdf;
-        private bool jpg;
+        private bool jpeg;
         private bool docx;
         private bool txt;
 
         public bool Pdf
         {
-            get => this.pdf;
+            get => pdf;
             set
             {
-                this.pdf = value;
+                pdf = value;
                 OnPropertyChanged("Pdf");
             }
         }
-        public bool Jpg
+        public bool Jpeg
         {
-            get => this.jpg;
+            get => this.jpeg;
             set
             {
-                this.jpg = value;
+                this.jpeg = value;
                 OnPropertyChanged("Jpg");
             }
         }
@@ -50,6 +51,17 @@ namespace Version_2._0.ViewModel
                 OnPropertyChanged("Txt");
             }
         }
+
+        private iOptionViewModel() { }
+        public static iOptionViewModel getInstance()
+        {
+            if (_instance == null)
+            {
+                _instance = new iOptionViewModel();
+            }
+            return _instance;
+        }
+
         public ICommand GetSaveCommand
         {
             get
@@ -80,10 +92,16 @@ namespace Version_2._0.ViewModel
             {
                 ExtToEnc.Add(".txt");
             }
-            if (jpg)
+            if (jpeg)
             {
-                ExtToEnc.Add(".jpg");
+                ExtToEnc.Add(".jpeg");
             }
+            Encrypt.SetExtensions();
+        }
+
+        public void SetToEncryptExt(List<Encrypt> l_encrypts )
+        {
+            
         }
 
         private bool CanDoCommand

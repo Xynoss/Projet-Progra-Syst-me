@@ -108,7 +108,6 @@ namespace EasySave_1_0.model
                     break;
             }
         }
-        public ModelLogState(): base() { }
 
         public int Prog()
         {

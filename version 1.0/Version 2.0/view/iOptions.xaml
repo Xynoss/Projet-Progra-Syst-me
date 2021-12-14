@@ -20,13 +20,13 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <CheckBox Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Height="20" Foreground="#FFBDBDBD" Content=".pdf" Margin="204,37,0,0" Grid.Column="1"/>
-        <CheckBox Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="20" Foreground="#FFBDBDBD" Content=".docx" Margin="204,55,0,0" Grid.Column="1"/>
-        <CheckBox Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="20" Foreground="#FFBDBDBD" Content=".txt" Margin="257,37,0,0" Grid.Column="1"/>
-        <CheckBox Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="20" Foreground="#FFBDBDBD" Content=".jpeg" Margin="257,55,0,0" Grid.Column="1"/>
+        <CheckBox x:Name="pdf" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Height="20" Foreground="#FFBDBDBD" Content=".pdf" Margin="204,37,0,0" Grid.Column="1"/>
+        <CheckBox x:Name="docx" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="20" Foreground="#FFBDBDBD" Content=".docx" Margin="204,55,0,0" Grid.Column="1"/>
+        <CheckBox x:Name="txt" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="20" Foreground="#FFBDBDBD" Content=".txt" Margin="257,37,0,0" Grid.Column="1"/>
+        <CheckBox x:Name="jpeg" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="20" Foreground="#FFBDBDBD" Content=".jpeg" Margin="257,55,0,0" Grid.Column="1"/>
         <RadioButton Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="57" Height="20" Foreground="#FFBDBDBD" Content="English" Margin="148,31,0,0" RenderTransformOrigin="1.1,0.415"/>
         <RadioButton Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="66" Height="20" Foreground="#FFBDBDBD" Content="Français" Margin="314,31,0,0"/>
-        <Button Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FFF3B700" BorderBrush="{x:Null}" Margin="227,14,0,0">
+        <Button Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FFF3B700" BorderBrush="{x:Null}" Margin="227,14,0,0" Click="Button_Click">
             <iconPacks:PackIconMaterialDesign Grid.Column="2" Kind="Save" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="50" Height="50"/>
         </Button>
         <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFBDBDBD" Content="Paramètres" FontSize="24" Margin="190,0,0,0"/>
