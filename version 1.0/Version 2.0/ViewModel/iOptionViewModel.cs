@@ -59,6 +59,11 @@ namespace Version_2._0.ViewModel
             {
                 _instance = new iOptionViewModel();
             }
+            List<string> list_ext = Encrypt.ListExt;
+            _instance.pdf = list_ext.Exists(val => val == "pdf");
+            _instance.jpeg = list_ext.Exists(val => val == "jpeg");
+            _instance.docx = list_ext.Exists(val => val == "docx");
+            _instance.txt = list_ext.Exists(val => val == "txt");
             return _instance;
         }
 
@@ -77,7 +82,7 @@ namespace Version_2._0.ViewModel
         }
 
 
-        private void DoCreateList()
+        public void DoCreateList()
         {
             List<string> ExtToEnc = new List<string>();
             if (pdf)
@@ -96,12 +101,19 @@ namespace Version_2._0.ViewModel
             {
                 ExtToEnc.Add(".jpeg");
             }
+            SetToEncryptExt(ExtToEnc);
             Encrypt.SetExtensions();
+            
         }
 
-        public void SetToEncryptExt(List<Encrypt> l_encrypts )
+        public void SetToEncryptExt(List<string> l_encrypts )
         {
-            
+            Settings.Default.exToEnc.Clear();
+            foreach (string s in l_encrypts)
+            {
+                Settings.Default.exToEnc.Add(s);
+            }
+            Settings.Default.Save();
         }
 
         private bool CanDoCommand

@@ -13,12 +13,13 @@ namespace Version_2._0.view
         public iOptions()
         {
             DataContext = iOptionViewModel.getInstance();
+            _instance.DoCreateList();
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (pdf.IsChecked == true)
+            if (ckbx_pdf.IsChecked == true)
             {
                 _instance.Pdf = true;
             }
@@ -27,7 +28,7 @@ namespace Version_2._0.view
                 _instance.Pdf = false;
             }
             //
-            if (jpeg.IsChecked == true)
+            if (ckbx_jpeg.IsChecked == true)
             {
                 _instance.Jpeg = true;
             }
@@ -36,7 +37,7 @@ namespace Version_2._0.view
                 _instance.Jpeg = false;
             }
             //
-            if (docx.IsChecked == true)
+            if (ckbx_docx.IsChecked == true)
             {
                 _instance.Docx = true;
             }
@@ -45,7 +46,7 @@ namespace Version_2._0.view
                 _instance.Docx = false;
             }
             //
-            if (txt.IsChecked == true)
+            if (ckbx_txt.IsChecked == true)
             {
                 _instance.Txt = true;
             }
@@ -53,6 +54,7 @@ namespace Version_2._0.view
             {
                 _instance.Txt = false;
             }
+            
         }
     }
 }
