@@ -8,7 +8,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <SolidColorBrush x:Key="PrimaryDarkBrush" Color="#FF292929"/>
-        <SolidColorBrush x:Key="PrimaryLightBrush" Color="orange"/>
+        <SolidColorBrush x:Key="PrimaryLightBrush" Color="#FFEBB612"/>
 
        
         <Style x:Key="NavigationListBoxStyle" TargetType="{x:Type ListBox}">

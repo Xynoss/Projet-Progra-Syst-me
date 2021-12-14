@@ -20,24 +20,18 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="20"/>
-        <TextBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="20"/>
-        <TextBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="20"/>
-        <Button Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50">
-            <iconPacks:PackIconMaterialDesign Grid.Column="2" Kind="Folder" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        </Button>
-        <Button Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50">
-            <iconPacks:PackIconMaterialDesign Grid.Column="2" Kind="Folder" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        </Button>
-        <Button Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50">
-            <iconPacks:PackIconMaterialDesign Grid.Column="2" Kind="Folder" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        </Button>
-        <Button Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" Foreground="Orange" BorderBrush="{x:Null}">
+        <CheckBox Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Height="20" Foreground="#FFBDBDBD" Content=".pdf" Margin="204,37,0,0" Grid.Column="1"/>
+        <CheckBox Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="20" Foreground="#FFBDBDBD" Content=".docx" Margin="204,55,0,0" Grid.Column="1"/>
+        <CheckBox Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="20" Foreground="#FFBDBDBD" Content=".txt" Margin="257,37,0,0" Grid.Column="1"/>
+        <CheckBox Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="20" Foreground="#FFBDBDBD" Content=".jpeg" Margin="257,55,0,0" Grid.Column="1"/>
+        <RadioButton Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="57" Height="20" Foreground="#FFBDBDBD" Content="English" Margin="148,31,0,0" RenderTransformOrigin="1.1,0.415"/>
+        <RadioButton Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="66" Height="20" Foreground="#FFBDBDBD" Content="Français" Margin="314,31,0,0"/>
+        <Button Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FFF3B700" BorderBrush="{x:Null}" Margin="227,14,0,0">
             <iconPacks:PackIconMaterialDesign Grid.Column="2" Kind="Save" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="50" Height="50"/>
         </Button>
-        <Label Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFBDBDBD" Content="Clé utilisée pour la cryptographie"/>
-        <Label Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFBDBDBD" Content="Chemin par logs" />
-        <Label Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFBDBDBD" Content="Lien vers la documentation"/>
+        <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFBDBDBD" Content="Paramètres" FontSize="24" Margin="190,0,0,0"/>
+        <Label Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFBDBDBD" Content="Type de fichier à crypter" FontSize="16" Grid.Row="1" Margin="164,0,0,0"/>
+        <Label Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFBDBDBD" Content="Choix des langues" FontSize="16" Margin="191,0,0,0"/>
 
     </Grid>
 </UserControl>
