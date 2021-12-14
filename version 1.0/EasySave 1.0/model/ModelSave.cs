@@ -105,12 +105,13 @@ namespace EasySave_1_0.model
             DateTime start = DateTime.Now;
             state.State = "ACTIVE";
             string ext = Path.GetExtension($"{sourcePath}\\{filename}");
-            if (ext == ".txt")
+            if (ExToEnc.Contains(ext))
             {
                 Process process = new Process();
                 string d = Directory.GetCurrentDirectory();
                 process.StartInfo.FileName = "CryptoSoft/CryptoSoft.exe";
-                string file = Path.GetFullPath(String.Concat(sourcePath, filename));
+                process.StartInfo.CreateNoWindow = true;
+                string file = Path.GetFullPath(String.Concat(sourcePath,"/", filename));
                 string target = Path.GetFullPath(targetPath);
                 process.StartInfo.Arguments = $"/e \"{file}\" \"{target}\\{Path.GetFileName(filename)}\" 1234567891234567";
                 process.Start();

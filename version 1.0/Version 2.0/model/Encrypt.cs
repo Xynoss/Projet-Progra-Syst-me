@@ -14,7 +14,7 @@ namespace Version_2._0.model
 
         public static void SetExtensions()
         {
-            
+            listExt.Clear();   
             foreach (string s in Properties.Settings.Default.exToEnc)
             {
                 listExt.Add(s);
