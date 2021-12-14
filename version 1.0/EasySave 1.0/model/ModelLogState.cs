@@ -86,7 +86,7 @@ namespace EasySave_1_0.model
             this.state = "";
             this.TotalFileToCopy = CnC.NbFiles(fileSource);
             this.TotalFileSize = CnC.FileSize(fileSource);
-            //this.Progression = 0;
+            this.Progression = 0;
             this.NbFilesLeft = CnC.NbFiles(fileSource);
             this.SaveType = SaveType;
         }
@@ -107,6 +107,12 @@ namespace EasySave_1_0.model
                     _modelsave = new ModelTotalSave(Name, FileSource, FileTarget);
                     break;
             }
+        }
+        public ModelLogState(): base() { }
+
+        public int Prog()
+        {
+            return this.progression = ((this.totalFileToCopy - this.nbFilesLeft) / this.totalFileToCopy) * 100;
         }
     }
 }

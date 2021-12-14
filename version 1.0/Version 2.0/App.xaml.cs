@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using Version_2._0.model;
 
 namespace Version_2._0
 {
@@ -18,6 +19,7 @@ namespace Version_2._0
         {
             base.OnStartup(e);
             SetLanguageDictionary();
+            Encrypt.SetExtensions();
         }
 
         private void SetLanguageDictionary()

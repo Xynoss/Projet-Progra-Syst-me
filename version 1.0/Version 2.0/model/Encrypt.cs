@@ -1,11 +1,18 @@
-﻿using System;
-using System.Diagnostics;
-using System.Windows.Input;
+﻿using EasySave_1_0.model;
+using System.Collections.Generic;
 
 namespace Version_2._0.model
 {
-    public sealed class Encrypt
+    public class Encrypt
     {
-        
+        public static void SetExtensions()
+        {
+            List<string> listExt = new List<string>();
+            foreach (string s in Properties.Settings.Default.exToEnc)
+            {
+                listExt.Add(s);
+            }
+            ModelSave.ExToEnc = listExt;
+        }
     }
 }

@@ -96,6 +96,7 @@ namespace EasySave_1_0.model {
 			state.State = "ACTIVE";
 			File.Copy(Path.Combine(sourcePath, filename), Path.Combine(targetPath, filename), true);
 			state.NbFilesLeft--;
+			state.Prog();
 			TimeSpan span = DateTime.Now - start;
 			LogLog(Name, span, f, targetPath, sourcePath);
 			LogState(Controller.Controller.States);
@@ -110,6 +111,13 @@ namespace EasySave_1_0.model {
 			{
 				Directory.CreateDirectory(dirPath);
 			}
+		}
+
+		private static List<string> exToEnc = new List<string>();
+		public static List<string> ExToEnc
+		{
+			get => exToEnc;
+			set => exToEnc = value;
 		}
 
 		public abstract ModelLogState ToState();
