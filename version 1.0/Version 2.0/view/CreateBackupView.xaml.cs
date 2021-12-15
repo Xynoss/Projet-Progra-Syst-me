@@ -17,6 +17,7 @@ namespace Version_2._0.view
         public CreateBackupView()
         {
             InitializeComponent();
+            display_SaveRef();
             Backuper = new CreateBackupModelView();
         }
 
@@ -36,7 +37,7 @@ namespace Version_2._0.view
             }
             if(save_diff.IsChecked == true)
             {
-                Backuper.CreateDiff(Txtbox_save_name.Text, tb_source.Text, Txtbox_target.Text,tb_refSave.Text);
+                Backuper.CreateDiff(Txtbox_save_name.Text, tb_source.Text, Txtbox_target.Text,((ModelSave)tb_refSave.SelectedItem).Name);
             }
             
         }
@@ -62,6 +63,12 @@ namespace Version_2._0.view
             Txtbox_DosSource.Visibility = Visibility.Visible;
             Txtbox_Savesource.Visibility = Visibility.Hidden;
             tb_refSave.IsEnabled = false;
+        }
+
+        private void display_SaveRef()
+        {
+            HomeViewModel HVM = HomeViewModel.getInstance();
+            tb_refSave.ItemsSource = HVM.saves;
         }
     }
 }

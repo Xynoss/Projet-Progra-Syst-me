@@ -111,7 +111,7 @@ namespace EasySave_1_0.model
 
         public int Prog()
         {
-            return this.progression = ((this.totalFileToCopy - this.nbFilesLeft) / this.totalFileToCopy) * 100;
+            return this.progression = (this.totalFileToCopy - this.nbFilesLeft) * 100 / this.totalFileToCopy ;
         }
     }
 }

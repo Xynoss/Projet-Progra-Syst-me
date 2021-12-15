@@ -25,8 +25,17 @@
         <TextBlock Text="{x:Static lang:Resources.Save_name}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" Foreground="#FFBDBDBD"/>
         <TextBox x:Name="Txtbox_save_name" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"  Width="322" Height="29"/>
 
-        <TextBlock Text="{x:Static lang:Resources.Save_saveref}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" Foreground="#FFBDBDBD"/>
-        <TextBox x:Name="tb_refSave" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"  Width="322" Height="29" />
+        <!--<TextBlock Text="{x:Static lang:Resources.Save_saveref}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" Foreground="#FFBDBDBD"/>-->
+        <ComboBox x:Name="tb_refSave" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="322" Height="29">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
 
         <TextBlock x:Name="Txtbox_DosSource" Text="{x:Static lang:Resources.Save_source}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" Foreground="#FFBDBDBD" Visibility="Visible"/>
         <TextBlock x:Name="Txtbox_Savesource" Text="{x:Static lang:Resources.Save_source}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" Foreground="#FFBDBDBD" Visibility="Hidden"/>

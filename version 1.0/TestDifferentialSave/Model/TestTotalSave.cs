@@ -48,8 +48,9 @@ namespace TestEasySave.Model
         public void TestCrypt1()
         {
             ModelSave save = new ModelTotalSave(saveName, sourcePath, targetPath);
-            ModelLogState logState = new ModelLogState(saveName, sourcePath, targetPath);
-            save.Save(ref logState);
+            ModelLogState logState = save.ToState();
+            List<ModelLogState> states = new List<ModelLogState> { logState };
+            save.Save(ref logState, ref states);
             Assert.IsTrue(File.Exists(@String.Concat(targetPath, saveName, "/", file)));
             Assert.AreEqual(File.ReadAllText(@String.Concat(targetPath, saveName, "/", file)), "{\u0010�#n\u000e\0\bTs7�]\u0001+");
         }

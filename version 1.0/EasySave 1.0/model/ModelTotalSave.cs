@@ -18,9 +18,10 @@ namespace EasySave_1_0.model
         /// <param name="state">an object Log State to refer to</param>
         public override void Save(ref model.ModelLogState state , ref List<model.ModelLogState> l_state)
         {
+            InitState(ref state);
             try
             {
-                CopyFolder(sourcePath, String.Concat(targetPath, name), ref state);
+                CopyFolder(sourcePath, String.Concat(targetPath, name), ref state, ref l_state);
             }
             catch (DirectoryNotFoundException dirNotFound)
             {
@@ -55,17 +56,17 @@ namespace EasySave_1_0.model
         /// <param name="sourcePath">source path of the element to save</param>
         /// <param name="targetPath">target path of the element where we have to save it</param>
         /// <param name="modelLogState">an object Log State to refer to</param>
-        public override void CopyFolder(string sourcePath, string targetPath, ref ModelLogState modelLogState)
+        public override void CopyFolder(string sourcePath, string targetPath, ref ModelLogState modelLogState, ref List<ModelLogState> states)
         {
             DirectoryCreated(targetPath);
             foreach (string f in Directory.EnumerateFiles(sourcePath))
             {
                 filename = Path.GetFileName(f);
-                CopyAndWrite(ref modelLogState, name, sourcePath, filename, targetPath, String.Concat(targetPath, "/", filename));
+                CopyAndWrite(ref modelLogState, name, sourcePath, filename, targetPath, String.Concat(targetPath, "/", filename), ref states);
             }
             foreach (string d in Directory.EnumerateDirectories(sourcePath))
             {
-                CopyFolder(d, String.Concat(targetPath, "/", new DirectoryInfo(d).Name), ref modelLogState);
+                CopyFolder(d, String.Concat(targetPath, "/", new DirectoryInfo(d).Name), ref modelLogState, ref states);
             }
         }
 

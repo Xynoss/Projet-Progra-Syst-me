@@ -42,5 +42,12 @@ namespace Version_2._0.ViewModel
             List<ModelLogState> fullListStates = viemmodelhome_save.States;
             Save.Save(ref toState, ref fullListStates);
         }
+
+        public List<ModelSave> SaveExisted()
+        {
+            List<ModelSave> SaveExisted = new List<ModelSave>();
+            SaveExisted = viemmodelhome_save.Saves;
+            return SaveExisted;
+        }
     }
 }
