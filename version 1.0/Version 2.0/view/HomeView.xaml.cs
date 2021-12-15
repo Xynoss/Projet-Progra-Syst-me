@@ -37,8 +37,11 @@ namespace Version_2._0.view
                     {
                         ModelLogState state_tmp = viemmodelhome_save.States.FindAll(state => state.Name == item.Name).FindAll(state => state.FileSource == item.SourcePath).Find(state => state.FileTarget == item.TargetPath);
                         List<ModelLogState> fullListStates = viemmodelhome_save.States;
-                        item.Save(ref state_tmp, ref fullListStates);
+                        Thread _thread = new Thread(new ThreadStart(ToSave));
+
                     }
+                    
+                    
                 }
             }
             catch(Exception ex)
@@ -51,6 +54,11 @@ namespace Version_2._0.view
         public void btn_close(object sender, RoutedEventArgs e)
         {
             popup_ex.IsOpen = false;
+        }
+
+        public static void ToSave(ModelSave item, ModelLogState state_tmp, List<ModelLogState> fullListStates)
+        {
+            item.Save(ref state_tmp, ref fullListStates);
         }
     }
 }

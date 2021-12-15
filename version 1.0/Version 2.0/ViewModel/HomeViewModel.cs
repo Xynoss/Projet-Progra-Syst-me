@@ -1,6 +1,7 @@
 ﻿using EasySave_1_0.model;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Threading;
 
 namespace Version_2._0.ViewModel
 {
@@ -35,6 +36,19 @@ namespace Version_2._0.ViewModel
             set
             {
                 states = value;
+            }
+        }
+
+        private List<Thread> l_threads;
+        public List<Thread> L_threads
+        {
+            get 
+            {
+                return l_threads;
+            }
+            set
+            {
+                l_threads = value;
             }
         }
 
