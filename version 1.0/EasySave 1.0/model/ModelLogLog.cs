@@ -31,16 +31,16 @@ namespace EasySave_1_0.model
             }
         }
 
-        private int timeTransfert;
-        public int TimeTransfert
+        private int transfertEncryptTime;
+        public int TransfertEncryptTime
         {
             get
             {
-                return timeTransfert;
+                return transfertEncryptTime;
             }
             set
             {
-                timeTransfert = value;
+                transfertEncryptTime = value;
             }
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace EasySave_1_0.model
             Calcul_Check CnC = new Calcul_Check();
             this.filename = filename;
             this.fileSize = (uint)CnC.FileSize(filename);
-            this.timeTransfert = (int)span.TotalMilliseconds;
+            this.TransfertEncryptTime = (int)span.TotalMilliseconds;
         }
 
         ModelLogLog() : base() { }
