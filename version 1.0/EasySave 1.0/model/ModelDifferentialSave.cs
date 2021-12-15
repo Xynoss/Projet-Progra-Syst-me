@@ -20,7 +20,7 @@ namespace EasySave_1_0.model
         public ModelDifferentialSave(string name, string sourcePath, string targetPath, string refSavePath) : base(name, sourcePath, targetPath)
         {
             saveRefPath = refSavePath;
-            string[] saveRef = refSavePath.Split(Separator);
+            
         }
 
 
