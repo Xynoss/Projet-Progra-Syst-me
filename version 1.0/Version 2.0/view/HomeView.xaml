@@ -8,11 +8,11 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="7*"/>
             <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="5*"/>
@@ -36,5 +36,7 @@
         <Popup x:Name="popup_ex" Width="685" Height="25" StaysOpen="False" Visibility="Hidden" PopupAnimation="Slide">
             <Button Content="NON TU PEUX PAS !" Click="btn_close" Background="DarkGray" Foreground="DarkRed"/>
         </Popup>
+        <StackPanel></StackPanel>
+
     </Grid>
 </UserControl>

@@ -23,7 +23,6 @@ namespace Version_2._0.ViewModel
                 List<ModelLogState> fullListStates = viemmodelhome_save.States;
                 Save.Save(ref toState, ref fullListStates);
             }
-
         }
 
         public void CreateDiff(string name, string sourcePath, string targetPath, string refSave)

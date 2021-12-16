@@ -45,5 +45,8 @@
         <Button Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Btn_Save" Background="{DynamicResource PrimaryDarkBrush}" Foreground="{DynamicResource PrimaryLightBrush}" BorderBrush="{x:Null}">
             <iconPacks:PackIconMaterialDesign Grid.Column="2" Kind="Save" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="25" Height="25"/>
         </Button>
+        <Button x:Name="btn_1" Content="play" Grid.Column="1" HorizontalAlignment="Left" Margin="522,0,0,0" Grid.Row="5" VerticalAlignment="Center"/>
+        <Button x:Name="btn_2" Content="stop" Grid.Column="1" HorizontalAlignment="Left" Margin="352,0,0,0" Grid.Row="5" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtProgress" Grid.Column="1" HorizontalAlignment="Left" Margin="392,0,0,0" Grid.Row="5" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
     </Grid>
 </UserControl>
