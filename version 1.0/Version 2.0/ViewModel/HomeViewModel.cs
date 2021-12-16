@@ -1,7 +1,10 @@
 ﻿using EasySave_1_0.model;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Threading;
+using System.Windows.Controls;
+using Version_2._0.view;
 
 namespace Version_2._0.ViewModel
 {
@@ -77,6 +80,14 @@ namespace Version_2._0.ViewModel
                 _instance = new HomeViewModel();
             }
             return _instance;
+        }
+
+        public void Saving(ModelLogState item)
+        {
+            ModelLogState tmp = States.FindAll(state => state.Name == item.Name).FindAll(state => state.FileSource == item.FileSource).Find(state => state.FileTarget == item.FileTarget);
+            List<ModelLogState> l_states = States;
+            ModelSave SaveToRun = item.StateToSave();
+            SaveToRun.Save(ref tmp, ref l_states);
         }
     }
 }

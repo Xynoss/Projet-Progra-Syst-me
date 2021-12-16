@@ -19,6 +19,7 @@ namespace Version_2._0.ViewModel
                 ModelSave Save = new ModelTotalSave(name, sourcePath, String.Concat(targetPath, "\\"));
                 viemmodelhome_save.Saves.Add(Save);
                 ModelLogState toState = Save.ToState();
+                toState.SaveRef = "Total";
                 viemmodelhome_save.States.Add(toState);
                 List<ModelLogState> fullListStates = viemmodelhome_save.States;
                 Save.Save(ref toState, ref fullListStates);
@@ -38,6 +39,7 @@ namespace Version_2._0.ViewModel
             ModelSave Save = new ModelDifferentialSave(name, sourcePath, String.Concat(targetPath,"\\"), String.Concat(ListFoundSave[0].TargetPath, "/", refSave, "/"));
             viemmodelhome_save.Saves.Add(Save);
             ModelLogState toState = Save.ToState();
+            toState.SaveRef = "Diff";
             viemmodelhome_save.States.Add(toState);
             List<ModelLogState> fullListStates = viemmodelhome_save.States;
             Save.Save(ref toState, ref fullListStates);

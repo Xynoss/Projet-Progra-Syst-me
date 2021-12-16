@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace EasySave_1_0.model
 {
-    public class ModelLogState : ModelLog
+    public class ModelLogState : ModelLog, INotifyPropertyChanged
     {
 
         private string state;
@@ -54,6 +55,7 @@ namespace EasySave_1_0.model
             set
             {
                 progression = value;
+                OnPropertyChanged("Progression");
             }
         }
 
@@ -69,6 +71,8 @@ namespace EasySave_1_0.model
                 nbFilesLeft = value;
             }
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private string saveRef;
         public string SaveRef { get { return saveRef; } set { saveRef = value; } }
@@ -111,7 +115,17 @@ namespace EasySave_1_0.model
 
         public int Prog()
         {
-            return this.progression = (this.totalFileToCopy - this.nbFilesLeft) * 100 / this.totalFileToCopy ;
+            return this.Progression = (this.totalFileToCopy - this.nbFilesLeft) * 100 / this.totalFileToCopy ;
+        }
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            var propertyChangedEventArgs =
+                new PropertyChangedEventArgs(propertyName);
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, propertyChangedEventArgs);
+            }
         }
     }
 }

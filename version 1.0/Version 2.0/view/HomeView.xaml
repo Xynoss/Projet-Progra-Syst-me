@@ -18,13 +18,19 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <DataGrid Name="dgSaves" AutoGenerateColumns="False" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2" ItemsSource="{Binding Saves}">
+        <DataGrid Name="dgSaves" AutoGenerateColumns="False" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2" ItemsSource="{Binding States}">
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn x:Name="check_list" CanUserResize="False"/>
-                <DataGridTextColumn Header="{x:Static lang:Resources.Save_name}" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="{x:Static lang:Resources.Save_source}" Binding="{Binding SourcePath}" />
-                <DataGridTextColumn Header="{x:Static lang:Resources.Save_target}" Binding="{Binding TargetPath}" />
-                <DataGridTextColumn Header="{x:Static lang:Resources.Save_saveref}" Binding="{Binding SaveRefPath}" />
+                <DataGridCheckBoxColumn x:Name="check_list" CanUserResize="False" Width="Auto"/>
+                <DataGridTextColumn Header="{x:Static lang:Resources.Save_name}" Binding="{Binding Name}" Width="Auto"/>
+                <DataGridTextColumn Header="{x:Static lang:Resources.Save_source}" Binding="{Binding FileSource}" Width="*"/>
+                <DataGridTextColumn Header="{x:Static lang:Resources.Save_target}" Binding="{Binding FileTarget}" Width="*"/>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ProgressBar x:Name="pgb_progression" Minimum="0" Maximum="100" Value="{Binding Progression, Mode=OneWay}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
             <DataGrid.RowDetailsTemplate>
                 <DataTemplate>
