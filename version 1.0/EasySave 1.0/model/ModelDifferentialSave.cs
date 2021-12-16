@@ -9,23 +9,29 @@ namespace EasySave_1_0.model
     /// </summary>
     public class ModelDifferentialSave : ModelSave
     {
-        private const string Separator = "\\\\";
+        #region attribut
         private string saveRefPath;
         public string SaveRefPath
         {
             get { return saveRefPath; }
             set { saveRefPath = value; }
         }
-
+        Logger _instanceLog = Logger.GetInstance();
+        #endregion
+        #region Constructeur
+        /// <summary>
+        /// Contructor to create the differential save based on an exist Total save
+        /// </summary>
+        /// <param name="name">name of the save</param>
+        /// <param name="sourcePath">source of the save</param>
+        /// <param name="targetPath">target of the save</param>
+        /// <param name="refSavePath">referential save</param>
         public ModelDifferentialSave(string name, string sourcePath, string targetPath, string refSavePath) : base(name, sourcePath, targetPath)
         {
             saveRefPath = refSavePath;
-            
         }
-
-
-        Logger _instanceLog = Logger.GetInstance();
-
+        #endregion
+        #region Méthodes
         /// <summary>
         /// methods to copy the files, trying to create the save and take every file form the source path.
         /// </summary>
@@ -121,11 +127,15 @@ namespace EasySave_1_0.model
             }
 
         }
+        /// <summary>
+        /// build a State Object base on a differential save
+        /// </summary>
+        /// <returns>the state created</returns>
         public override ModelLogState ToState()
         {
             string SaveType = "Diff";
             return new ModelLogState(name, sourcePath, targetPath, SaveType);
         }
-
+        #endregion
     }
 }

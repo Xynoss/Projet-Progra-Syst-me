@@ -9,9 +9,18 @@ namespace EasySave_1_0.model
     /// </summary>
     public class ModelTotalSave : ModelSave
     {
+        #region Constructeur
+        /// <summary>
+        /// Construter of the class to build a Total Save
+        /// </summary>
+        /// <param name="name">name of the save</param>
+        /// <param name="sourcePath">source of the save</param>
+        /// <param name="targetPath">target of the save</param>
         public ModelTotalSave(string name, string sourcePath, string targetPath) : base(name, sourcePath, targetPath)
         {
         }
+        #endregion
+        #region Méthode
         /// <summary>
         /// methods to copy the files, trying to create the save and take every file form the source path.
         /// </summary>
@@ -69,13 +78,16 @@ namespace EasySave_1_0.model
                 CopyFolder(d, String.Concat(targetPath, "/", new DirectoryInfo(d).Name), ref modelLogState, ref states);
             }
         }
-
+        /// <summary>
+        /// transform a save to a state 
+        /// </summary>
+        /// <returns>return the state transform form a save</returns>
         public override ModelLogState ToState()
         {
             string SaveType = "Total";
             return new ModelLogState(name, sourcePath, targetPath , SaveType);
         }
-
+        #endregion
     }
 
 }

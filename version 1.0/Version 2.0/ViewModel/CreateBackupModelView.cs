@@ -6,11 +6,16 @@ namespace Version_2._0.ViewModel
 {
     class CreateBackupModelView
     {
+        #region attribut
         HomeViewModel viemmodelhome_save = HomeViewModel.getInstance();
-        public CreateBackupModelView() { }
         List<ModelSave> ListFoundSave = new List<ModelSave>();
-        
+        #endregion
 
+        #region constructeur
+        public CreateBackupModelView() { }
+        #endregion
+
+        #region Méthode
         public void CreateComp(string name, string sourcePath, string targetPath)
         {
             ListFoundSave = viemmodelhome_save.saves.FindAll(x => x.Name == name);
@@ -51,5 +56,6 @@ namespace Version_2._0.ViewModel
             SaveExisted = viemmodelhome_save.Saves;
             return SaveExisted;
         }
+        #endregion
     }
 }

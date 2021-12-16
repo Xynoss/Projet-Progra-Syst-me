@@ -5,13 +5,15 @@ namespace Version_2._0.model
 {
     public class Encrypt
     {
+        #region attribut
         private static List<string> listExt = new List<string>();
         public static List<string> ListExt
         {
             get { return listExt; }
             set { listExt = value; }
         }
-
+        #endregion
+        #region Méthode
         public static void SetExtensions()
         {
             listExt.Clear();   
@@ -21,5 +23,6 @@ namespace Version_2._0.model
             }
             ModelSave.ExToEnc = listExt;
         }
+        #endregion
     }
 }

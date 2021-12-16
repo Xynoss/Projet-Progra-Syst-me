@@ -8,6 +8,7 @@ namespace Version_2._0.ViewModel
 {
     class iOptionViewModel : INotifyPropertyChanged
     {
+        #region attribut
         private ICommand command;
         static iOptionViewModel _instance;
         private bool pdf;
@@ -16,7 +17,8 @@ namespace Version_2._0.ViewModel
         private bool txt;
         private bool fr;
         private bool en;
-
+        #endregion
+        #region setter getter
         public bool Pdf
         {
             get => pdf;
@@ -53,7 +55,6 @@ namespace Version_2._0.ViewModel
                 OnPropertyChanged("Txt");
             }
         }
-
         public bool Fr
         {
             get => this.fr;
@@ -72,22 +73,6 @@ namespace Version_2._0.ViewModel
                 OnPropertyChanged("En");
             }
         }
-
-        private iOptionViewModel() { }
-        public static iOptionViewModel getInstance()
-        {
-            if (_instance == null)
-            {
-                _instance = new iOptionViewModel();
-            }
-            List<string> list_ext = Encrypt.ListExt;
-            _instance.pdf = list_ext.Exists(val => val == ".pdf");
-            _instance.jpeg = list_ext.Exists(val => val == ".jpeg");
-            _instance.docx = list_ext.Exists(val => val == ".docx");
-            _instance.txt = list_ext.Exists(val => val == ".txt");
-            return _instance;
-        }
-
         public ICommand GetSaveCommand
         {
             get
@@ -101,8 +86,29 @@ namespace Version_2._0.ViewModel
             }
             private set { command = value; }
         }
+        private bool CanDoCommand
+        {
+            get { return command != null; }
+        }
+        #endregion
+        #region contructeur et getinstance
+        private iOptionViewModel() { }
 
-
+        public static iOptionViewModel getInstance()
+        {
+            if (_instance == null)
+            {
+                _instance = new iOptionViewModel();
+            }
+            List<string> list_ext = Encrypt.ListExt;
+            _instance.pdf = list_ext.Exists(val => val == ".pdf");
+            _instance.jpeg = list_ext.Exists(val => val == ".jpeg");
+            _instance.docx = list_ext.Exists(val => val == ".docx");
+            _instance.txt = list_ext.Exists(val => val == ".txt");
+            return _instance;
+        }
+        #endregion
+        #region Méthode
         public void DoCreateList()
         {
             List<string> ExtToEnc = new List<string>();
@@ -152,11 +158,7 @@ namespace Version_2._0.ViewModel
             }
             Version_2._0.Properties.Resources.Culture = new System.Globalization.CultureInfo(Version_2._0.Properties.Settings.Default.Lang);
         }
-
-        private bool CanDoCommand
-        {
-            get { return command != null; }
-        }
+        #endregion
         #region INotifyPropertyChanged Members 
         public event PropertyChangedEventHandler PropertyChanged;
 

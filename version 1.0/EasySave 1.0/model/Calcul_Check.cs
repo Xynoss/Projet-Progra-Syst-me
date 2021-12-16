@@ -6,14 +6,19 @@ namespace EasySave_1_0.model {
 	/// Class to get the size of a file and the number of files in a folder.
 	/// </summary>
 	public class Calcul_Check {
-		public Calcul_Check() {
-		}
-		/// <summary>
-		/// Method to determine the file's size in a directory
+        #region Constructeur
+        /// <summary>
+		/// Constructer of the class calcul and check
 		/// </summary>
-		/// <param name="pathFile">Access path to the file.</param>
-		/// <returns>Size of the file.</returns>
-		public int FileSize(string pathFile)
+		public Calcul_Check() { }
+        #endregion
+        #region Methods
+        /// <summary>
+        /// Method to determine the file's size in a directory
+        /// </summary>
+        /// <param name="pathFile">Access path to the file.</param>
+        /// <returns>Size of the file.</returns>
+        public int FileSize(string pathFile)
 		{
 			//get the attribute for files or directory
 			FileAttributes fileAtt = File.GetAttributes(pathFile);
@@ -41,8 +46,6 @@ namespace EasySave_1_0.model {
         {
 			return (int)Directory.GetFiles(pathFile, ".", SearchOption.AllDirectories).Length;
         }
-
-
-	}
-
+        #endregion
+    }
 }

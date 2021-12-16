@@ -74,7 +74,10 @@ namespace EasySave_1_0.model
             }
             return _instance;
         }
-
+        /// <summary>
+        /// transform the exist Save in the log into a save in the app
+        /// </summary>
+        /// <returns>list of state</returns>
         public List<ModelLogState> JsonToSave()
         {
             try

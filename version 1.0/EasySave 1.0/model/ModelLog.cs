@@ -29,6 +29,7 @@ namespace EasySave_1_0.model
                 fileSource = value;
             }
         }
+
         protected string fileTarget;
         public string FileTarget
         {
@@ -41,6 +42,7 @@ namespace EasySave_1_0.model
                 fileTarget = value;
             }
         }
+
         protected DateTime timestamp;
         public DateTime Timestamp
         {
@@ -60,7 +62,6 @@ namespace EasySave_1_0.model
             get { return saveType; }
             set { saveType = value; }
         }
-
 
         /// <summary>
         /// Constructor of the ModelLog class

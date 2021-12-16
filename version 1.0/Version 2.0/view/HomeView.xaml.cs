@@ -24,39 +24,39 @@ namespace Version_2._0.view
 
         public void btn_execute(object sender, RoutedEventArgs e)
         {
-            
-                /*try
-                {
 
-                    
-                }
-                catch (Exception ex)
-                {
-                    popup_ex.Dispatcher.Invoke(() =>
-                    {
-                        popup_ex.IsOpen = true;
-                    });
-                }*/
+            try
+            {
                 foreach (ModelLogState item in dgSaves.ItemsSource)
                 {
-                    /*if (Process.GetProcessesByName("notepad").Length > 0)
+                    if (Process.GetProcessesByName("notepad").Length > 0)
                     {
                         string m;
-                        m = String.Format("DO U NO DA WAE OV {0}?", "Calculator");
+                        m = String.Format("You can't run there a NotePad running back");
                         throw new System.Exception(m);
-                    }*/
+                    }
 
                     if (((CheckBox)check_list.GetCellContent(item)).IsChecked == true)
                     {
                         Thread _thread = new Thread(() =>
                         {
-                        viemmodelhome_save.Saving(item);
+                            viemmodelhome_save.Saving(item);
                         });
                         _thread.Start();
+                    }
                 }
-                }
-            
-            
+
+            }
+            catch (Exception ex)
+            {
+                popup_ex.Dispatcher.Invoke(() =>
+                {
+                    popup_ex.IsOpen = true;
+                });
+            }
+
+
+
 
         }
         public void btn_close(object sender, RoutedEventArgs e)

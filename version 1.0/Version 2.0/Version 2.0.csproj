@@ -9,23 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="disquette.png" />
-    <None Remove="english.png" />
-    <None Remove="english.svg.png" />
-    <None Remove="france.svg.png" />
-    <None Remove="france.svg.webp" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\EasySave 1.0\EasySave_1_0.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="disquette.png" />
-    <Resource Include="english.png" />
-    <Resource Include="english.svg.png" />
-    <Resource Include="france.svg.png" />
-    <Resource Include="france.svg.webp" />
   </ItemGroup>
 
   <ItemGroup>

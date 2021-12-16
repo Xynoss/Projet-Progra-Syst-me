@@ -5,11 +5,13 @@ using System.IO;
 
 namespace EasySave_1_0.model
 {
+    
     /// <summary>
     /// Abstract class for the save process.
     /// </summary>
     public abstract class ModelSave
     {
+        #region attribut et setter getter
         protected string name;
         public string Name
         {
@@ -49,7 +51,6 @@ namespace EasySave_1_0.model
             }
         }
 
-
         protected string filename;
         public string Filename
         {
@@ -70,7 +71,15 @@ namespace EasySave_1_0.model
                 return String.Format("back up {0} from {1} to {2} folder", Name, SourcePath, targetPath);
             }
         }
-
+        
+        private static List<string> exToEnc = new List<string>();
+        public static List<string> ExToEnc
+        {
+            get => exToEnc;
+            set => exToEnc = value;
+        }
+        #endregion
+        #region constructeur
         /// <summary>
         /// Constructor for the save object.
         /// </summary>
@@ -89,6 +98,8 @@ namespace EasySave_1_0.model
             TargetPath = targetPath;
             SourcePath = sourcePath;
         }
+        #endregion
+        #region Méthodes
         /// <summary>
         /// Abstract method to save folders and files
         /// </summary>
@@ -102,6 +113,7 @@ namespace EasySave_1_0.model
         /// </summary>
         /// <param name="str_in">file concerned at the moment of the process.</param>
         public abstract void LogLog(string name, TimeSpan span, string filename, string targetPath, string sourcePath);
+        
         public void CopyAndWrite(ref model.ModelLogState state, string Name, string sourcePath, string filename, string targetPath, string f, ref List<ModelLogState> states)
         {
             DateTime start = DateTime.Now;
@@ -144,16 +156,15 @@ namespace EasySave_1_0.model
                 Directory.CreateDirectory(dirPath);
             }
         }
-
-        private static List<string> exToEnc = new List<string>();
-        public static List<string> ExToEnc
-        {
-            get => exToEnc;
-            set => exToEnc = value;
-        }
-
+        /// <summary>
+        /// a method to transform a Save to a State Model
+        /// </summary>
+        /// <returns>the state created</returns>
         public abstract ModelLogState ToState();
-
+        /// <summary>
+        /// initialize the State
+        /// </summary>
+        /// <param name="state">State to initialize</param>
         protected void InitState(ref ModelLogState state)
         {
             state.Progression = 0;
@@ -161,7 +172,7 @@ namespace EasySave_1_0.model
             state.TotalFileToCopy = state.NbFilesLeft;
             state.TotalFileSize = new Calcul_Check().FileSize(sourcePath);
         }
-
+        #endregion
     }
 
 }

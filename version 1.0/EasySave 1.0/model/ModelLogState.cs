@@ -5,7 +5,7 @@ namespace EasySave_1_0.model
 {
     public class ModelLogState : ModelLog, INotifyPropertyChanged
     {
-
+        #region attribut
         private string state;
         public string State
         {
@@ -75,9 +75,11 @@ namespace EasySave_1_0.model
         public event PropertyChangedEventHandler PropertyChanged;
 
         private string saveRef;
-        public string SaveRef { get { return saveRef; } set { saveRef = value; } }
-
-
+        public string SaveRef {
+            get { return saveRef; } set { saveRef = value; } 
+        }
+        #endregion
+        #region Constructor 
         /// <summary>
         /// constructor of the modelLogState class
         /// </summary>
@@ -97,7 +99,12 @@ namespace EasySave_1_0.model
         }
 
         public ModelLogState() : base() { }
-
+        #endregion
+        #region Methods
+        /// <summary>
+        /// transform a State to a Save between a total and a differential
+        /// </summary>
+        /// <returns>the save created</returns>
         public ModelSave StateToSave()
         {
             ModelSave _modelsave = null;
@@ -112,12 +119,18 @@ namespace EasySave_1_0.model
             }
             return _modelsave;
         }
-
+        /// <summary>
+        /// calcul of the progression of the save
+        /// </summary>
+        /// <returns>integer in pourcentage</returns>
         public int Prog()
         {
             return this.Progression = (this.totalFileToCopy - this.nbFilesLeft) * 100 / this.totalFileToCopy ;
         }
-
+        /// <summary>
+        /// notify when a changed is detected
+        /// </summary>
+        /// <param name="propertyName">the name of the attribut changed</param>
         protected void OnPropertyChanged(string propertyName)
         {
             var propertyChangedEventArgs =
@@ -127,5 +140,6 @@ namespace EasySave_1_0.model
                 PropertyChanged(this, propertyChangedEventArgs);
             }
         }
+        #endregion
     }
 }

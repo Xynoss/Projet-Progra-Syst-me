@@ -8,8 +8,10 @@ using Version_2._0.view;
 
 namespace Version_2._0.ViewModel
 {
+    #region Singleton
     public sealed class HomeViewModel : INotifyPropertyChanged
     {
+        #region attribut
         static HomeViewModel _instance;
         public string Title { get; } = "Home";
 
@@ -42,19 +44,6 @@ namespace Version_2._0.ViewModel
             }
         }
 
-        private List<Thread> l_threads;
-        public List<Thread> L_threads
-        {
-            get 
-            {
-                return l_threads;
-            }
-            set
-            {
-                l_threads = value;
-            }
-        }
-
         private void OnPropertyChanged(string propertyName)
         {
             var propertyChangedEventArgs =
@@ -64,7 +53,9 @@ namespace Version_2._0.ViewModel
                 PropertyChanged(this, propertyChangedEventArgs);
             }
         }
+        #endregion
 
+        #region constructeur
         private HomeViewModel()
         {
             Logger _intenceLog = Logger.GetInstance();
@@ -72,7 +63,9 @@ namespace Version_2._0.ViewModel
             Saves = new List<ModelSave>();
             States.ForEach(x => Saves.Add(x.StateToSave()));
         }
+        #endregion
 
+        #region récup instance
         public static HomeViewModel getInstance()
         {
             if (_instance == null)
@@ -81,7 +74,9 @@ namespace Version_2._0.ViewModel
             }
             return _instance;
         }
+        #endregion
 
+        #region Méthode
         public void Saving(ModelLogState item)
         {
             ModelLogState tmp = States.FindAll(state => state.Name == item.Name).FindAll(state => state.FileSource == item.FileSource).Find(state => state.FileTarget == item.FileTarget);
@@ -89,5 +84,7 @@ namespace Version_2._0.ViewModel
             ModelSave SaveToRun = item.StateToSave();
             SaveToRun.Save(ref tmp, ref l_states);
         }
+        #endregion
     }
+    #endregion
 }
