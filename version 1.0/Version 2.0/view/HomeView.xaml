@@ -39,6 +39,9 @@
             </DataGrid.RowDetailsTemplate>
         </DataGrid>
         <Button Content="{x:Static lang:Resources.btn_execute}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Margin="20,0,0,0" Click="btn_execute"/>
+        <Button Content="play" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Margin="0,0,20,0" Command="{Binding GetPlayCommand}"/>
+        <Button Content="pause" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Margin="0,0,50,0" Command="{Binding GetPauseCommand}"/>
+        <Button Content="stop" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Margin="0,0,90,0" Command="{Binding GetStopCommand}"/>
         <Popup x:Name="popup_ex" Width="685" Height="25" StaysOpen="False" Visibility="Hidden" PopupAnimation="Slide">
             <Button Content="NON TU PEUX PAS !" Click="btn_close" Background="DarkGray" Foreground="DarkRed"/>
         </Popup>

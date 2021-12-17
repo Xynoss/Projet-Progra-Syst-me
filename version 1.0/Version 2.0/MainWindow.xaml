@@ -12,7 +12,6 @@
         Height="450" 
         Width="800" 
         WindowStartupLocation="CenterScreen"
-        Icon="/disquette.png" 
         ResizeMode="NoResize"
         Background="#FF292929">
     <Window.Resources>

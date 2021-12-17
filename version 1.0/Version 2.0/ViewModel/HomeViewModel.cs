@@ -1,10 +1,8 @@
 ﻿using EasySave_1_0.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Threading;
-using System.Windows.Controls;
-using Version_2._0.view;
+using System.Windows.Input;
 
 namespace Version_2._0.ViewModel
 {
@@ -12,6 +10,9 @@ namespace Version_2._0.ViewModel
     public sealed class HomeViewModel : INotifyPropertyChanged
     {
         #region attribut
+        private ICommand commandpause;
+        private ICommand commandplay;
+        private ICommand commandstop;
         static HomeViewModel _instance;
         public string Title { get; } = "Home";
 
@@ -53,6 +54,42 @@ namespace Version_2._0.ViewModel
                 PropertyChanged(this, propertyChangedEventArgs);
             }
         }
+
+        public ICommand GetPauseCommand
+        {
+            get
+            {
+                if(commandpause == null)
+                {
+                    commandpause = new RelayCommand(param => pause());
+                }
+                return commandpause;
+            }
+        }
+
+        public ICommand GetStopCommand
+        {
+            get
+            {
+                if(commandstop == null)
+                {
+                    commandstop = new RelayCommand(param => stop());
+                }
+                return commandstop;
+            }
+        }
+
+        public ICommand GetPlayCommand
+        {
+            get
+            {
+                if(commandplay == null)
+                {
+                    commandplay = new RelayCommand(param => play());
+                }
+                return commandplay;
+            }
+        }
         #endregion
 
         #region constructeur
@@ -83,6 +120,21 @@ namespace Version_2._0.ViewModel
             List<ModelLogState> l_states = States;
             ModelSave SaveToRun = item.StateToSave();
             SaveToRun.Save(ref tmp, ref l_states);
+        }
+
+        public void play()
+        {
+            ModelSave.mrevent.Set();
+        }
+
+        public void pause()
+        {
+            ModelSave.mrevent.Reset();
+        }
+
+        public void stop()
+        {
+            
         }
         #endregion
     }

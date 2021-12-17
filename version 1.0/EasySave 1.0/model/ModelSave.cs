@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
 
 namespace EasySave_1_0.model
 {
@@ -78,6 +79,8 @@ namespace EasySave_1_0.model
             get => exToEnc;
             set => exToEnc = value;
         }
+
+        public static ManualResetEvent mrevent = new ManualResetEvent(true);
         #endregion
         #region constructeur
         /// <summary>
@@ -116,6 +119,7 @@ namespace EasySave_1_0.model
         
         public void CopyAndWrite(ref model.ModelLogState state, string Name, string sourcePath, string filename, string targetPath, string f, ref List<ModelLogState> states)
         {
+            mrevent.WaitOne();
             DateTime start = DateTime.Now;
             state.State = "ACTIVE";
             string ext = Path.GetExtension($"{sourcePath}\\{filename}");
